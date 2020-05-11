@@ -11,35 +11,32 @@ import headroom from '../styles/headroom';
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <Fragment>
       <Global
         styles={css`
           *,
           *:before,
           *:after {
-            box-sizing: inherit;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
           }
           html {
             text-rendering: optimizeLegibility;
             overflow-x: hidden;
-            box-sizing: border-box;
             -ms-overflow-style: scrollbar;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
           }
-          html,
-          body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
+          #gatsby-focus-wrapper {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
           }
-
           body {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
           }
           a {
             color: ${theme.colors.link};
@@ -61,7 +58,6 @@ const Layout = ({ children }) => (
       <NavBar />
       {children}
       <Footer />
-    </Fragment>
   </ThemeProvider>
 );
 

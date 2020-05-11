@@ -4,11 +4,19 @@ import styled from '@emotion/styled';
 import Headroom from 'react-headroom';
 import logo from '../../static/logo/header-logo.png';
 
-const StyledLink = styled(Link)`
-  display: flex;
-  font-weight: 700;
-  align-items: center;
-`;
+// const StyledLink = styled(Link)`
+//   display: flex;
+//   font-weight: 700;
+//   align-items: center;
+//   img {
+//     height: 30px;
+//     margin: auto;
+//   }
+// `;
+const StyledLink = styled.a`
+color: white;
+font-weight: bold;
+`
 
 const Nav = styled.nav`
   display: flex;
@@ -30,12 +38,12 @@ const Nav = styled.nav`
 const NavBar = () => (
   <Headroom calcHeightOnResize disableInlineStyles>
     <StyledLink to="/">
-      <img src={logo} alt="Gatsby Logo" />
+      {/* <img src={logo} alt="Gatsby Logo" /> */}
+      <Link to="/">Home</Link>
     </StyledLink>
     <Nav>
-      <Link to="/">Home</Link>
       <Link to="/blog">Blog</Link>
-      <Link to="/about">About</Link>
+      {/* <Link to="/about">About</Link> */}
     </Nav>
   </Headroom>
 );

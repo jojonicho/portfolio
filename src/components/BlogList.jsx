@@ -58,7 +58,7 @@ const Image = styled.div`
 
 const Information = styled.div`
   h1 {
-    font-size: 2rem;
+    font-size: calc(1vw + 1rem);
     display: inline-block;
     color: ${props => props.theme.colors.black.base};
     transition: all ${props => props.theme.transitions.default.duration};

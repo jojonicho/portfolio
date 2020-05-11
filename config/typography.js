@@ -5,7 +5,7 @@ export const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: 1.45,
   headerFontFamily: [
-    'Candal',
+    'Josefin Sans',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',

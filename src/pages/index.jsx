@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
-import { Header, PostList } from 'components';
+import { PostList } from 'components';
 import { Layout } from 'layouts';
+import Typed from 'react-typed';
+import Rotate from 'react-reveal/Rotate';
+import Pulse from 'react-reveal/Pulse';
+import SVG from '../components/SVG';
 
 const PostWrapper = styled.div`
   display: flex;
@@ -20,12 +24,70 @@ const PostWrapper = styled.div`
   }
 `;
 
+const Greeting = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: calc(5vw + 40px);
+  height: calc(5vw + 45px);
+`
+const FixedBox = styled.div`
+  // height: 15vw;
+  // padding: 5vw;
+  height: 250px;
+`
+
+const SubTitle = styled.text`
+  color: ${props => props.theme.colors.white.light};
+  font-size: calc(2vw + 10px);
+  font-weight: 100;
+`
+
+const Header = styled.div`
+background: ${props => props.theme.gradient.rightToLeft};
+@media (max-width: ${props => props.theme.breakpoints.m}) {
+  height: 550px;
+}
+@media (max-width: ${props => props.theme.breakpoints.s}) {
+  height: 500px;
+}
+font-weight: bold;
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+align-items: center;
+padding: 4vw;
+min-height: 200px;
+color: ${props => props.theme.colors.white.light};
+font-size: calc(2vw + 40px);
+`
+
 const Index = ({ data }) => {
+  const mylist = ['React', 'Gatsby', 'Flutter', 'GraphQL'];
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    setTimeout(() => {
+      setCount(count >= mylist.length - 1 ? 0 : count+1);
+    }, 2800);
+  }, [count]);
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'Home Page'} />
-      <Header title="Home Page">Gatsby Tutorial Starter</Header>
+      <Helmet title={'jojonicho'} />
+      <Header>
+      Jonathan Nicholas
+        <Greeting>
+          <FixedBox>
+            <Rotate spy={count}>
+              <Pulse spy={count} duration={1700}>
+                <SVG name={mylist[count]} />
+              </Pulse>
+            </Rotate>
+          </FixedBox>
+        </Greeting>
+        <SubTitle>Computer Science Freshman @ UI</SubTitle>
+      </Header>
       <PostWrapper>
         {edges.map(({ node }) => {
           const { id, excerpt, frontmatter } = node;

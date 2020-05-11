@@ -8,9 +8,11 @@ const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  font-size: calc(0.5vw + 0.5rem);
   justify-content: center;
+  align-items: center;
   a {
-    margin: 0 1rem 1rem 0;
+    margin: 0.4vw 1vw;
     color: ${props => props.theme.colors.black.blue};
     padding: 0.3rem 0.6rem;
     background: ${props => props.theme.colors.white.grey};
