@@ -60,6 +60,7 @@ const Information = styled.div`
       color: ${props => props.theme.colors.primary.base};
     }
   }
+  font-size: calc(0.2vw + 0.7rem);
   text-align: center;
   flex-basis: 100%;
   max-width: 100%;

@@ -5,10 +5,10 @@ import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { PostList } from 'components';
 import { Layout } from 'layouts';
-import Typed from 'react-typed';
 import Rotate from 'react-reveal/Rotate';
 import Pulse from 'react-reveal/Pulse';
 import SVG from '../components/SVG';
+import Affiliates from '../components/Affiliates';
 
 const PostWrapper = styled.div`
   display: flex;
@@ -30,89 +30,84 @@ const Greeting = styled.div`
   flex-wrap: wrap;
   width: calc(5vw + 40px);
   height: calc(5vw + 45px);
-`
-const FixedBox = styled.div`
-  height: 250px;
-`
+`;
 
 const SubTitle = styled.text`
   color: ${props => props.theme.colors.white.light};
   font-size: calc(1vw + 20px);
   font-weight: 100;
-`
+`;
 
 const Header = styled.div`
-background: ${props => props.theme.gradient.rightToLeft};
-@media (max-width: ${props => props.theme.breakpoints.m}) {
-  height: 550px;
-}
-@media (max-width: ${props => props.theme.breakpoints.s}) {
+  background: ${props => props.theme.gradient.rightToLeft};
   height: 450px;
-}
-font-weight: bold;
-display: flex;
-flex-direction: column;
-justify-content: center;
-text-align: center;
-align-items: center;
-padding: 4vw;
-min-height: 200px;
-color: ${props => props.theme.colors.white.light};
-font-size: calc(1.2vw + 30px);
-`
-const Section = styled.div`
-`
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    height: 400px;
+  }
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    height: 380px;
+  }
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 2vw;
+  min-height: 200px;
+  color: ${props => props.theme.colors.white.light};
+  font-size: calc(1.2vw + 30px);
+`;
+const Section = styled.div``;
 const SectionTitle = styled.div`
   color: ${props => props.theme.colors.black.base};
   font-size: calc(0.8vw + 20px);
   font-weight: 300;
   margin: calc(0.5vw + 10px) calc(1.5vw + 10px);
-`
-
+`;
 
 const Index = ({ data }) => {
   const mylist = ['React', 'Gatsby', 'Flutter', 'GraphQL'];
   const [count, setCount] = useState(0);
   useEffect(() => {
     setTimeout(() => {
-      setCount(count >= mylist.length - 1 ? 0 : count+1);
+      setCount(count >= mylist.length - 1 ? 0 : count + 1);
     }, 2600);
   }, [count]);
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'jojonicho'} />
+      <Helmet title={'jonathan nicholas'} />
       <Header>
-      Jonathan Nicholas
+        Jonathan Nicholas
         <Greeting>
-          <FixedBox>
-            <Rotate spy={count}>
-              <Pulse spy={count} duration={1800}>
-                <SVG name={mylist[count]} />
-              </Pulse>
-            </Rotate>
-          </FixedBox>
+          <Rotate spy={count}>
+            <Pulse spy={count} duration={1800}>
+              <SVG name={mylist[count]} />
+            </Pulse>
+          </Rotate>
         </Greeting>
         <SubTitle>Computer Science Freshman @ UI</SubTitle>
+        <Affiliates />
       </Header>
       <Section>
         <SectionTitle>Featured Posts</SectionTitle>
-      <PostWrapper>
-        {edges.map(({ node }) => {
-          const { id, excerpt, frontmatter } = node;
-          const { cover, path, title, date } = frontmatter;
-          return (
-            <PostList
-              key={id}
-              cover={cover.childImageSharp.fluid}
-              path={path}
-              title={title}
-              date={date}
-              excerpt={excerpt}
-            />
-          );
-        })}
-      </PostWrapper>
+        <PostWrapper>
+          {edges.map(({ node }) => {
+            const { id, excerpt, frontmatter } = node;
+            const { cover, path, title, date } = frontmatter;
+            return (
+              <PostList
+                key={id}
+                cover={cover.childImageSharp.fluid}
+                path={path}
+                title={title}
+                date={date}
+                excerpt={excerpt}
+              />
+            );
+          })}
+        </PostWrapper>
       </Section>
     </Layout>
   );

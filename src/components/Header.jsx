@@ -4,15 +4,13 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.header`
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-  }
   background: ${props => props.theme.gradient.rightToLeft};
   height: 500px;
   @media (max-width: ${props => props.theme.breakpoints.m}) {
     height: 400px;
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    height: 300px;
+    height: 250px;
   }
   position: relative;
   overflow: hidden;

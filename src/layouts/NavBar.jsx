@@ -16,7 +16,7 @@ import logo from '../../static/logo/header-logo.png';
 const StyledLink = styled(Link)`
 font-weight: bold;
 font-family: ${props => props.theme.fontFamily.body};
-color: ${props => props.theme.colors.white.base};
+color: ${props => props.theme.colors.secondary.base};
 transition: all ${props => props.theme.transitions.default.duration};
 &:hover {
   color: ${props => props.theme.colors.white.grey};

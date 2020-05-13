@@ -17,6 +17,9 @@ export const colors = {
     light: '#3e5fbc',
     dark: '#284187',
   },
+  secondary: {
+    base: "#F1616D",
+  },
   background: {
     light: '#3e5fbc',
     dark: '#284187',

@@ -16,7 +16,7 @@ const Text = styled.div`
 `;
 
 const CustomLink = styled.a`
-color: white;
+color: ${props => props.theme.colors.secondary.base};
 font-weight: bold;
 `
 
