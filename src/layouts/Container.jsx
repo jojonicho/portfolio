@@ -17,6 +17,7 @@ const Wrapper = styled.section`
 
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     width: 100%;
+    padding: 0.7rem;
   }
 `;
 

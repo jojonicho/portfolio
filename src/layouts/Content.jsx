@@ -10,13 +10,13 @@ const Wrapper = styled.div`
     letter-spacing: -0.003em;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-    font-size: calc(0.5vw + 8px);
-    line-height: 1.9;
+    font-size: calc(0.5vw + 9px);
+    line-height: 2;
     color: black;
     code {
       padding: 0.2rem 0.5rem;
       margin: 0.5rem 0;
-      font-size: calc(1vw + 6px);
+      font-size: calc(0.5vw + 10px);
     }
   }
   a:not(.gatsby-resp-image-link):not(.anchor) {

@@ -29,7 +29,7 @@ const Greeting = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   width: calc(5vw + 40px);
-  height: calc(5vw + 45px);
+  height: calc(5vw + 40px);
 `;
 
 const SubTitle = styled.text`
@@ -40,13 +40,13 @@ const SubTitle = styled.text`
 
 const Header = styled.div`
   background: ${props => props.theme.gradient.rightToLeft};
-  height: 450px;
+  // height: 450px;
   @media (max-width: ${props => props.theme.breakpoints.m}) {
     height: 400px;
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    height: 365px;
-    padding: 60px 3vw;
+    height: 355px;
+    padding: 60px 3vw 0px 3vw;
   }
   font-weight: bold;
   display: flex;
@@ -54,7 +54,7 @@ const Header = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  min-height: 200px;
+  // min-height: 200px;
   color: ${props => props.theme.colors.white.light};
   font-size: calc(1.2vw + 30px);
 `;
