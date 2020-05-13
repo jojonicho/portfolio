@@ -45,7 +45,8 @@ const Header = styled.div`
     height: 400px;
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    height: 380px;
+    height: 360px;
+    padding-top: 35px;
   }
   font-weight: bold;
   display: flex;
@@ -53,7 +54,6 @@ const Header = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  padding: 2vw;
   min-height: 200px;
   color: ${props => props.theme.colors.white.light};
   font-size: calc(1.2vw + 30px);

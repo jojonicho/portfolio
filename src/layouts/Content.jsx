@@ -10,12 +10,13 @@ const Wrapper = styled.div`
     letter-spacing: -0.003em;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-    font-size: calc(0.5vw + 8!px);
-    line-height: 2;
+    font-size: calc(0.5vw + 8px);
+    line-height: 1.9;
     color: black;
     code {
       padding: 0.2rem 0.5rem;
       margin: 0.5rem 0;
+      font-size: calc(1vw + 6px);
     }
   }
   a:not(.gatsby-resp-image-link):not(.anchor) {
@@ -31,7 +32,7 @@ const Wrapper = styled.div`
     }
   }
   h1 {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   h2 {
     margin-top: 1rem;
@@ -44,6 +45,7 @@ const Wrapper = styled.div`
   h6 {
     display: inline-block;
     position: relative;
+    font-size: calc(1.5vw + 15px);
     a {
       box-shadow: none;
       border-bottom: none;
