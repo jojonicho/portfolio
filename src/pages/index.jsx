@@ -45,8 +45,8 @@ const Header = styled.div`
     height: 400px;
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    height: 340px;
-    padding: 40px 3vw;
+    height: 365px;
+    padding: 60px 3vw;
   }
   font-weight: bold;
   display: flex;
