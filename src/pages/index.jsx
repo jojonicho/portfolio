@@ -41,12 +41,13 @@ const SubTitle = styled.text`
 const Header = styled.div`
   background: ${props => props.theme.gradient.rightToLeft};
   height: 450px;
+  padding: 1vw;
   @media (max-width: ${props => props.theme.breakpoints.m}) {
     height: 400px;
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     height: 360px;
-    padding-top: 35px;
+    padding-top: 30px;
   }
   font-weight: bold;
   display: flex;
