@@ -13,9 +13,15 @@ import logo from '../../static/logo/header-logo.png';
 //     margin: auto;
 //   }
 // `;
-const StyledLink = styled.a`
-color: white;
+const StyledLink = styled(Link)`
 font-weight: bold;
+font-family: ${props => props.theme.fontFamily.body};
+color: ${props => props.theme.colors.white.base};
+transition: all ${props => props.theme.transitions.default.duration};
+&:hover {
+  color: ${props => props.theme.colors.white.grey};
+}
+
 `
 
 const Nav = styled.nav`
@@ -37,9 +43,9 @@ const Nav = styled.nav`
 
 const NavBar = () => (
   <Headroom calcHeightOnResize disableInlineStyles>
-    <StyledLink to="/">
+    <StyledLink to="/">Home
       {/* <img src={logo} alt="Gatsby Logo" /> */}
-      <Link to="/">Home</Link>
+      {/* <Link to="/">Home</Link> */}
     </StyledLink>
     <Nav>
       <Link to="/blog">Blog</Link>

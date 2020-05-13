@@ -32,14 +32,12 @@ const Greeting = styled.div`
   height: calc(5vw + 45px);
 `
 const FixedBox = styled.div`
-  // height: 15vw;
-  // padding: 5vw;
   height: 250px;
 `
 
 const SubTitle = styled.text`
   color: ${props => props.theme.colors.white.light};
-  font-size: calc(2vw + 10px);
+  font-size: calc(1vw + 20px);
   font-weight: 100;
 `
 
@@ -49,7 +47,7 @@ background: ${props => props.theme.gradient.rightToLeft};
   height: 550px;
 }
 @media (max-width: ${props => props.theme.breakpoints.s}) {
-  height: 500px;
+  height: 450px;
 }
 font-weight: bold;
 display: flex;
@@ -60,8 +58,17 @@ align-items: center;
 padding: 4vw;
 min-height: 200px;
 color: ${props => props.theme.colors.white.light};
-font-size: calc(2vw + 40px);
+font-size: calc(1.2vw + 30px);
 `
+const Section = styled.div`
+`
+const SectionTitle = styled.div`
+  color: ${props => props.theme.colors.black.base};
+  font-size: calc(0.8vw + 20px);
+  font-weight: 300;
+  margin: calc(0.5vw + 10px) calc(1.5vw + 10px);
+`
+
 
 const Index = ({ data }) => {
   const mylist = ['React', 'Gatsby', 'Flutter', 'GraphQL'];
@@ -69,7 +76,7 @@ const Index = ({ data }) => {
   useEffect(() => {
     setTimeout(() => {
       setCount(count >= mylist.length - 1 ? 0 : count+1);
-    }, 2800);
+    }, 2600);
   }, [count]);
   const { edges } = data.allMarkdownRemark;
   return (
@@ -80,7 +87,7 @@ const Index = ({ data }) => {
         <Greeting>
           <FixedBox>
             <Rotate spy={count}>
-              <Pulse spy={count} duration={1700}>
+              <Pulse spy={count} duration={1800}>
                 <SVG name={mylist[count]} />
               </Pulse>
             </Rotate>
@@ -88,6 +95,8 @@ const Index = ({ data }) => {
         </Greeting>
         <SubTitle>Computer Science Freshman @ UI</SubTitle>
       </Header>
+      <Section>
+        <SectionTitle>Featured Posts</SectionTitle>
       <PostWrapper>
         {edges.map(({ node }) => {
           const { id, excerpt, frontmatter } = node;
@@ -104,6 +113,7 @@ const Index = ({ data }) => {
           );
         })}
       </PostWrapper>
+      </Section>
     </Layout>
   );
 };
