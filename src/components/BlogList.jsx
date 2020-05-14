@@ -11,44 +11,38 @@ const Wrapper = styled.article`
 `;
 
 const Image = styled.div`
-  margin: auto;
-  position: relative;
+  // margin: auto;
+  // position: relative;
   box-shadow: ${props => props.theme.shadow.feature.small.default};
   transition: ${props => props.theme.transitions.boom.transition};
   border-radius: ${props => props.theme.borderRadius.default};
-  min-height: 200px;
+  // min-height: 200px;
   img {
     border-radius: ${props => props.theme.borderRadius.default};
   }
   &:hover {
     box-shadow: ${props => props.theme.shadow.feature.small.hover};
-    transform: scale(1.04);
+    transform: scale(1.03);
   }
   a {
     border-radius: ${props => props.theme.borderRadius.default};
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 5px ${props => props.theme.colors.primary.dark};
+      box-shadow: 0 0 0 5px ${props => props.theme.colors.secondary.base};
     }
   }
-  flex-basis: 100%;
-  max-width: 100%;
-  width: 100%;
-  @media (max-width: 800px) {
-    flex-basis: 100%;
-    max-width: 100%;
-    width: 100%;
-    margin-bottom: 1.5vw;
-  }
-  @media (max-width: 500px) {
-    min-height: 200px;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    min-height: 150px;
   }
 `;
 
 // const StyledLink = styled(Link)`
 const StyledImg = styled(Img)`
   height: 200px;
-`
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    height: 150px;
+  }
+`;
 
 const Information = styled.div`
   h1 {
@@ -60,7 +54,7 @@ const Information = styled.div`
       color: ${props => props.theme.colors.primary.base};
     }
   }
-  font-size: calc(0.2vw + 0.7rem);
+  font-size: calc(0.2vw + 0.65rem);
   text-align: center;
   flex-basis: 100%;
   max-width: 100%;
@@ -85,7 +79,7 @@ const BlogList = ({ path, cover, title, date, excerpt, tags }) => (
   <Container>
     <Wrapper>
       <Image>
-      <Link to={path} title={title}>
+        <Link to={path} title={title}>
           <StyledImg fluid={cover} />
         </Link>
       </Image>

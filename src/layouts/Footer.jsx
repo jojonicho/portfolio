@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Wrapper = styled.footer`
-  padding: calc(0.5vw + 15px);
+  padding: calc(0.3vw + 7px);
   box-shadow: ${props => props.theme.shadow.footer};
   background: ${props => props.theme.gradient.leftToRight};
   font-family: ${props => props.theme.fontFamily.body};
@@ -25,7 +25,7 @@ const Footer = () => (
     <Text>
       <span>
         Created by{' '}
-        <CustomLink href="https://www.jojonicho.wtf">@jojonicho</CustomLink>
+        <CustomLink href="https://www.github.com/jojonicho">@jojonicho</CustomLink>
       </span>
     </Text>
   </Wrapper>

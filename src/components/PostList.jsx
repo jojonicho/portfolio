@@ -33,7 +33,7 @@ const Wrapper = styled.article`
     flex-basis: 100%;
     max-width: 100%;
     width: 100%;
-    height: 15rem;
+    height: 12rem;
   }
 `;
 
@@ -99,6 +99,7 @@ const Info = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
+  font-size: calc(0.2vw + 12px);
 `;
 
 const Title = styled.h2`

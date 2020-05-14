@@ -4,17 +4,17 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 const TagsContainer = styled.div`
-  margin: 1rem 0;
+  margin: 0.3rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  font-size: calc(0.5vw + 0.5rem);
+  font-size: calc(0.2vw + 0.6rem);
   justify-content: center;
   align-items: center;
   a {
-    margin: 0.4vw 1vw;
+    margin: 0.1vw 0.6vw;
     color: ${props => props.theme.colors.black.blue};
-    padding: 0.3rem 0.6rem;
+    padding: 0.2rem 0.5rem;
     background: ${props => props.theme.colors.white.grey};
     border-radius: 10px;
     &:hover {

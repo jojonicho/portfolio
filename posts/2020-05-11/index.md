@@ -5,6 +5,7 @@ date: "2020-05-13"
 title: "The Gatsby Project Structure"
 tags: ['gatsby', 'markdown', 'emotion.js']
 published: true
+featured: true
 ---
 
 Hello, my name is Jonathan Nicholas and this will be my first post on jojonicho.wtf. In this article, I will be documenting how I made this website using Gatsby!
@@ -19,5 +20,5 @@ layout/index.jsx
 export { default as NavBar } from './NavBar';
 export { default as Content } from './Content';
 export { default as Footer } from './Footer';
-
+```
 to be continued!

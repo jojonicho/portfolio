@@ -5,13 +5,17 @@ import prism from '../styles/prism';
 
 const Wrapper = styled.div`
   ${prism};
+  code {
+    font-size: calc(0.5vw + 9px);
+  }
   p,
   li {
-    letter-spacing: -0.003em;
+    letter-spacing: -0.004em;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
     font-size: calc(0.5vw + 9px);
     line-height: 2;
+    margin: 0.3rem;
     color: black;
     code {
       padding: 0.2rem 0.5rem;
@@ -32,10 +36,11 @@ const Wrapper = styled.div`
     }
   }
   h1 {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
   }
   h2 {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   h1,
   h2,
@@ -45,7 +50,7 @@ const Wrapper = styled.div`
   h6 {
     display: inline-block;
     position: relative;
-    font-size: calc(1.5vw + 15px);
+    font-size: calc(1.3vw + 15px);
     a {
       box-shadow: none;
       border-bottom: none;

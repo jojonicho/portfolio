@@ -12,11 +12,19 @@ const SuggestionBar = styled.div`
   justify-content: space-between;
   background: ${props => props.theme.colors.white.light};
   box-shadow: ${props => props.theme.shadow.suggestion};
+  font-size: calc(0.4vw + 10px);
 `;
 const PostSuggestion = styled.div`
   display: flex;
   align-items: center;
   margin: 1rem 3rem 0 3rem;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    margin: 2vw 3vw 0 3vw;
+    padding: 0px;
+  }
+  h3 {
+    font-size: calc(0.4vw + 10px);
+  }
 `;
 
 const Post = ({ data, pageContext }) => {

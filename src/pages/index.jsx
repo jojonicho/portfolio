@@ -15,12 +15,12 @@ const PostWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 4rem 4rem 1rem 4rem;
-  @media (max-width: 1000px) {
-    margin: 4rem 2rem 1rem 2rem;
+  margin: 2rem 4rem 1rem 4rem;
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    // margin: 4rem 2rem 1rem 2rem;
   }
-  @media (max-width: 700px) {
-    margin: 4rem 1rem 1rem 1rem;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    margin: 2vw 1rem;
   }
 `;
 
@@ -34,19 +34,20 @@ const Greeting = styled.div`
 
 const SubTitle = styled.text`
   color: ${props => props.theme.colors.white.light};
-  font-size: calc(1vw + 20px);
+  font-size: calc(0.5vw + 20px);
   font-weight: 100;
 `;
 
 const Header = styled.div`
   background: ${props => props.theme.gradient.rightToLeft};
   // height: 450px;
+  padding-top: 1vw;
   @media (max-width: ${props => props.theme.breakpoints.m}) {
     height: 400px;
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     height: 355px;
-    padding: 60px 3vw 0px 3vw;
+    padding: 55px 3vw 0px 3vw;
   }
   font-weight: bold;
   display: flex;
@@ -77,7 +78,7 @@ const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'jonathan nicholas'} />
+      <Helmet title={`Jonathan Nicholas' Personal Website`} />
       <Header>
         Jonathan Nicholas
         <Greeting>
@@ -90,6 +91,9 @@ const Index = ({ data }) => {
         <SubTitle>Computer Science Freshman @ UI</SubTitle>
         <Affiliates />
       </Header>
+      <Section>
+        <SectionTitle>About Me</SectionTitle>
+      </Section>
       <Section>
         <SectionTitle>Featured Posts</SectionTitle>
         <PostWrapper>
@@ -141,6 +145,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: 6
       sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {frontmatter: {featured: {eq: true}}}
     ) {
       edges {
         node {

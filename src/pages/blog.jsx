@@ -9,7 +9,7 @@ const Blog = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'Blog Page'} />
+      <Helmet title={'jojonicho blog'} />
       {/* <Header title="Blog Page">Code Documentation and Life Lessons</Header> */}
       {edges.map(({ node }) => (
         <BlogList
@@ -51,7 +51,7 @@ Blog.propTypes = {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: {frontmatter: {published: {eq: true}}}) {
       edges {
         node {
           id

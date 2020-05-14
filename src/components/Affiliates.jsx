@@ -37,7 +37,7 @@ const affiliates = [
     link: 'https://www.linkedin.com/in/joni',
   },
   {
-    base: 'Github',
+    logo: 'Github',
     link: 'https://www.github.com/jojonicho',
   },
   {
