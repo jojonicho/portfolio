@@ -30,6 +30,15 @@ const Text = styled.div`
   max-width: ${props => props.theme.layout.base};
   padding: 0 2vw;
   align-items: center;
+  h1 {
+    font-size: calc(0.9vw + 18px);
+    margin: 2vw 0;
+  }
+  h3 {
+    font-size: calc(0.9vw + 12px);
+    // margin: 2vw;
+    margin-top: 0;
+  }
 `;
 
 const Subtitle = styled.p`
