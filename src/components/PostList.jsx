@@ -33,7 +33,7 @@ const Wrapper = styled.article`
     flex-basis: 100%;
     max-width: 100%;
     width: 100%;
-    height: 12rem;
+    height: 13rem;
   }
 `;
 
@@ -99,11 +99,12 @@ const Info = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  font-size: calc(0.2vw + 12px);
+  font-size: calc(0.2vw + 11px);
 `;
 
 const Title = styled.h2`
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.3rem;
+  font-size: calc(0.2vw + 18px);
 `;
 
 const PostList = ({ cover, path, date, title, excerpt }) => (
