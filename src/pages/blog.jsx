@@ -4,11 +4,19 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { BlogList } from 'components';
 import { Layout } from 'layouts';
+import styled from '@emotion/styled';
+
+const Wrapper = styled.div`
+@media (max-width: ${props => props.theme.breakpoints.s}) {
+  margin-top: 2rem;
+}
+`
 
 const Blog = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
+      <Wrapper>
       <Helmet title={"Jonathan's blog"} />
       {edges.map(({ node }) => (
         <BlogList
@@ -21,6 +29,7 @@ const Blog = ({ data }) => {
           excerpt={node.excerpt}
         />
       ))}
+      </Wrapper>
     </Layout>
   );
 };
@@ -50,7 +59,7 @@ Blog.propTypes = {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: {frontmatter: {published: {eq: true}}}) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: {fileAbsolutePath: {regex: "/(posts)/"}, frontmatter: {published: {eq: true}}}) {
       edges {
         node {
           id

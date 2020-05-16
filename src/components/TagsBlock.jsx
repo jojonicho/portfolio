@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 const TagsContainer = styled.div`
-  margin: 0.3rem;
+  // margin: 0.3rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -12,7 +12,7 @@ const TagsContainer = styled.div`
   justify-content: center;
   align-items: center;
   a {
-    margin: 0.1vw 0.6vw;
+    margin: 0.5vw 0.6vw;
     color: ${props => props.theme.colors.black.blue};
     padding: 0.2rem 0.5rem;
     background: ${props => props.theme.colors.white.grey};

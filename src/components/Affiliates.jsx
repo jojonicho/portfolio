@@ -3,18 +3,18 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 // import PropTypes from 'prop-types';
 // import Img from 'gatsby-image';
-import SVG from "../components/SVG";
+import SVG from '../components/SVG';
 
 const Container = styled.div`
   margin: 1rem 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  font-size: calc(0.5vw + 0.5rem);
+  font-size: calc(0.5vw + 0.1rem);
   justify-content: center;
   align-items: center;
   a {
-    margin: 0.4vw 1vw;
+    margin: 0.4vw calc(0.3rem + 0.5vw);
     color: ${props => props.theme.colors.black.blue};
     border-radius: 10px;
     &:hover {
@@ -23,17 +23,17 @@ const Container = styled.div`
     }
   }
   svg {
-      transition: all 300ms ease-in-out;
-      fill: white;
-      box-shadow: ${props => props.theme.shadow.feature.small.hover};
-  }
-  svg:hover {
+    transition: all 300ms ease-in-out;
+    fill: white;
+    box-shadow: ${props => props.theme.shadow.feature.small.hover};
+    &:hover {
       fill: ${props => props.theme.colors.secondary.base};
+    }
   }
 `;
 const affiliates = [
-{
-    logo: "Linkedin",
+  {
+    logo: 'Linkedin',
     link: 'https://www.linkedin.com/in/joni',
   },
   {
@@ -47,21 +47,21 @@ const affiliates = [
 ];
 
 const External = styled.a`
-    padding: 0px;
-    width: calc(1.5vw + 20px);
-    margin: 0px;
-`
+  padding: 0px;
+  width: calc(0.5vw + 28px);
+  margin: 0px;
+`;
 
 const Affiliates = () => (
   <Container>
-    {affiliates && affiliates.map( aff => {
+    {affiliates &&
+      affiliates.map(aff => {
         return (
-            <External href={aff.link}>
-                <SVG name={aff.logo} />
-            </External>
+          <External href={aff.link}>
+            <SVG name={aff.logo} />
+          </External>
         );
-    })
-    }
+      })}
   </Container>
 );
 

@@ -9,7 +9,17 @@ import Rotate from 'react-reveal/Rotate';
 import Pulse from 'react-reveal/Pulse';
 import SVG from '../components/SVG';
 import Affiliates from '../components/Affiliates';
-import Blog from '../pages/blog';
+import BlogList from '../components/BlogList';
+
+const Container = styled.div`
+  padding: 1vw 2vw 2vw 2vw;
+  display: flex;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    padding: 0.5rem 2rem 2rem;
+    font-size: 0.8rem;
+  }
+  // justify-content: center;
+`
 
 const PostWrapper = styled.div`
   display: flex;
@@ -76,7 +86,9 @@ const Index = ({ data }) => {
       setCount(count >= mylist.length - 1 ? 0 : count + 1);
     }, 2600);
   }, [count]);
-  const { edges } = data.allMarkdownRemark;
+  const posts = data.posts.edges;
+  const projects = data.projects.edges;
+
   return (
     <Layout>
       <Helmet title={`Jonathan Nicholas' Personal Website`} />
@@ -94,12 +106,24 @@ const Index = ({ data }) => {
       </Header>
       <Section>
         <SectionTitle>Projects</SectionTitle>
-        {/* <Blog /> */}
+        {projects.map(({ node }) => {
+          return (
+            <BlogList
+              key={node.id}
+              cover={node.frontmatter.cover.childImageSharp.fluid}
+              path={node.frontmatter.path}
+              title={node.frontmatter.title}
+              date={node.frontmatter.date}
+              tags={node.frontmatter.tags}
+              excerpt={node.excerpt}
+            />
+          );
+        })}
       </Section>
       <Section>
         <SectionTitle>Featured Posts</SectionTitle>
         <PostWrapper>
-          {edges.map(({ node }) => {
+          {posts.map(({ node }) => {
             const { id, excerpt, frontmatter } = node;
             const { cover, path, title, date } = frontmatter;
             return (
@@ -117,6 +141,14 @@ const Index = ({ data }) => {
       </Section>
       <Section>
         <SectionTitle>About Me</SectionTitle>
+        <Container>
+          Aspiring Software Engineer, currently in 2nd Semester<br />
+          Current GPA: 4.0<br />
+          Sea Undergraduate Scholarship 2019 Awardee<br />
+          Third Winner of Datavidia 2020<br />
+          Finalist of JOINTS Data Mining 2020<br />
+          Organizations: Ristek, BEM, KMK<br />
+        </Container>
       </Section>
     </Layout>
   );
@@ -147,15 +179,49 @@ Index.propTypes = {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
+    posts: allMarkdownRemark(
       limit: 6
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: {frontmatter: {featured: {eq: true}}}
+      filter: {
+        fileAbsolutePath: { regex: "/(posts)/" }
+        frontmatter: { featured: { eq: true } }
+      }
     ) {
       edges {
         node {
           id
           excerpt(pruneLength: 75)
+          frontmatter {
+            title
+            path
+            tags
+            date(formatString: "MM.DD.YYYY")
+            cover {
+              childImageSharp {
+                fluid(
+                  maxWidth: 1000
+                  quality: 90
+                  traceSVG: { color: "#2B2B2F" }
+                ) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    projects: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {
+        fileAbsolutePath: { regex: "/(projects)/" }
+        frontmatter: { published: { eq: true } }
+      }
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 200)
           frontmatter {
             title
             path
