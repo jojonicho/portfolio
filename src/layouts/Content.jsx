@@ -5,9 +5,20 @@ import prism from '../styles/prism';
 
 const Wrapper = styled.div`
   ${prism};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: start;
   code {
     display: block;
     font-size: calc(0.6vw + 6px);
+    margin: auto;
+  }
+  .language-text{
+    display: inline-block;
+    margin: 0;
+    transform: translate(0,33%);
+    padding: 0.1rem 0.2rem;
   }
   p, li{
     letter-spacing: -0.004em;
@@ -17,11 +28,10 @@ const Wrapper = styled.div`
     line-height: 1.9;
     margin: 0.25rem;
     color: black;
-    // code {
-    //   padding: 0.2rem 0.5rem;
-    //   margin: 0.5rem 0;
-    //   font-size: calc(0.5vw + 10px);
-    // }
+    img {
+      display: block;
+      margin: auto;
+    }
   }
   a:not(.gatsby-resp-image-link):not(.anchor) {
     color: black;
