@@ -13,6 +13,7 @@ Hello, welcome to my first post on jojonicho.wtf. In this article, I will be doc
 ## Gatsby's folder structure
 
 - **layout** - The structure of your website. If you've ever dangled with Django, then this should be familiar in many ways. You specify "blocks" such as the navbar, content, and footer and then define them all in index.js
+
 ```jsx
 layout / index.jsx;
 export { default as NavBar } from './NavBar';
@@ -130,4 +131,6 @@ Now you have a fully functional blog created through Markdown content and displa
 
 ![cool squirtle](https://images-ext-1.discordapp.net/external/VRp_nRYeDVeWrvZJK7ySxIOhK6FAtwfWKmrOFB3Fees/https/imgur.com/OM52HE1.gif)
 
-Part 2 will be about styling and theming using emotion.js!
+Stay tuned for part 2 where I will be discussing about styling and theming using emotion.js!
+
+Song recommendation of the day: Last Stardust by Aimer.
