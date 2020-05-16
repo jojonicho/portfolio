@@ -2,15 +2,14 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Header, BlogList } from 'components';
+import { BlogList } from 'components';
 import { Layout } from 'layouts';
 
 const Blog = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'jojonicho blog'} />
-      {/* <Header title="Blog Page">Code Documentation and Life Lessons</Header> */}
+      <Helmet title={"Jonathan's blog"} />
       {edges.map(({ node }) => (
         <BlogList
           key={node.id}

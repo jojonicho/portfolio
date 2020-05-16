@@ -6,22 +6,22 @@ import prism from '../styles/prism';
 const Wrapper = styled.div`
   ${prism};
   code {
-    font-size: calc(0.5vw + 9px);
+    display: block;
+    font-size: calc(0.6vw + 6px);
   }
-  p,
-  li {
+  p, li{
     letter-spacing: -0.004em;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-    font-size: calc(0.5vw + 9px);
-    line-height: 2;
-    margin: 0.3rem;
+    font-size: calc(0.5vw + 10px);
+    line-height: 1.9;
+    margin: 0.25rem;
     color: black;
-    code {
-      padding: 0.2rem 0.5rem;
-      margin: 0.5rem 0;
-      font-size: calc(0.5vw + 10px);
-    }
+    // code {
+    //   padding: 0.2rem 0.5rem;
+    //   margin: 0.5rem 0;
+    //   font-size: calc(0.5vw + 10px);
+    // }
   }
   a:not(.gatsby-resp-image-link):not(.anchor) {
     color: black;
@@ -40,11 +40,10 @@ const Wrapper = styled.div`
     margin-bottom: 0.5rem;
   }
   h2 {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: calc(0.7rem + 1vw);
   }
-  h1,
-  h2,
-  h3,
   h4,
   h5,
   h6 {

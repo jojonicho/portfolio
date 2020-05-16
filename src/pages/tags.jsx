@@ -14,7 +14,7 @@ const Tags = ({ data }) => {
 
   return (
     <Layout>
-      <Header title="Tags Page">Gatsby Tutorial Starter</Header>
+      <Header title="Tags Page" />
       <Container>
         <TagsBlock list={tags.sort()} />
       </Container>

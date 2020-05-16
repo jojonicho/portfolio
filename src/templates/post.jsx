@@ -10,8 +10,8 @@ const SuggestionBar = styled.div`
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  background: ${props => props.theme.colors.white.light};
-  box-shadow: ${props => props.theme.shadow.suggestion};
+  // background: ${props => props.theme.colors.white.light};
+  // box-shadow: ${props => props.theme.shadow.suggestion};
   font-size: calc(0.4vw + 10px);
 `;
 const PostSuggestion = styled.div`

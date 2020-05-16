@@ -11,7 +11,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           query {
-            allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___date]}) {
+            allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}}}) {
               edges {
                 node {
                   frontmatter {

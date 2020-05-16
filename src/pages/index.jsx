@@ -9,6 +9,7 @@ import Rotate from 'react-reveal/Rotate';
 import Pulse from 'react-reveal/Pulse';
 import SVG from '../components/SVG';
 import Affiliates from '../components/Affiliates';
+import Blog from '../pages/blog';
 
 const PostWrapper = styled.div`
   display: flex;
@@ -92,7 +93,8 @@ const Index = ({ data }) => {
         <Affiliates />
       </Header>
       <Section>
-        <SectionTitle>About Me</SectionTitle>
+        <SectionTitle>Projects</SectionTitle>
+        {/* <Blog /> */}
       </Section>
       <Section>
         <SectionTitle>Featured Posts</SectionTitle>
@@ -112,6 +114,9 @@ const Index = ({ data }) => {
             );
           })}
         </PostWrapper>
+      </Section>
+      <Section>
+        <SectionTitle>About Me</SectionTitle>
       </Section>
     </Layout>
   );
