@@ -51,7 +51,7 @@ const affiliates = [
 
 const External = styled.a`
   padding: 0px;
-  width: calc(0.5vw + 25px);
+  width: calc(0.5vw + 22px);
   margin: 0px;
 `;
 

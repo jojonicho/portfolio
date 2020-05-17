@@ -4,12 +4,10 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 
-import { PostList, BlogList, Affiliates, SVG } from 'components';
+import { PostList, BlogList, AnimatedIntro , SVG } from 'components';
 import { Layout } from 'layouts';
-import Rotate from 'react-reveal/Rotate';
 import Pulse from 'react-reveal/Pulse';
 import Fade from 'react-reveal/Fade';
-import { useSpring, animated, useTransition } from 'react-spring'
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -31,58 +29,6 @@ const PostWrapper = styled.div`
   }
 `;
 
-const Greeting = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: calc(5vw + 40px);
-  height: calc(5vw + 40px);
-  margin-top: 0.25rem;
-`;
-
-const SubTitle = styled.text`
-  color: ${props => props.theme.colors.white.light};
-  font-size: calc(0.5vw + 20px);
-  font-weight: 100;
-`;
-
-const TransitionItems = styled(animated.div)`
-overflow: hidden;
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: calc(1em + 2vw);
-font-weight: 800;
-text-transform: uppercase;
-will-change: transform, opacity, height;
-white-space: nowrap;
-cursor: pointer;
-line-height: 80px;
-word-wrap: break-word
-`
-
-const Header = styled.div`
-  background: ${props => props.theme.gradient.rightToLeft};
-  // height: 450px;
-  padding-top: 1vw;
-  @media (max-width: ${props => props.theme.breakpoints.m}) {
-    height: 400px;
-  }
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    height: 310px;
-    padding: 55px 3vw 0px 3vw;
-  }
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  // min-height: 200px;
-  color: ${props => props.theme.colors.white.light};
-  font-size: calc(1.2vw + 30px);
-`;
 const Section = styled.div``;
 const SectionTitle = styled.div`
   color: ${props => props.theme.colors.black.base};
@@ -92,62 +38,15 @@ const SectionTitle = styled.div`
 `;
 
 const Index = ({ data }) => {
-  const mylist = ['React', 'Gatsby', 'Flutter', 'GraphQL'];
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    setTimeout(() => {
-      setCount(count >= mylist.length - 1 ? 0 : count + 1);
-    }, 2600);
-  }, [count]);
-
-  const ref = useRef([])
-  const [items, set] = useState([])
-  const transitions = useTransition(items, null, { //'#28b4d7'
-    from: { opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(600px) rotateX(0deg)', color: '#3498db' },
-    enter: [
-      { opacity: 1, height: 80, innerHeight: 80 },
-      { transform: 'perspective(600px) rotateX(0deg)' },
-    ],
-    leave: [{ color: '#F1616D' }, { innerHeight: 0 }, { opacity: 0, height: 0 }],
-  })
-
-  const reset = useCallback(() => {
-    ref.current.map(clearTimeout)
-    ref.current = []
-    set([])
-    ref.current.push(setTimeout(() => set(['Jonathan', 'Nicholas']), 500))
-    ref.current.push(setTimeout(() => set(['Jonathan', 'Frontend', 'Nicholas']), 2000))
-    ref.current.push(setTimeout(() => set(['Jonathan', 'Nicholas']), 3000))
-    ref.current.push(setTimeout(() => set(['Jonathan', 'Data Science', 'Nicholas']), 5500))
-    ref.current.push(setTimeout(() => set(['Jonathan', 'Nicholas']), 6500))
-  }, [])
-
-  useEffect(() => void reset(), [])
-
   const posts = data.posts.edges;
   const projects = data.projects.edges;
 
   return (
     <Layout>
       <Helmet title={`Jonathan Nicholas' Personal Website`} />
-      <Header>
-        {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
-        <TransitionItems key={key} style={rest} onClick={reset}>
-          <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>
-        </TransitionItems>
-      ))}
-        <Greeting>
-          <Rotate spy={count}>
-            <Pulse spy={count} duration={1800}>
-              <SVG name={mylist[count]} />
-            </Pulse>
-          </Rotate>
-        </Greeting>
-        <SubTitle>Computer Science Freshman @ UI</SubTitle>
-        <Affiliates />
-      </Header>
       <Fade duration={1300}>
       <Section>
+        <AnimatedIntro />
           <SectionTitle>Projects</SectionTitle>
           <Pulse duration={1100}>
             {projects.map(({ node }) => {

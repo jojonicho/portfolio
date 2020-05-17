@@ -119,7 +119,7 @@ export const query = graphql`
 
 **Passing Data to Our Component**
 
-We can use object destructuring for the `data` node inside the parameters our functional component.
+We can use object destructuring for the `data` node inside the parameters of our functional component.
 ```js
 const Index = ({ data }) => {
     const posts = data.posts.edges;
@@ -133,4 +133,4 @@ Now you have a fully functional blog created through Markdown content and displa
 
 Stay tuned for part 2 where I will be discussing about styling and theming using emotion.js!
 
-Song recommendation of the day: Last Stardust by Aimer.
+Song recommendation of the day: Last Stardust by [Aimer](https://www.aimer-web.jp/).

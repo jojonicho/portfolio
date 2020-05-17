@@ -12,12 +12,14 @@ const Wrapper = styled.div`
   code {
     display: block;
     font-size: calc(0.6vw + 6px);
-    margin: auto;
   }
   .language-text{
     display: inline-block;
     margin: 0;
     transform: translate(0,33%);
+    @media (max-width: ${props => props.theme.breakpoints.s}){
+      transform: translate(0, 40%);
+    }
     padding: 0.1rem 0.2rem;
   }
   p, li{
@@ -32,6 +34,9 @@ const Wrapper = styled.div`
       display: block;
       margin: auto;
     }
+  }
+  ul {
+    margin-bottom: 0;
   }
   a:not(.gatsby-resp-image-link):not(.anchor) {
     color: black;
