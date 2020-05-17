@@ -3,13 +3,13 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
-import { PostList } from 'components';
+
+import { PostList, BlogList, Affiliates, SVG } from 'components';
 import { Layout } from 'layouts';
 import Rotate from 'react-reveal/Rotate';
 import Pulse from 'react-reveal/Pulse';
-import SVG from '../components/SVG';
-import Affiliates from '../components/Affiliates';
-import BlogList from '../components/BlogList';
+import Fade from 'react-reveal/Fade';
+import { useSpring, animated } from 'react-spring'
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -19,7 +19,7 @@ const Container = styled.div`
     font-size: 0.8rem;
   }
   // justify-content: center;
-`
+`;
 
 const PostWrapper = styled.div`
   display: flex;
@@ -104,46 +104,55 @@ const Index = ({ data }) => {
         <SubTitle>Computer Science Freshman @ UI</SubTitle>
         <Affiliates />
       </Header>
+      <Fade duration={1300}>
       <Section>
-        <SectionTitle>Projects</SectionTitle>
-        {projects.map(({ node }) => {
-          return (
-            <BlogList
-              key={node.id}
-              cover={node.frontmatter.cover.childImageSharp.fluid}
-              path={node.frontmatter.path}
-              title={node.frontmatter.title}
-              date={node.frontmatter.date}
-              tags={node.frontmatter.tags}
-              excerpt={node.excerpt}
-            />
-          );
-        })}
+          <SectionTitle>Projects</SectionTitle>
+          <Pulse duration={1100}>
+            {projects.map(({ node }) => {
+              return (
+                <BlogList
+                  key={node.id}
+                  cover={node.frontmatter.cover.childImageSharp.fluid}
+                  path={node.frontmatter.path}
+                  title={node.frontmatter.title}
+                  date={node.frontmatter.date}
+                  tags={node.frontmatter.tags}
+                  excerpt={node.excerpt}
+                />
+              );
+            })}
+          </Pulse>
       </Section>
-      <Section>
-        <SectionTitle>Featured Posts</SectionTitle>
-        <PostWrapper>
-          {posts.map(({ node }) => {
-            const { id, excerpt, frontmatter } = node;
-            const { cover, path, title, date } = frontmatter;
-            return (
-              <PostList
-                key={id}
-                cover={cover.childImageSharp.fluid}
-                path={path}
-                title={title}
-                date={date}
-                excerpt={excerpt}
-              />
-            );
-          })}
-        </PostWrapper>
-      </Section>
+      </Fade>
+
+      <Fade bottom cascade distance="10px" duration={900}>
+        <Section>
+          <SectionTitle>Featured Posts</SectionTitle>
+            <PostWrapper>
+              {posts.map(({ node }) => {
+                const { id, excerpt, frontmatter } = node;
+                const { cover, path, title, date } = frontmatter;
+                return (
+                  <PostList
+                    key={id}
+                    cover={cover.childImageSharp.fluid}
+                    path={path}
+                    title={title}
+                    date={date}
+                    excerpt={excerpt}
+                  />
+                );
+              })}
+            </PostWrapper>
+        </Section>
+      </Fade>
+
       <Section>
         <SectionTitle>About Me</SectionTitle>
         <Container>
-          Aspiring Software Engineer, currently in 2nd Semester<br />
-          Current GPA: 4.0<br />
+          Aspiring Software Engineer<br />
+          Freshman, Second Semester<br />
+          Current GPA: 4.0/4.0<br />
           Sea Undergraduate Scholarship 2019 Awardee<br />
           Third Winner of Datavidia 2020<br />
           Finalist of JOINTS Data Mining 2020<br />

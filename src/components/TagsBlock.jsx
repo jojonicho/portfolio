@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade'; 
 
 const TagsContainer = styled.div`
   // margin: 0.3rem;
@@ -26,6 +27,7 @@ const TagsContainer = styled.div`
 `;
 
 const TagsBlock = ({ list }) => (
+  <Fade cascade bottom distance='10px' delay={100}>
   <TagsContainer>
     {list &&
       list.map(tag => {
@@ -37,6 +39,8 @@ const TagsBlock = ({ list }) => (
         );
       })}
   </TagsContainer>
+  </Fade>
+
 );
 
 export default TagsBlock;
