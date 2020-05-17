@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import SVG from '../components/SVG';
 
 const Container = styled.div`
-  margin: 1rem 0;
+  margin: 0.35rem 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -14,7 +14,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   a {
-    margin: 0.4vw calc(0.3rem + 0.5vw);
+    margin: 0.4vw calc(0.1rem + 0.5vw);
     color: ${props => props.theme.colors.black.blue};
     border-radius: 10px;
     &:hover {
