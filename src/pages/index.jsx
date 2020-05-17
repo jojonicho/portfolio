@@ -70,7 +70,7 @@ const Header = styled.div`
     height: 400px;
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    height: 330px;
+    height: 310px;
     padding: 55px 3vw 0px 3vw;
   }
   font-weight: bold;
@@ -102,8 +102,8 @@ const Index = ({ data }) => {
 
   const ref = useRef([])
   const [items, set] = useState([])
-  const transitions = useTransition(items, null, { // '#28b4d7'
-    from: { opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(600px) rotateX(0deg)', color: '#28b4d7' },
+  const transitions = useTransition(items, null, { //'#28b4d7'
+    from: { opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(600px) rotateX(0deg)', color: '#3498db' },
     enter: [
       { opacity: 1, height: 80, innerHeight: 80 },
       { transform: 'perspective(600px) rotateX(0deg)' },

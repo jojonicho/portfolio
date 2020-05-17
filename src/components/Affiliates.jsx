@@ -13,8 +13,11 @@ const Container = styled.div`
   font-size: calc(0.5vw + 0.1rem);
   justify-content: center;
   align-items: center;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    margin: 0.1rem 0 1rem;
+  }
   a {
-    margin: 0.4vw calc(0.1rem + 0.5vw);
+    margin: 0.4vw calc(0.15rem + 0.2vw);
     color: ${props => props.theme.colors.black.blue};
     border-radius: 10px;
     &:hover {
@@ -48,7 +51,7 @@ const affiliates = [
 
 const External = styled.a`
   padding: 0px;
-  width: calc(0.5vw + 28px);
+  width: calc(0.5vw + 25px);
   margin: 0px;
 `;
 
