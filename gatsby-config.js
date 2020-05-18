@@ -5,6 +5,7 @@ module.exports = {
     ...config,
   },
   plugins: [
+    `gatsby-plugin-preload-fonts`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-transformer-sharp',

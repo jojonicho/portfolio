@@ -1,5 +1,3 @@
-require("typeface-josefin-sans");
-require("typeface-righteous");
 export const colors = {
   white: {
     base: '#fff',

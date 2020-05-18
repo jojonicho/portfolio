@@ -15,6 +15,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "rm -rf public && rm -rf .cache",
+    "preload-fonts": "gatsby-preload-fonts",
     "format-output": "prettier src/**/*.{js,jsx}",
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
@@ -35,6 +36,7 @@
     "gatsby-plugin-google-analytics": "^2.1.14",
     "gatsby-plugin-manifest": "^2.2.14",
     "gatsby-plugin-offline": "^2.2.10",
+    "gatsby-plugin-preload-fonts": "^1.2.2",
     "gatsby-plugin-react-helmet": "^3.1.6",
     "gatsby-plugin-sharp": "^2.2.20",
     "gatsby-plugin-sitemap": "^2.2.10",
@@ -57,7 +59,6 @@
     "typeface-candal": "0.0.54",
     "typeface-josefin-sans": "^0.0.75",
     "typeface-open-sans": "0.0.54",
-    "typeface-righteous": "^0.0.72",
     "typography": "^0.16.19"
   },
   "devDependencies": {
