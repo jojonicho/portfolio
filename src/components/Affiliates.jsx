@@ -60,7 +60,7 @@ const Affiliates = () => (
     {affiliates &&
       affiliates.map(aff => {
         return (
-          <External href={aff.link}>
+          <External href={aff.link} title={aff.logo}>
             <SVG name={aff.logo} />
           </External>
         );
