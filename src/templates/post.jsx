@@ -34,7 +34,8 @@ const Post = ({ data, pageContext }) => {
   const {date, title, tags, path, description, id} = frontmatter
   const image = frontmatter.cover.childImageSharp.fluid;
   const disqusConfig = {
-    shortname: process.env.GATSBY_DISQUS_NAME,
+    // shortname: process.env.GATSBY_DISQUS_NAME,
+    shortname: "jojonicho",
     config: { identifier: path, title },
   }
   return (
