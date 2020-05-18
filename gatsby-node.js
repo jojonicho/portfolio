@@ -8,23 +8,24 @@ exports.createPages = ({ graphql, actions }) => {
     const tagPosts = path.resolve('src/templates/tag.jsx');
 
     resolve(
-      graphql(
-        `
-          query {
-            allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}}}) {
-              edges {
-                node {
-                  frontmatter {
-                    path
-                    title
-                    tags
-                  }
+      graphql(`
+        query {
+          allMarkdownRemark(
+            sort: { order: ASC, fields: [frontmatter___date] }
+            filter: { frontmatter: { published: { eq: true } } }
+          ) {
+            edges {
+              node {
+                frontmatter {
+                  path
+                  title
+                  tags
                 }
               }
             }
           }
-        `
-      ).then(result => {
+        }
+      `).then(result => {
         if (result.errors) {
           return reject(result.errors);
         }
