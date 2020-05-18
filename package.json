@@ -46,6 +46,7 @@
     "gatsby-source-filesystem": "^2.1.21",
     "gatsby-transformer-remark": "^2.6.21",
     "gatsby-transformer-sharp": "^2.2.13",
+    "netlify-cli": "^2.51.0",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",

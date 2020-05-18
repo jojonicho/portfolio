@@ -1,4 +1,6 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+
 import { Layout, Container } from 'layouts';
 import { Header, TagsBlock } from 'components';
 
