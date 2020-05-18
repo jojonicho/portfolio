@@ -1,6 +1,6 @@
 ---
 path: "/cv"
-cover: "../2020-05-18/sea.jpg"
+cover: "../2020-05-18/sea.png"
 date: "2020-05-17"
 title: "Jonathan Nicholas' CV"
 tags: ['curriculum vitae']

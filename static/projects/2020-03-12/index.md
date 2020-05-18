@@ -1,6 +1,6 @@
 ---
 path: "/perak"
-cover: "../2020-03-12/perak.jpg"
+cover: "../2020-03-12/perak.png"
 date: "2020-03-12"
 title: "perak.cs.ui.ac.id"
 tags: [react, 'redux', 'hooks', firebase]

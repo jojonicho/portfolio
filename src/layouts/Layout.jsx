@@ -1,9 +1,10 @@
+import 'typeface-open-sans';
+import 'typeface-josefin-sans';
+
 import React from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { css, Global } from '@emotion/core';
 import PropTypes from 'prop-types';
-require('typeface-open-sans');
-require('typeface-josefin-sans');
 import { SEO } from 'components';
 import { NavBar, Footer } from 'layouts';
 import theme from '../../config/theme';

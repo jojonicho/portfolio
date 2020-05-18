@@ -1,6 +1,6 @@
 ---
 path: '/gatsby-1'
-cover: '../2020-05-16/emilia.jpg'
+cover: '../2020-05-16/emilia.png'
 date: '2020-05-16'
 title: 'The Gatsby Project Structure. Part One: Passing and Querying Data'
 tags: ['gatsby', 'markdown', 'emotion.js']
