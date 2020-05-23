@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 
-import { PostList, BlogList, AnimatedIntro , SVG } from 'components';
+import { PostList, BlogList, AnimatedIntro, SVG } from 'components';
 import { Layout } from 'layouts';
 import Pulse from 'react-reveal/Pulse';
 import Fade from 'react-reveal/Fade';
@@ -45,8 +45,8 @@ const Index = ({ data }) => {
     <Layout>
       <Helmet title={`Jonathan Nicholas' Personal Website`} />
       <Fade duration={1300}>
-      <Section>
-        <AnimatedIntro />
+        <Section>
+          <AnimatedIntro />
           <SectionTitle>Projects</SectionTitle>
           <Pulse duration={1100}>
             {projects.map(({ node }) => {
@@ -63,41 +63,48 @@ const Index = ({ data }) => {
               );
             })}
           </Pulse>
-      </Section>
+        </Section>
       </Fade>
 
-      <Fade bottom cascade distance="10px" duration={900}>
+      <Fade duration={900}>
         <Section>
           <SectionTitle>Featured Posts</SectionTitle>
-            <PostWrapper>
-              {posts.map(({ node }) => {
-                const { id, excerpt, frontmatter } = node;
-                const { cover, path, title, date } = frontmatter;
-                return (
-                  <PostList
-                    key={id}
-                    cover={cover.childImageSharp.fluid}
-                    path={path}
-                    title={title}
-                    date={date}
-                    excerpt={excerpt}
-                  />
-                );
-              })}
-            </PostWrapper>
+          <PostWrapper>
+            {posts.map(({ node }) => {
+              const { id, excerpt, frontmatter } = node;
+              const { cover, path, title, date } = frontmatter;
+              return (
+                <PostList
+                  key={id}
+                  cover={cover.childImageSharp.fluid}
+                  path={path}
+                  title={title}
+                  date={date}
+                  excerpt={excerpt}
+                />
+              );
+            })}
+          </PostWrapper>
         </Section>
       </Fade>
 
       <Section>
         <SectionTitle>About Me</SectionTitle>
         <Container>
-          Aspiring Software Engineer<br />
-          Freshman, Second Semester<br />
-          Current GPA: 4.0/4.0<br />
-          Sea Undergraduate Scholarship 2019 Awardee<br />
-          Third Winner of Datavidia 2020<br />
-          Finalist of JOINTS Data Mining 2020<br />
-          Organizations: Ristek, BEM, KMK<br />
+          Aspiring Software Engineer
+          <br />
+          Freshman, Second Semester
+          <br />
+          Current GPA: 4.0/4.0
+          <br />
+          Sea Undergraduate Scholarship 2019 Awardee
+          <br />
+          Third Winner of Datavidia 2020
+          <br />
+          Finalist of JOINTS Data Mining 2020
+          <br />
+          Organizations: Ristek, BEM, KMK
+          <br />
         </Container>
       </Section>
     </Layout>
