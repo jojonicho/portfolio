@@ -105,24 +105,26 @@ const AnimatedIntro = () => {
   }, []);
 
   useEffect(() => void reset(), []);
-  return(
+  return (
     <Header>
-    {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
-    <TransitionItems key={key} style={rest} onClick={reset}>
-      <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>
-    </TransitionItems>
-  ))}
-    <Greeting>
-      <Rotate spy={count}>
-        <Pulse spy={count} duration={1800}>
-          <SVG name={mylist[count]} />
-        </Pulse>
-      </Rotate>
-    </Greeting>
-    <SubTitle>Computer Science Freshman @ UI</SubTitle>
-    <Affiliates />
-  </Header>
-  )
+      {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
+        <TransitionItems key={key} style={rest} onClick={reset}>
+          <animated.div style={{ overflow: 'hidden', height: innerHeight }}>
+            {item}
+          </animated.div>
+        </TransitionItems>
+      ))}
+      <Greeting>
+        <Rotate spy={count}>
+          <Pulse spy={count} duration={1800}>
+            <SVG name={mylist[count]} />
+          </Pulse>
+        </Rotate>
+      </Greeting>
+      <SubTitle>Computer Science Freshman @ UI</SubTitle>
+      <Affiliates />
+    </Header>
+  );
 };
 
 export default AnimatedIntro;

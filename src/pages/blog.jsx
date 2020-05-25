@@ -7,28 +7,28 @@ import { Layout } from 'layouts';
 import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
-@media (max-width: ${props => props.theme.breakpoints.s}) {
-  margin-top: 2rem;
-}
-`
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    margin-top: 2rem;
+  }
+`;
 
 const Blog = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
       <Wrapper>
-      <Helmet title={"Jonathan's blog"} />
-      {edges.map(({ node }) => (
-        <BlogList
-          key={node.id}
-          cover={node.frontmatter.cover.childImageSharp.fluid}
-          path={node.frontmatter.path}
-          title={node.frontmatter.title}
-          date={node.frontmatter.date}
-          tags={node.frontmatter.tags}
-          excerpt={node.excerpt}
-        />
-      ))}
+        <Helmet title={"Jonathan's blog"} />
+        {edges.map(({ node }) => (
+          <BlogList
+            key={node.id}
+            cover={node.frontmatter.cover.childImageSharp.fluid}
+            path={node.frontmatter.path}
+            title={node.frontmatter.title}
+            date={node.frontmatter.date}
+            tags={node.frontmatter.tags}
+            excerpt={node.excerpt}
+          />
+        ))}
       </Wrapper>
     </Layout>
   );
@@ -59,7 +59,13 @@ Blog.propTypes = {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: {fileAbsolutePath: {regex: "/(posts)/"}, frontmatter: {published: {eq: true}}}) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {
+        fileAbsolutePath: { regex: "/(posts)/" }
+        frontmatter: { published: { eq: true } }
+      }
+    ) {
       edges {
         node {
           id

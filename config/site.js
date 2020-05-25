@@ -12,7 +12,7 @@ module.exports = {
   favicon: 'static/logo/profpic.png', // Used for manifest favicon generation
   shortName: 'jojonicho', // shortname for manifest. MUST be shorter than 12 characters
   author: 'Jonathan', // Author for schemaORGJSONLD
-  themeColor: '#3e7bf2',
+  themeColor: '#3e7bf2', // '#1C2833'
   backgroundColor: '#d3e0ff',
   twitter: '@jojonicho', // Twitter Username
 };

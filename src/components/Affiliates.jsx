@@ -27,7 +27,7 @@ const Container = styled.div`
   }
   svg {
     transition: all 300ms ease-in-out;
-    fill: white;
+    fill: ${props => props.theme.colors.white.light};
     box-shadow: ${props => props.theme.shadow.feature.small.hover};
     &:hover {
       fill: ${props => props.theme.colors.secondary.base};

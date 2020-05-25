@@ -13,16 +13,17 @@ const Wrapper = styled.div`
     display: block;
     font-size: calc(0.6vw + 6px);
   }
-  .language-text{
+  .language-text {
     display: inline-block;
     margin: 0;
-    transform: translate(0,33%);
-    @media (max-width: ${props => props.theme.breakpoints.s}){
+    transform: translate(0, 33%);
+    @media (max-width: ${props => props.theme.breakpoints.s}) {
       transform: translate(0, 40%);
     }
     padding: 0.1rem 0.2rem;
   }
-  p, li{
+  p,
+  li {
     letter-spacing: -0.004em;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;

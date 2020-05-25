@@ -2,12 +2,11 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import { DiscussionEmbed } from "disqus-react"
+import { DiscussionEmbed } from 'disqus-react';
 
 import { Layout, Container, Content } from 'layouts';
 import { TagsBlock, Header, SEO } from 'components';
 import '../styles/prism';
-
 
 const SuggestionBar = styled.div`
   display: flex;
@@ -30,14 +29,14 @@ const PostSuggestion = styled.div`
 
 const Post = ({ data, pageContext }) => {
   const { next, prev } = pageContext;
-  const {html, frontmatter, excerpt } = data.markdownRemark
-  const {date, title, tags, path, description, id} = frontmatter
+  const { html, frontmatter, excerpt } = data.markdownRemark;
+  const { date, title, tags, path, description, id } = frontmatter;
   const image = frontmatter.cover.childImageSharp.fluid;
   const disqusConfig = {
     // shortname: process.env.GATSBY_DISQUS_NAME,
-    shortname: "jojonicho",
+    shortname: 'jojonicho',
     config: { identifier: path, title },
-  }
+  };
   return (
     <Layout>
       <SEO
@@ -71,7 +70,10 @@ const Post = ({ data, pageContext }) => {
         </PostSuggestion>
       </SuggestionBar>
       <Container>
-      <DiscussionEmbed shortname={disqusConfig.shortname} config={disqusConfig.config} />
+        <DiscussionEmbed
+          shortname={disqusConfig.shortname}
+          config={disqusConfig.config}
+        />
       </Container>
     </Layout>
   );
@@ -98,11 +100,12 @@ export const query = graphql`
         cover {
           childImageSharp {
             fluid(
+              background: "rgba(255,0,0,1)"
               maxWidth: 1920
               quality: 90
-              duotone: { highlight: "#386eee", shadow: "#2323be", opacity: 60 }
+              duotone: { highlight: "#2B2B2F", shadow: "#2B2B2F", opacity: 50 }
             ) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
             resize(width: 1200, quality: 90) {
               src

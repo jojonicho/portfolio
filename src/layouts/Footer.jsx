@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 
 const Wrapper = styled.footer`
   padding: calc(0.3vw + 7px);
-  box-shadow: ${props => props.theme.shadow.footer};
-  background: ${props => props.theme.gradient.leftToRight};
+  // box-shadow: ${props => props.theme.shadow.footer};
+  background: ${props => props.theme.gradient.rightToLeft};
   font-family: ${props => props.theme.fontFamily.body};
   font-weight: 500;
 `;
@@ -16,16 +16,18 @@ const Text = styled.div`
 `;
 
 const CustomLink = styled.a`
-color: ${props => props.theme.colors.secondary.base};
-font-weight: bold;
-`
+  color: ${props => props.theme.colors.secondary.base};
+  font-weight: bold;
+`;
 
 const Footer = () => (
   <Wrapper>
     <Text>
       <span>
         Created by{' '}
-        <CustomLink href="https://www.github.com/jojonicho">@jojonicho</CustomLink>
+        <CustomLink href="https://www.github.com/jojonicho">
+          @jojonicho
+        </CustomLink>
       </span>
     </Text>
   </Wrapper>

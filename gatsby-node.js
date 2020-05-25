@@ -16,10 +16,28 @@ exports.createPages = ({ graphql, actions }) => {
           ) {
             edges {
               node {
+                id
+                excerpt(pruneLength: 200)
                 frontmatter {
                   path
                   title
                   tags
+                  cover {
+                    childImageSharp {
+                      fluid(
+                        maxWidth: 1000
+                        quality: 90
+                        traceSVG: { color: "#2B2B2F" }
+                      ) {
+                        base64
+                        tracedSVG
+                        srcWebp
+                        srcSetWebp
+                        originalImg
+                        originalName
+                      }
+                    }
+                  }
                 }
               }
             }
