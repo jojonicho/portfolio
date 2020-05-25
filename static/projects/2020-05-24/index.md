@@ -1,5 +1,5 @@
 ---
-path: '/tierlist'
+path: '/giftr'
 cover: '../2020-05-24/tierlist.png'
 date: '2020-05-24'
 title: 'Tierlist GIF Search Engine'
@@ -8,9 +8,9 @@ published: true
 featured: false
 ---
 
-[**Live Demo**](https://tier.jojonicho.wtf) - [**Github**](https://github.com/jojonicho/tierlist)
+[**Live Demo**](https://giftr.jojonicho.wtf) - [**Github**](https://github.com/jojonicho/giftr)
 
-# Tierlist GIF Search!
+# Giftr! a Tierlist GIF Search Engine.
 
 A tierlist gif search engine built with React, Typescript, emotion@next, react-beautiful-dnd
 ![gif-tierlist](./tierlist.png)
