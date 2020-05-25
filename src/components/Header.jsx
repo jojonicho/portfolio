@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import Img from 'gatsby-image';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "@emotion/styled";
+import Img from "gatsby-image";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.header`
-  background: ${props => props.theme.gradient.rightToLeft};
+  background: ${(props) => props.theme.gradient.rightToLeft};
   height: 500px;
-  @media (max-width: ${props => props.theme.breakpoints.m}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.m}) {
     height: 400px;
   }
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     height: 215px;
   }
   position: relative;
@@ -17,7 +17,7 @@ const Wrapper = styled.header`
 `;
 
 const Text = styled.div`
-  color: ${props => props.theme.colors.white.base};
+  color: ${(props) => props.theme.colors.white.base};
   z-index: 0;
   position: absolute;
   top: 60%;
@@ -27,7 +27,7 @@ const Text = styled.div`
   flex-direction: column;
   text-align: center;
   width: 100%;
-  max-width: ${props => props.theme.layout.base};
+  max-width: ${(props) => props.theme.layout.base};
   padding: 0 2vw;
   align-items: center;
   h1 {
@@ -43,12 +43,12 @@ const Text = styled.div`
 
 const Subtitle = styled.p`
   max-width: 650px;
-  color: ${props => props.theme.colors.white.light};
+  color: ${(props) => props.theme.colors.white.light};
 `;
 
 const Header = ({ children, title, date, cover }) => (
   <Wrapper>
-    <Img fluid={cover || {} || [] || ''} />
+    <Img fluid={cover || {} || [] || ""} />
     <Text>
       <h1>{title}</h1>
       <h3>{date}</h3>

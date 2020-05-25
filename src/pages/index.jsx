@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import styled from '@emotion/styled';
 
 import { PostList, BlogList, AnimatedIntro, SVG } from 'components';
@@ -12,7 +12,7 @@ import Fade from 'react-reveal/Fade';
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
   display: flex;
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     padding: 0.5rem 2rem 2rem;
     font-size: 0.8rem;
   }
@@ -24,14 +24,14 @@ const PostWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 2rem 4rem 1rem 4rem;
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     margin: 2vw 1rem;
   }
 `;
 
 const Section = styled.div``;
 const SectionTitle = styled.div`
-  color: ${props => props.theme.colors.black.base};
+  color: ${(props) => props.theme.colors.black.base};
   font-size: calc(0.8vw + 20px);
   font-weight: 300;
   margin: calc(0.5vw + 10px) calc(1.5vw + 10px);

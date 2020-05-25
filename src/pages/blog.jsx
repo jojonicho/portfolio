@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import { BlogList } from 'components';
 import { Layout } from 'layouts';
 import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     margin-top: 2rem;
   }
 `;

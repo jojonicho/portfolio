@@ -1,4 +1,4 @@
-const config = require('./config/site');
+const config = require("./config/site");
 // require("dotenv").config({
 //   path: `.env.${process.env.NODE_ENV}`,
 // })
@@ -9,68 +9,60 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-preload-fonts`,
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-catch-links',
-    'gatsby-transformer-sharp',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-catch-links",
+    "gatsby-transformer-sharp",
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 750,
               quality: 90,
               linkImagesToOriginal: true,
             },
           },
-          'gatsby-remark-prismjs',
+          "gatsby-remark-prismjs",
         ],
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'posts',
+        name: "posts",
         path: `${__dirname}/static/posts`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'projects',
+        name: "projects",
         path: `${__dirname}/static/projects`,
       },
     },
     {
-      resolve: 'gatsby-plugin-emotion',
+      resolve: "gatsby-plugin-typography",
       options: {
-        autoLabel: process.env.NODE_ENV !== 'production',
-        // eslint-disable-next-line
-        labelFormat: `[filename]--[local]`,
+        pathToConfigModule: "config/typography.js",
       },
     },
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-sitemap",
     {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'config/typography.js',
-      },
-    },
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: config.title,
         short_name: config.shortName,
         description: config.description,
         start_url: config.pathPrefix,
-        background_color: '#1C2833',
-        theme_color: '#1C2833',
-        display: 'standalone',
+        background_color: "#1C2833",
+        theme_color: "#1C2833",
+        display: "standalone",
         icon: config.favicon,
       },
     },
-    'gatsby-plugin-offline',
+    "gatsby-plugin-offline",
   ],
 };

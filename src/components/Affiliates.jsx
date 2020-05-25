@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-// import PropTypes from 'prop-types';
-// import Img from 'gatsby-image';
 import SVG from '../components/SVG';
 
 const Container = styled.div`
@@ -13,24 +10,24 @@ const Container = styled.div`
   font-size: calc(0.5vw + 0.1rem);
   justify-content: center;
   align-items: center;
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     margin: 0.1rem 0 1rem;
   }
   a {
     margin: 0.4vw calc(0.15rem + 0.2vw);
-    color: ${props => props.theme.colors.black.blue};
+    color: ${(props) => props.theme.colors.black.blue};
     border-radius: 10px;
     &:hover {
-      color: ${props => props.theme.colors.white.light};
-      border: ${props => props.theme.colors.primary.light};
+      color: ${(props) => props.theme.colors.white.light};
+      border: ${(props) => props.theme.colors.primary.light};
     }
   }
   svg {
     transition: all 300ms ease-in-out;
-    fill: ${props => props.theme.colors.white.light};
-    box-shadow: ${props => props.theme.shadow.feature.small.hover};
+    fill: ${(props) => props.theme.colors.white.light};
+    box-shadow: ${(props) => props.theme.shadow.feature.small.hover};
     &:hover {
-      fill: ${props => props.theme.colors.secondary.base};
+      fill: ${(props) => props.theme.colors.secondary.base};
     }
   }
 `;
@@ -58,7 +55,7 @@ const External = styled.a`
 const Affiliates = () => (
   <Container>
     {affiliates &&
-      affiliates.map(aff => {
+      affiliates.map((aff) => {
         return (
           <External href={aff.link} title={aff.logo}>
             <SVG name={aff.logo} />
