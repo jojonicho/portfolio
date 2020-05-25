@@ -41,7 +41,7 @@ const Layout = ({ children }) => (
           flex-direction: column;
         }
         a {
-          color: ${theme.colors.link};
+          color: ${theme.colors.primary.dark};
           transition: color 0.5s;
           text-decoration: none;
         }

@@ -49,19 +49,17 @@ const Index = ({ data }) => {
           <AnimatedIntro />
           <SectionTitle>Projects</SectionTitle>
           <Pulse duration={1100}>
-            {projects.map(({ node }) => {
-              return (
-                <BlogList
-                  key={node.id}
-                  cover={node.frontmatter.cover.childImageSharp.fluid}
-                  path={node.frontmatter.path}
-                  title={node.frontmatter.title}
-                  date={node.frontmatter.date}
-                  tags={node.frontmatter.tags}
-                  excerpt={node.excerpt}
-                />
-              );
-            })}
+            {projects.map(({ node }) => (
+              <BlogList
+                key={node.id}
+                cover={node.frontmatter.cover.childImageSharp.fluid}
+                path={node.frontmatter.path}
+                title={node.frontmatter.title}
+                date={node.frontmatter.date}
+                tags={node.frontmatter.tags}
+                excerpt={node.excerpt}
+              />
+            ))}
           </Pulse>
         </Section>
       </Fade>

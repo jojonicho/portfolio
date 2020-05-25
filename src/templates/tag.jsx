@@ -8,12 +8,10 @@ import { BlogList } from 'components';
 
 const Tag = ({ pageContext }) => {
   const { posts, tagName } = pageContext;
-  const upperTag = tagName.charAt(0).toUpperCase() + tagName.slice(1);
-  console.log(posts);
   return (
     <Layout>
       <Helmet title={`${tagName} | Jojonicho`} />
-      {posts.map((post, index) => (
+      {posts.map(post => (
         <BlogList
           key={post.id}
           cover={post.frontmatter.cover.childImageSharp.fluid}
