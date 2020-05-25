@@ -1,17 +1,16 @@
-import 'typeface-open-sans';
-import 'typeface-josefin-sans';
+import "typeface-open-sans";
+import "typeface-josefin-sans";
 
-import React from 'react';
-import { ThemeProvider, css, Global } from '@emotion/react';
-import PropTypes from 'prop-types';
-import { SEO } from 'components';
-import { NavBar, Footer } from 'layouts';
-import theme from '../../config/theme';
-import headroom from '../styles/headroom';
+import React from "react";
+import { ThemeProvider, css, Global } from "@emotion/react";
+import PropTypes from "prop-types";
+import { SEO } from "components";
+import { NavBar, Footer } from "layouts";
+import theme from "../../config/theme";
+import headroom from "../styles/headroom";
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <link rel="preload" />
     <Global
       styles={css`
         *,
