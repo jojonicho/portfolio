@@ -12,11 +12,9 @@ import headroom from "../styles/headroom";
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <link
-      as="style"
       rel="stylesheet preload prefetch"
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Open+Sans&display=swap"
-      type="text/css"
-      crossorigin="anonymous"
+      as="style"
     />
     <Global
       styles={css`

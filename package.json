@@ -12,10 +12,10 @@
   },
   "scripts": {
     "develop": "gatsby develop",
-    "build": "gatsby build",
+    "preload-fonts": "gatsby-preload-fonts",
+    "build": "build",
     "serve": "gatsby serve",
     "clean": "rm -rf public && rm -rf .cache",
-    "preload-fonts": "gatsby-preload-fonts",
     "format-output": "prettier src/**/*.{js,jsx}",
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
