@@ -1,14 +1,14 @@
 {
-  "name": "gatsby-tutorial-starter",
-  "author": "Justin Formentin",
-  "title": "Gatsby V2 Tutorial Starter",
+  "name": "jojonicho-portfolio",
+  "author": "Jonathan Nicholas",
+  "title": "Portfolio and Blog",
   "description": "My Blog",
-  "homepage": "https://gatsby-tutorial-starter.netlify.com",
+  "homepage": "https://jojonicho.wtf",
   "license": "MIT",
   "version": "0.0.7",
   "repository": {
     "type": "git",
-    "url": "https://github.com/justinformentin/gatsby-v2-tutorial-starter"
+    "url": "https://github.com/jojonicho/jojonicho"
   },
   "scripts": {
     "develop": "gatsby develop",
@@ -75,9 +75,6 @@
   },
   "keywords": [
     "jonathan nicholas",
-    "jojonicho",
-    "personal blog",
-    "gatsby",
-    "emotion"
+    "jojonicho"
   ]
 }
