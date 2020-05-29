@@ -71,7 +71,8 @@ export const gradient = {
   // eslint-disable-next-line
   leftToRight: `linear-gradient(-45deg, ${colors.background.light} 0%, ${colors.background.dark} 100%)`,
   // eslint-disable-next-line
-  rightToLeft: `linear-gradient(45deg, ${colors.snazzy.lightBlack} -350%, ${colors.snazzy.black} 100%)`,
+  // rightToLeft: `linear-gradient(45deg, ${colors.snazzy.lightBlack} -350%, ${colors.snazzy.black} 100%)`,
+  rightToLeft: `linear-gradient(45deg, ${colors.background.dlight} 0%, ${colors.background.ddark} 150%)`,
 };
 
 export const transition = {
