@@ -4,7 +4,7 @@ import { Affiliates, SVG } from "components";
 import Rotate from "react-reveal/Rotate";
 import Pulse from "react-reveal/Pulse";
 import styled from "@emotion/styled";
-import { useSpring, animated, useTransition } from "react-spring";
+import { animated, useTransition } from "react-spring";
 
 const TransitionItems = styled(animated.div)`
   overflow: hidden;
@@ -22,13 +22,16 @@ const TransitionItems = styled(animated.div)`
   word-wrap: break-word;
 `;
 
-const Greeting = styled.div`
+const SVGContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: calc(5vw + 40px);
-  height: calc(5vw + 40px);
-  margin-top: 0.25rem;
+  width: calc(4vw + 40px);
+  height: calc(4vw + 40px);
+  margin-top: 0.2rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.m}) {
+    margin-top: 0rem;
+  }
 `;
 
 const Header = styled.div`
@@ -115,14 +118,14 @@ const AnimatedIntro = () => {
           </animated.div>
         </TransitionItems>
       ))}
-      <Greeting>
+      <SVGContainer>
         <Rotate spy={count}>
           <Pulse spy={count} duration={1800}>
             <SVG name={mylist[count]} />
           </Pulse>
         </Rotate>
-      </Greeting>
-      <SubTitle>Computer Science Freshman @ UI</SubTitle>
+      </SVGContainer>
+      <SubTitle>I Build Web Apps While Passionately Learn</SubTitle>
       <Affiliates />
     </Header>
   );

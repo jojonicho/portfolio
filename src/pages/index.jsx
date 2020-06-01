@@ -1,13 +1,13 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import styled from '@emotion/styled';
+import React, { useRef, useState, useEffect, useCallback } from "react";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import styled from "@emotion/styled";
 
-import { PostList, BlogList, AnimatedIntro, SVG } from 'components';
-import { Layout } from 'layouts';
-import Pulse from 'react-reveal/Pulse';
-import Fade from 'react-reveal/Fade';
+import { PostList, BlogList, AnimatedIntro, SVG } from "components";
+import { Layout } from "layouts";
+import Pulse from "react-reveal/Pulse";
+import Fade from "react-reveal/Fade";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -91,9 +91,9 @@ const Index = ({ data }) => {
         <Container>
           Aspiring Software Engineer
           <br />
-          Freshman, Second Semester
+          Universitas Indonesia, Freshman
           <br />
-          Current GPA: 4.0/4.0
+          Current GPA: 4.00/4.00
           <br />
           Sea Undergraduate Scholarship 2019 Awardee
           <br />
