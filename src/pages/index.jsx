@@ -103,6 +103,7 @@ const Index = ({ data }) => {
           <br />
           Organizations: Ristek, BEM, KMK
           <br />
+          Huge fan of Mrs. GREEN APPLE and Aimer
         </Container>
       </Section>
     </Layout>
