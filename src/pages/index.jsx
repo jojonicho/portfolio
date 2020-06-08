@@ -99,7 +99,7 @@ const Index = ({ data }) => {
           <br />
           Third Winner of Datavidia 2020
           <br />
-          Finalist of JOINTS Data Mining 2020
+          Third Winner of JOINTS Data Mining 2020
           <br />
           Organizations: Ristek, BEM, KMK
           <br />
