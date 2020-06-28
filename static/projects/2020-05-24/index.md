@@ -1,9 +1,9 @@
 ---
-path: '/giftr'
-cover: '../2020-05-24/tierlist.png'
-date: '2020-05-24'
-title: 'Tierlist GIF Search Engine'
-tags: ['typescript', 'emotion.js', react-beautiful-dnd]
+path: "/giftr"
+cover: "../2020-05-24/tierlist.png"
+date: "2020-05-24"
+title: "Tierlist GIF Search Engine"
+tags: [typescript, emotionJS, react-beautiful-dnd]
 published: true
 featured: false
 ---
@@ -35,7 +35,6 @@ touch .env
 REACT_APP_TENOR_API_KEY=YOUR_API_KEY
 ```
 
-[Website](https://tierlist.jojonicho.wtf) - [Github](https://github.com/jojonicho/tierlist)<br>
 **Tierlist GIF Search Engine with Typescript React**<br>
 
 - Drag and drop using react-beautiful-dnd
