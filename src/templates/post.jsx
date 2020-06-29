@@ -111,7 +111,7 @@ export const query = graphql`
               background: "#2e3246"
               maxWidth: 1920
               quality: 90
-              duotone: { highlight: "#F1616D", shadow: "#2e3246", opacity: 50 }
+              duotone: { highlight: "#2e3246", shadow: "#F1616D", opacity: 50 }
             ) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
