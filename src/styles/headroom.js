@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
-import theme from '../../config/theme';
+import { css } from "@emotion/react";
+import theme from "../../config/theme";
 
 const headroom = css`
   .headroom-wrapper {
@@ -20,6 +20,16 @@ const headroom = css`
         fill: ${theme.colors.white.base};
       }
     }
+    nav {
+      a {
+        font-weight: 600;
+        color: ${theme.colors.secondary.base};
+        &:hover {
+          border-color: ${theme.colors.black.blue};
+          color: ${theme.colors.primary.base};
+        }
+      }
+    }
   }
   .headroom--unfixed {
     position: relative;
@@ -38,17 +48,17 @@ const headroom = css`
     position: fixed;
     transform: translateY(0);
     transition: ${theme.transitions.headroom.transition};
-    background-color: ${theme.colors.white.light};
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    background-color: ${theme.colors.white.base};
+    box-shadow: 0 1px 10px rgba(46, 50, 70, 0.2);
     nav {
       a {
-        color: ${theme.colors.black.base};
+        color: ${theme.colors.primary.base};
         &:hover {
-          border-color: ${theme.colors.black.base};
-          color: ${theme.colors.black.base};
+          border-color: ${theme.colors.black.blue};
+          color: ${theme.colors.secondary.base};
         }
         &:focus {
-          color: ${theme.colors.black.base};
+          color: ${theme.colors.black.blue};
         }
       }
     }
