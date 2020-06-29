@@ -22,6 +22,7 @@ const Layout = ({ children }) => (
           padding: 0;
         }
         html {
+          width: 100vw;
           text-rendering: optimizeLegibility;
           overflow-x: hidden;
           -ms-overflow-style: scrollbar;
@@ -36,6 +37,8 @@ const Layout = ({ children }) => (
           flex-direction: column;
         }
         body {
+          overflow-x: hidden;
+          widht: 100vw;
           display: flex;
           flex-direction: column;
         }

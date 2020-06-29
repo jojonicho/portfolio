@@ -40,6 +40,10 @@ const SectionTitle = styled.div`
   margin: calc(0.5vw + 10px) calc(1.5vw + 10px);
 `;
 
+const CarouselContainer = styled.div`
+  margin-bottom: 12.5px;
+`;
+
 const Index = ({ data }) => {
   const posts = data.posts.edges;
   const projects = data.projects.edges;
@@ -49,7 +53,7 @@ const Index = ({ data }) => {
     autoplay: true,
     arrows: true,
     autoplaySpeed: 6000,
-    speed: 1500,
+    speed: 1200,
     swipeToSlide: true,
     // slidesToShow: 1,
     // slidesToScroll: 1,
@@ -62,19 +66,21 @@ const Index = ({ data }) => {
           <AnimatedIntro />
           <SectionTitle>Projects</SectionTitle>
           <Pulse duration={1100}>
-            <Slider {...settings}>
-              {projects.map(({ node }) => (
-                <BlogList
-                  key={node.id}
-                  cover={node.frontmatter.cover.childImageSharp.fluid}
-                  path={node.frontmatter.path}
-                  title={node.frontmatter.title}
-                  date={node.frontmatter.date}
-                  tags={node.frontmatter.tags}
-                  excerpt={node.excerpt}
-                />
-              ))}
-            </Slider>
+            <CarouselContainer>
+              <Slider {...settings}>
+                {projects.map(({ node }) => (
+                  <BlogList
+                    key={node.id}
+                    cover={node.frontmatter.cover.childImageSharp.fluid}
+                    path={node.frontmatter.path}
+                    title={node.frontmatter.title}
+                    date={node.frontmatter.date}
+                    tags={node.frontmatter.tags}
+                    excerpt={node.excerpt}
+                  />
+                ))}
+              </Slider>
+            </CarouselContainer>
           </Pulse>
         </Section>
       </Fade>
