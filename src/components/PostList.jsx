@@ -11,6 +11,7 @@ const Wrapper = styled.article`
   z-index: 100;
   border-radius: ${(props) => props.theme.borderRadius.default};
   box-shadow: ${(props) => props.theme.shadow.feature.small.default};
+  // box-shadow: ${(props) => props.theme.shadow.card};
   transition: ${(props) => props.theme.transitions.boom.transition};
   height: 17rem;
   flex-basis: calc(99.9% * 1 / 3 - 2.5rem);
@@ -61,10 +62,10 @@ const StyledLink = styled(Link)`
     bottom: 0;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.3) 50%,
-      rgba(0, 0, 0, 0.7) 80%,
-      rgba(0, 0, 0, 0.8) 100%
+      rgba(46, 50, 70, 0) 0%,
+      rgba(46, 50, 70, 0.2) 40%,
+      rgba(46, 50, 70, 0.4) 60%,
+      rgba(46, 50, 70, 0.6) 100%
     );
     z-index: -10;
     border-radius: ${theme.borderRadius.default};

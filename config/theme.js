@@ -56,9 +56,13 @@ export const shadow = {
       default: "0 40px 40px rgba(0, 0, 0, 0.2)",
       hover: "0 50px 50px rgba(0, 0, 0, 0.1)",
     },
-    small: {
+    medium: {
       default: "0 15px 25px rgba(0, 0, 0, 0.2)",
       hover: "0 40px 45px rgba(0, 0, 0, 0.1)",
+    },
+    small: {
+      default: "0 1px 7px 1px rgba(46, 50, 70, 0.2)",
+      hover: "0 10px 45px rgba(46, 50, 70, 0.1)",
     },
   },
   text: {

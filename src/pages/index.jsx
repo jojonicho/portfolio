@@ -6,8 +6,11 @@ import styled from "@emotion/styled";
 
 import { PostList, BlogList, AnimatedIntro, SVG } from "components";
 import { Layout } from "layouts";
-import Pulse from "react-reveal/Pulse";
+import Pulse from "react-reveal";
 import Fade from "react-reveal/Fade";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -40,7 +43,17 @@ const SectionTitle = styled.div`
 const Index = ({ data }) => {
   const posts = data.posts.edges;
   const projects = data.projects.edges;
-
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    arrows: true,
+    autoplaySpeed: 6000,
+    speed: 1500,
+    swipeToSlide: true,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+  };
   return (
     <Layout>
       <Helmet title={`Jonathan Nicholas' Personal Website`} />
@@ -49,17 +62,19 @@ const Index = ({ data }) => {
           <AnimatedIntro />
           <SectionTitle>Projects</SectionTitle>
           <Pulse duration={1100}>
-            {projects.map(({ node }) => (
-              <BlogList
-                key={node.id}
-                cover={node.frontmatter.cover.childImageSharp.fluid}
-                path={node.frontmatter.path}
-                title={node.frontmatter.title}
-                date={node.frontmatter.date}
-                tags={node.frontmatter.tags}
-                excerpt={node.excerpt}
-              />
-            ))}
+            <Slider {...settings}>
+              {projects.map(({ node }) => (
+                <BlogList
+                  key={node.id}
+                  cover={node.frontmatter.cover.childImageSharp.fluid}
+                  path={node.frontmatter.path}
+                  title={node.frontmatter.title}
+                  date={node.frontmatter.date}
+                  tags={node.frontmatter.tags}
+                  excerpt={node.excerpt}
+                />
+              ))}
+            </Slider>
           </Pulse>
         </Section>
       </Fade>

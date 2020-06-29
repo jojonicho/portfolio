@@ -17,12 +17,12 @@ A discord clone built with NextJS, Typescript, and ApolloGraphQL.
 
 **Discord Clone with NextJS, Typescript, and Apollo GraphQL**<br>
 
-- Chat implementation using Apollo GraphQL Subscriptions
-- Typescript and styled with Emotion.js
-- Apollo Codegen for type-safety mutation/query/subcription hooks
+- Chat implementation using Apollo GraphQL Subscriptions.
+- Typescript and styled with Emotion.js.
+- Apollo Codegen for type-safety mutation/query/subcription hooks.
 - User register validation, login and authentication using refresh and authentication Json Web Token.
-- User confirmation with email using Nodemailer stored in redis.
-- Backend using Node with TypeORM and TypeGraphQL
+- User confirmation with email using Nodemailer stored in Redis.
+- Backend using Node with TypeORM and TypeGraphQL.
 
 ## Installation
 

@@ -1,12 +1,12 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import styled from '@emotion/styled';
-import PropTypes from 'prop-types';
-import { DiscussionEmbed } from 'disqus-react';
+import React from "react";
+import { graphql, Link } from "gatsby";
+import styled from "@emotion/styled";
+import PropTypes from "prop-types";
+import { DiscussionEmbed } from "disqus-react";
 
-import { Layout, Container, Content } from 'layouts';
-import { TagsBlock, Header, SEO } from 'components';
-import '../styles/prism';
+import { Layout, Container, Content } from "layouts";
+import { TagsBlock, Header, SEO } from "components";
+import "../styles/prism";
 
 const SuggestionBar = styled.div`
   display: flex;
@@ -18,14 +18,22 @@ const PostSuggestion = styled.div`
   display: flex;
   align-items: center;
   margin: 1rem 3rem 0 3rem;
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     margin: 2vw 3vw 0 3vw;
     padding: 0px;
   }
   h3 {
     font-size: calc(0.4vw + 10px);
+    color: ${(props) => props.theme.colors.black.base};
+    transition: all ${(props) => props.theme.transitions.default.duration};
+    &:hover {
+      color: ${(props) => props.theme.colors.primary.base};
+    }
   }
 `;
+// const Link = styled.link`
+// &:hover {}
+// `
 
 const Post = ({ data, pageContext }) => {
   const { next, prev } = pageContext;
@@ -34,14 +42,14 @@ const Post = ({ data, pageContext }) => {
   const image = frontmatter.cover.childImageSharp.fluid;
   const disqusConfig = {
     // shortname: process.env.GATSBY_DISQUS_NAME,
-    shortname: 'jojonicho',
+    shortname: "jojonicho",
     config: { identifier: path, title },
   };
   return (
     <Layout>
       <SEO
         title={title}
-        description={description || excerpt || ' '}
+        description={description || excerpt || " "}
         banner={image}
         pathname={path}
         article
@@ -100,10 +108,10 @@ export const query = graphql`
         cover {
           childImageSharp {
             fluid(
-              background: "rgba(255,0,0,1)"
+              background: "#2e3246"
               maxWidth: 1920
               quality: 90
-              duotone: { highlight: "#2B2B2F", shadow: "#2B2B2F", opacity: 50 }
+              duotone: { highlight: "#F1616D", shadow: "#2e3246", opacity: 50 }
             ) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
