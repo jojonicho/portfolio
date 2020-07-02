@@ -65,6 +65,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@types/react-slick": "^0.23.4",
     "babel-eslint": "^10.0.3",
     "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.11.0",

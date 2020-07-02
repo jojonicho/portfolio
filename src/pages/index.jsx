@@ -51,12 +51,9 @@ const Index = ({ data }) => {
     dots: true,
     infinite: true,
     autoplay: true,
-    arrows: true,
     autoplaySpeed: 6000,
     speed: 1200,
     swipeToSlide: true,
-    // slidesToShow: 1,
-    // slidesToScroll: 1,
   };
   return (
     <Layout>

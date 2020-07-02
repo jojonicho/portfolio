@@ -1,31 +1,33 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from '@emotion/styled';
-import Headroom from 'react-headroom';
+import React from "react";
+import { Link } from "gatsby";
+import styled from "@emotion/styled";
+import Headroom from "react-headroom";
+import SVG from "../components/SVG";
 
 const StyledLink = styled(Link)`
-  font-weight: bold;
-  font-family: ${props => props.theme.fontFamily.body};
-  color: ${props => props.theme.colors.secondary.base};
-  transition: all ${props => props.theme.transitions.default.duration};
+  display: flex;
+  justify-content: center;
+  transition: all ${(props) => props.theme.transitions.default.duration};
   &:hover {
-    color: ${props => props.theme.colors.primary.base};
+    color: ${(props) => props.theme.colors.white.light};
+    border: ${(props) => props.theme.colors.primary.light};
+    filter: brightness(1.2);
   }
 `;
 
 const Nav = styled.nav`
   display: flex;
   justify-content: flex-end;
-  font-family: ${props => props.theme.fontFamily.body};
+  font-family: ${(props) => props.theme.fontFamily.body};
   font-weight: 500;
   font-size: 1.1rem;
   align-items: center;
   a {
-    color: ${props => props.theme.colors.white.base};
+    color: ${(props) => props.theme.colors.white.base};
     margin-left: 2rem;
-    transition: all ${props => props.theme.transitions.default.duration};
+    transition: all ${(props) => props.theme.transitions.default.duration};
     &:hover {
-      color: ${props => props.theme.colors.secondary.base};
+      color: ${(props) => props.theme.colors.secondary.base};
     }
   }
 `;
@@ -33,9 +35,7 @@ const Nav = styled.nav`
 const NavBar = () => (
   <Headroom calcHeightOnResize disableInlineStyles>
     <StyledLink to="/">
-      Home
-      {/* <img src={logo} alt="Gatsby Logo" /> */}
-      {/* <Link to="/">Home</Link> */}
+      <SVG name="Logo" />
     </StyledLink>
     <Nav>
       <a href="https://cv.jojonicho.wtf">CV</a>
