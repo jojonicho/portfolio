@@ -107,11 +107,11 @@ const Index = ({ data }) => {
       <Section>
         <SectionTitle>About Me</SectionTitle>
         <Container>
-          Aspiring Software Engineer
+          Software Engineer Intern at Mekari
           <br />
           Universitas Indonesia, Freshman
           <br />
-          Current GPA: 4.00/4.00
+          Current GPA: X.00/4.00
           <br />
           Sea Undergraduate Scholarship 2019 Awardee
           <br />
