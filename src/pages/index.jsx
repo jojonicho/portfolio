@@ -109,9 +109,9 @@ const Index = ({ data }) => {
         <Container>
           Software Engineer Intern at Mekari
           <br />
-          Universitas Indonesia, Freshman
+          Universitas Indonesia, Incoming Sophomore
           <br />
-          Current GPA: X.00/4.00
+          Current GPA: 4.00/4.00
           <br />
           Sea Undergraduate Scholarship 2019 Awardee
           <br />
