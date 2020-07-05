@@ -49,7 +49,6 @@ const Index = ({ data }) => {
   const posts = data.posts.edges;
   const projects = data.projects.edges;
   const experiences = data.experiences.node;
-  console.log(experiences);
   const settings = {
     dots: true,
     infinite: true,
