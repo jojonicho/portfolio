@@ -1,11 +1,11 @@
-const path = require('path');
+const path = require("path");
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const postTemplate = path.resolve('src/templates/post.jsx');
-    const tagPosts = path.resolve('src/templates/tag.jsx');
+    const postTemplate = path.resolve("src/templates/post.jsx");
+    const tagPosts = path.resolve("src/templates/tag.jsx");
 
     resolve(
       graphql(`
@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-      `).then(result => {
+      `).then((result) => {
         if (result.errors) {
           return reject(result.errors);
         }
@@ -52,9 +52,9 @@ exports.createPages = ({ graphql, actions }) => {
 
         const postsByTag = {};
         // create tags page
-        posts.forEach(({ node }) => {
+        posts.map(({ node }) => {
           if (node.frontmatter.tags) {
-            node.frontmatter.tags.forEach(tag => {
+            node.frontmatter.tags.map((tag) => {
               if (!postsByTag[tag]) {
                 postsByTag[tag] = [];
               }
@@ -67,21 +67,23 @@ exports.createPages = ({ graphql, actions }) => {
         const tags = Object.keys(postsByTag);
 
         //create tags
-        tags.forEach(tagName => {
-          const posts = postsByTag[tagName];
+        if (tags.length > 0) {
+          tags.map((tagName) => {
+            const posts = postsByTag[tagName];
 
-          createPage({
-            path: `/tags/${tagName}`,
-            component: tagPosts,
-            context: {
-              posts,
-              tagName,
-            },
+            createPage({
+              path: `/tags/${tagName}`,
+              component: tagPosts,
+              context: {
+                posts,
+                tagName,
+              },
+            });
           });
-        });
+        }
 
         //create posts
-        posts.forEach(({ node }, index) => {
+        posts.map(({ node }, index) => {
           const path = node.frontmatter.path;
           const prev = index === 0 ? null : posts[index - 1].node;
           const next =
@@ -105,7 +107,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
     },
   });
 };
