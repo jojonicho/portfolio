@@ -11,7 +11,6 @@ const Wrapper = styled.article`
   z-index: 100;
   border-radius: ${(props) => props.theme.borderRadius.default};
   box-shadow: ${(props) => props.theme.shadow.feature.small.default};
-  // box-shadow: ${(props) => props.theme.shadow.card};
   transition: ${(props) => props.theme.transitions.boom.transition};
   height: 17rem;
   flex-basis: calc(99.9% * 1 / 3 - 2.5rem);

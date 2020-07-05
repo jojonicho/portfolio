@@ -44,11 +44,13 @@ const headroom = css`
     transform: translateY(-100%);
     transition: ${theme.transitions.headroom.transition};
   }
+
   .headroom--pinned {
     position: fixed;
     transform: translateY(0);
     transition: ${theme.transitions.headroom.transition};
-    background-color: ${theme.colors.white.base};
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
     box-shadow: 0 1px 10px rgba(46, 50, 70, 0.2);
     nav {
       a {

@@ -8,7 +8,16 @@ module.exports = {
     ...config,
   },
   plugins: [
-    `gatsby-plugin-preload-fonts`,
+    "gatsby-transformer-json",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "experience",
+        path: `${__dirname}/static/experiences/`,
+        typeName: `Experience`,
+      },
+    },
+    "gatsby-plugin-preload-fonts",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
     "gatsby-transformer-sharp",

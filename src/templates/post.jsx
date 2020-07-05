@@ -31,9 +31,6 @@ const PostSuggestion = styled.div`
     }
   }
 `;
-// const Link = styled.link`
-// &:hover {}
-// `
 
 const Post = ({ data, pageContext }) => {
   const { next, prev } = pageContext;

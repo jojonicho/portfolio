@@ -1,16 +1,17 @@
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 
-import { PostList, BlogList, AnimatedIntro, SVG } from "components";
+import { PostList, BlogList, AnimatedIntro } from "components";
 import { Layout } from "layouts";
 import Pulse from "react-reveal";
 import Fade from "react-reveal/Fade";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Experience from "../components/Experience";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -47,12 +48,14 @@ const CarouselContainer = styled.div`
 const Index = ({ data }) => {
   const posts = data.posts.edges;
   const projects = data.projects.edges;
+  const experiences = data.experiences.node;
+  console.log(experiences);
   const settings = {
     dots: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 6000,
-    speed: 1200,
+    speed: 700,
     swipeToSlide: true,
   };
   return (
@@ -81,7 +84,24 @@ const Index = ({ data }) => {
           </Pulse>
         </Section>
       </Fade>
-
+      <Section>
+        <SectionTitle>Experience</SectionTitle>
+        <PostWrapper>
+          {experiences.map(
+            ({ company, position, startDate, endDate, image }) => {
+              return (
+                <Experience
+                  company={company}
+                  position={position}
+                  image={image}
+                  startDate={startDate}
+                  endDate={endDate}
+                />
+              );
+            }
+          )}
+        </PostWrapper>
+      </Section>
       <Fade duration={900}>
         <Section>
           <SectionTitle>Featured Posts</SectionTitle>
@@ -109,7 +129,7 @@ const Index = ({ data }) => {
         <Container>
           Software Engineer Intern at Mekari
           <br />
-          Universitas Indonesia, Incoming Sophomore
+          Universitas Indonesia, Sophomore
           <br />
           Current GPA: 4.00/4.00
           <br />
@@ -153,6 +173,15 @@ Index.propTypes = {
 
 export const query = graphql`
   query {
+    experiences: experiencesJson {
+      node {
+        company
+        position
+        image
+        startDate
+        endDate
+      }
+    }
     posts: allMarkdownRemark(
       limit: 6
       sort: { order: DESC, fields: [frontmatter___date] }

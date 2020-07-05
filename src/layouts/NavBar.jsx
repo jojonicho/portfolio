@@ -40,7 +40,6 @@ const NavBar = () => (
     <Nav>
       <a href="https://cv.jojonicho.wtf">CV</a>
       <Link to="/blog">Blog</Link>
-      {/* <Link to="/about">About</Link> */}
     </Nav>
   </Headroom>
 );
