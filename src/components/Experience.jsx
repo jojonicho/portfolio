@@ -1,9 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
-import { TagsBlock } from "components";
-import { Container } from "layouts";
 
 const Wrapper = styled.article`
   margin-bottom: 2rem;
@@ -71,7 +67,7 @@ const Date = styled.div`
   color: ${(props) => props.theme.colors.black.lighter};
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
   margin: 0;
 `;
 
@@ -79,8 +75,8 @@ const Experience = ({ company, position, image, startDate, endDate }) => (
   <Wrapper>
     <Image>
       <img src={image} />
-      <Title>{position}</Title>
       <Information>
+        <Title>{position}</Title>
         <Date>
           {startDate} - {endDate}
         </Date>
