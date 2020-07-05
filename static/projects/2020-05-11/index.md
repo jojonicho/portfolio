@@ -1,6 +1,6 @@
 ---
 path: "/jojonicho"
-cover: "../2020-05-11/jojonicho.png"
+cover: "../2020-05-11/index.png"
 date: "2020-05-11"
 title: "jojonicho.wtf"
 tags: ["gatsby", "markdown", "emotionJS", graphQL]
