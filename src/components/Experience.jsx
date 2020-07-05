@@ -51,7 +51,7 @@ const Image = styled.div`
 
 const Information = styled.div`
   h1 {
-    font-size: calc(1vw + 1rem);
+    font-size: calc(0.6vw + 1rem);
     display: inline-block;
     color: ${(props) => props.theme.colors.black.base};
     transition: all ${(props) => props.theme.transitions.default.duration};
@@ -69,6 +69,7 @@ const Date = styled.div`
 
 const Title = styled.h1`
   margin: 0;
+  text-align: center;
 `;
 
 const Experience = ({ company, position, image, startDate, endDate }) => (
