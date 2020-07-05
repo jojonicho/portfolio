@@ -67,20 +67,18 @@ exports.createPages = ({ graphql, actions }) => {
         const tags = Object.keys(postsByTag);
 
         //create tags
-        if (tags.length > 0) {
-          tags.map((tagName) => {
-            const posts = postsByTag[tagName];
+        tags.map((tagName) => {
+          const posts = postsByTag[tagName];
 
-            createPage({
-              path: `/tags/${tagName}`,
-              component: tagPosts,
-              context: {
-                posts,
-                tagName,
-              },
-            });
+          createPage({
+            path: `/tags/${tagName.toLowerCase()}`,
+            component: tagPosts,
+            context: {
+              posts,
+              tagName,
+            },
           });
-        }
+        });
 
         //create posts
         posts.map(({ node }, index) => {
