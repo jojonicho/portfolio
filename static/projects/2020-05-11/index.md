@@ -3,12 +3,12 @@ path: "/jojonicho"
 cover: "../2020-05-11/index.png"
 date: "2020-05-11"
 title: "jojonicho.wtf"
-tags: ["gatsby", "markdown", "emotionJS", graphQL]
+tags: [gatsby, react, markdown, emotionJS, graphQL]
 published: true
 featured: false
 ---
 
-[**Website**](https://jojonicho.wtf) - [**Github**](https://github.com/jojonicho/jojonicho)<br>
+[**Website**](https://jojonicho.wtf) - [**Github**](https://github.com/jojonicho/portfolio)<br>
 
 # Portfolio and Blog Web App with Gatsby
 
