@@ -25,18 +25,18 @@ const TransitionItems = styled(animated.div)`
 const SVGContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex-wrap: wrap;
   width: calc(4vw + 40px);
   height: calc(4vw + 40px);
-  margin-top: 0.2rem;
-  @media (max-width: ${(props) => props.theme.breakpoints.m}) {
-    margin-top: 0rem;
+  margin-top: calc(1rem + 0.5vw);
+  @media (max-width: ${(props) => props.theme.breakpoints.xs}) {
+    margin-top: calc(0.4rem + 0.4vw);
   }
 `;
 
 const Header = styled.div`
   background: ${(props) => props.theme.gradient.rightToLeft};
-  // background: ${(props) => props.theme.colors.snazzy.black};
   padding-top: 1vw;
   @media (max-width: ${(props) => props.theme.breakpoints.m}) {
     height: 400px;
@@ -51,12 +51,12 @@ const Header = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  // min-height: 200px;
   color: ${(props) => props.theme.colors.white.light};
   font-size: calc(1.2vw + 30px);
 `;
 
 const SubTitle = styled.text`
+  padding-top: 0;
   color: ${(props) => props.theme.colors.white.light};
   font-size: calc(0.5vw + 20px);
   font-weight: 100;
@@ -74,7 +74,6 @@ const AnimatedIntro = () => {
   const ref = useRef([]);
   const [items, set] = useState([]);
   const transitions = useTransition(items, null, {
-    //'#28b4d7'
     from: {
       opacity: 0,
       height: 0,
