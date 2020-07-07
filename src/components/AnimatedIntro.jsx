@@ -125,7 +125,9 @@ const AnimatedIntro = () => {
           </Pulse>
         </Rotate>
       </SVGContainer>
-      <SubTitle>I Build Web Apps While Passionately Learn</SubTitle>
+      <SubTitle>
+        I Love to <strong>Learn</strong> and <strong>Code</strong>!
+      </SubTitle>
       <Affiliates />
     </Header>
   );
