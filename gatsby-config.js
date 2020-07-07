@@ -17,6 +17,13 @@ module.exports = {
         typeName: `Experience`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/logo/`,
+      },
+    },
     "gatsby-plugin-preload-fonts",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",

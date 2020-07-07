@@ -59,7 +59,7 @@ const Index = ({ data }) => {
   };
   return (
     <Layout>
-      <Helmet title={`Jonathan Nicholas' Personal Website`} />
+      <Helmet title={`Portfolio of Jonathan Nicholas`} />
       <Fade duration={1300}>
         <Section>
           <AnimatedIntro />
