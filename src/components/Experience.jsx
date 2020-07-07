@@ -6,15 +6,11 @@ const Wrapper = styled.article`
   position: relative;
   z-index: 100;
   border-radius: ${(props) => props.theme.borderRadius.default};
-  box-shadow: ${(props) => props.theme.shadow.feature.small.default};
   transition: ${(props) => props.theme.transitions.boom.transition};
   flex-basis: calc(99.9% * 1 / 3 - 2.5rem);
   max-width: calc(99.9% * 1 / 3 - 2.5rem);
   width: calc(99.9% * 1 / 3 - 2.5rem);
-  &:hover {
-    box-shadow: ${(props) => props.theme.shadow.feature.small.hover};
-    transform: scale(1.04);
-  }
+  box-shadow: ${(props) => props.theme.shadow.feature.small.default};
 
   @media (max-width: 1000px) {
     flex-basis: calc(99.9% * 1 / 2 - 1rem);

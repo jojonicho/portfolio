@@ -11,12 +11,9 @@ const Wrapper = styled.article`
 `;
 
 const Image = styled.div`
-  // margin: auto;
-  // position: relative;
   box-shadow: ${(props) => props.theme.shadow.feature.small.default};
   transition: ${(props) => props.theme.transitions.boom.transition};
   border-radius: ${(props) => props.theme.borderRadius.default};
-  // min-height: 200px;
   img {
     border-radius: ${(props) => props.theme.borderRadius.default};
   }

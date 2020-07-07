@@ -83,24 +83,26 @@ const Index = ({ data }) => {
           </Pulse>
         </Section>
       </Fade>
-      <Section>
-        <SectionTitle>Experience</SectionTitle>
-        <PostWrapper>
-          {experiences.map(
-            ({ company, position, startDate, endDate, image }) => {
-              return (
-                <Experience
-                  company={company}
-                  position={position}
-                  image={image}
-                  startDate={startDate}
-                  endDate={endDate}
-                />
-              );
-            }
-          )}
-        </PostWrapper>
-      </Section>
+      <Fade duration={900}>
+        <Section>
+          <SectionTitle>Experience</SectionTitle>
+          <PostWrapper>
+            {experiences.map(
+              ({ company, position, startDate, endDate, image }) => {
+                return (
+                  <Experience
+                    company={company}
+                    position={position}
+                    image={image}
+                    startDate={startDate}
+                    endDate={endDate}
+                  />
+                );
+              }
+            )}
+          </PostWrapper>
+        </Section>
+      </Fade>
       <Fade duration={900}>
         <Section>
           <SectionTitle>Featured Posts</SectionTitle>
