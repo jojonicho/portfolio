@@ -132,7 +132,7 @@ const Index = ({ data }) => {
           <br />
           Universitas Indonesia, Sophomore
           <br />
-          Current GPA: 4.00/4.00
+          Current GPA: 3.92/4.00
           <br />
           Sea Undergraduate Scholarship 2019 Awardee
           <br />
