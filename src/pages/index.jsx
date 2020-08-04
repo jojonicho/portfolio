@@ -39,10 +39,14 @@ const SectionTitle = styled.div`
   font-size: calc(0.8vw + 20px);
   font-weight: 300;
   margin: calc(0.5vw + 10px) calc(1.5vw + 10px);
+  text-align: ${(props) => (props.center ? "center" : "left")};
 `;
 
 const CarouselContainer = styled.div`
-  margin-bottom: 12.5px;
+  margin-bottom: 15px;
+  @media (max-width: ${(props) => props.theme.breakpoints.xs}) {
+    margin-bottom: 50px;
+  }
 `;
 
 const Index = ({ data }) => {
@@ -124,7 +128,6 @@ const Index = ({ data }) => {
           </PostWrapper>
         </Section>
       </Fade>
-
       <Section>
         <SectionTitle>About Me</SectionTitle>
         <Container>
@@ -144,6 +147,29 @@ const Index = ({ data }) => {
           <br />
           Huge fan of Mrs. GREEN APPLE and Aimer
         </Container>
+      </Section>
+      <Section>
+        <SectionTitle center={true}>
+          <i>
+            "Take it as a challenge, push your limits, you have come miles away,
+            it is just few meters now.
+            <br />
+            <br /> It is never easy to achieve anything. If you have achieved
+            anything easily, don't count it as your achievements. You may find a
+            lot of problems, face them, resolve them.
+            <br />
+            <br />
+            If they are not serious, you be the one. <br />
+            If they are not motivating, you be the one.
+            <br /> If they are not helpful, you help yourself.
+            <br />
+            <br /> I know it is very easy to say. Give your best and if things
+            still do not work, you always have the option to leave it. But then,
+            you won't regret that you didn't try.
+            <br />
+            <br /> I hope this helps! Best of Luck!"
+          </i>
+        </SectionTitle>
       </Section>
     </Layout>
   );
