@@ -1,7 +1,7 @@
 ---
 path: "/distro"
-cover: "../2020-06-29/distro.png"
-date: "2020-06-29"
+cover: "../2020-08-04/distro.png"
+date: "2020-08-04"
 title: "Distro! Discord Clone"
 tags: [NextJS, apollo, typescript, emotionJS, hooks]
 published: true
