@@ -8,7 +8,8 @@ published: true
 featured: false
 ---
 
-[Frontend](https://github.com/jojonicho/distro) - [Backend](https://github.com/jojonicho/node-graphql-jwt-auth)
+[Live Demo](https://distro.vercel.app)<br/>
+[Frontend](https://github.com/jojonicho/distro) - [Backend](https://github.com/jojonicho/distro-backend)
 
 # Distro! A Discord Clone.
 
