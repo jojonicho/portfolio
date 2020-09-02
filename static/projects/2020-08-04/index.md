@@ -13,7 +13,7 @@ featured: false
 
 # Discord Clone​ with NextJS, Typescript, and Apollo GraphQL
 
-![distro](https://github.com/jojonicho/portfolio/blob/master/static/projects/2020-08-04/distro.gif)
+![distro](https://github.com/jojonicho/portfolio/blob/master/static/projects/2020-08-04/distro.gif?raw=true)
 
 - Chat implementation using Apollo GraphQL Subscriptions.
 - Typescript and styled with Emotion.js.

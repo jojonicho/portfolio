@@ -8,7 +8,7 @@ published: true
 featured: false
 ---
 
-[Live Demo](https://cherrlinker.vercel.app)<br/>
+[Live Demo](https://cherrylinker.vercel.app)<br/>
 [Frontend](https://github.com/jojonicho/linker) - [Backend](https://github.com/jojonicho/linker-backend)
 
 # Notion/Google Docs Clone​ with NextJS, Typescript, and Apollo GraphQL
