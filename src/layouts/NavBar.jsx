@@ -39,7 +39,8 @@ const NavBar = () => (
     </StyledLink>
     <Nav>
       <a
-        href="s.id/
+        is
+        href="https://s.id/
 jojonicho-resume"
       >
         CV
