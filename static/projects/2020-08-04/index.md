@@ -11,12 +11,9 @@ featured: false
 [Live Demo](https://distro.vercel.app)<br/>
 [Frontend](https://github.com/jojonicho/distro) - [Backend](https://github.com/jojonicho/distro-backend)
 
-# Distro! A Discord Clone.
+# Discord Clone​ with NextJS, Typescript, and Apollo GraphQL
 
-A discord clone built with NextJS, Typescript, and ApolloGraphQL.
-![gif-tierlist](./distro.png)
-
-**Discord Clone with NextJS, Typescript, and Apollo GraphQL**<br>
+![distro](https://github.com/jojonicho/portfolio/blob/master/static/projects/2020-08-04/distro.gif)
 
 - Chat implementation using Apollo GraphQL Subscriptions.
 - Typescript and styled with Emotion.js.
@@ -27,7 +24,7 @@ A discord clone built with NextJS, Typescript, and ApolloGraphQL.
 
 ## Installation
 
-Tierlist requires NextJS to run.
+Distro requires NextJS to run.
 
 ```sh
 git clone https://github.com/jojonicho/distro.git

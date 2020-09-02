@@ -38,7 +38,12 @@ const NavBar = () => (
       <SVG name="Logo" />
     </StyledLink>
     <Nav>
-      <a href="https://cv.jojonicho.wtf">CV</a>
+      <a
+        href="s.id/
+jojonicho-resume"
+      >
+        CV
+      </a>
       <Link to="/blog">Blog</Link>
     </Nav>
   </Headroom>

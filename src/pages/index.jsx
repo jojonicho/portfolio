@@ -57,7 +57,7 @@ const Index = ({ data }) => {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 3000,
     speed: 700,
     swipeToSlide: true,
   };
@@ -151,6 +151,12 @@ const Index = ({ data }) => {
       <Section>
         <SectionTitle center={true}>
           <i>
+            To test in hope of a result... <br />
+            is an action to be praised.
+            <br />
+            We only covet that which has value
+          </i>
+          {/* <i>
             "Take it as a challenge, push your limits, you have come miles away,
             it is just few meters now.
             <br />
@@ -168,7 +174,7 @@ const Index = ({ data }) => {
             you won't regret that you didn't try.
             <br />
             <br /> I hope this helps! Best of Luck!"
-          </i>
+          </i> */}
         </SectionTitle>
       </Section>
     </Layout>

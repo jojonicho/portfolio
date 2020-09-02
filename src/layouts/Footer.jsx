@@ -24,7 +24,6 @@ const Footer = () => (
   <Wrapper>
     <Text>
       <span>
-        With ❤️ by{" "}
         <CustomLink href="https://www.github.com/jojonicho">
           @jojonicho
         </CustomLink>
