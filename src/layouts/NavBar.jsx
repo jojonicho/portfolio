@@ -40,8 +40,7 @@ const NavBar = () => (
     <Nav>
       <a
         is
-        href="https://s.id/
-jojonicho-resume"
+        href="https://docs.google.com/document/d/16Sq38YBPO5pXOXhL7qezbZIY2xVN4oTFLJKVICiynDw/export?format=pdf"
       >
         CV
       </a>
