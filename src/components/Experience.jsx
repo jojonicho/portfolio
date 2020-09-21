@@ -2,6 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const Wrapper = styled.article`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
   position: relative;
   z-index: 100;
@@ -22,6 +25,11 @@ const Wrapper = styled.article`
     flex-basis: 100%;
     max-width: 100%;
     width: 100%;
+  }
+
+  &:hover {
+    box-shadow: ${(props) => props.theme.shadow.feature.small.hover};
+    transform: scale(1.04);
   }
 `;
 
@@ -51,9 +59,6 @@ const Information = styled.div`
     display: inline-block;
     color: ${(props) => props.theme.colors.black.base};
     transition: all ${(props) => props.theme.transitions.default.duration};
-    &:hover {
-      color: ${(props) => props.theme.colors.primary.base};
-    }
   }
   font-size: calc(0.2vw + 0.65rem);
   text-align: center;
@@ -68,10 +73,17 @@ const Title = styled.h1`
   text-align: center;
 `;
 
+const Img = styled.img`
+  // width: 100%;
+  // min-width: 200px;
+  min-height: 40px;
+  max-height: 100px;
+`;
+
 const Experience = ({ company, position, image, startDate, endDate }) => (
   <Wrapper>
     <Image>
-      <img src={image} />
+      <Img src={image} />
       <Information>
         <Title>{position}</Title>
         <Date>

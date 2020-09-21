@@ -125,7 +125,7 @@ const AnimatedIntro = () => {
         </Rotate>
       </SVGContainer>
       <SubTitle>
-        I Love to <strong>Learn</strong> and <strong>Code</strong>!
+        I Love to <strong>Code</strong> and <strong>Learn</strong>
       </SubTitle>
       <Affiliates />
     </Header>

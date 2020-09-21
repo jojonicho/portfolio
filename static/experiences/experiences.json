@@ -1,13 +1,26 @@
 {
   "node": [
     {
-      "company": "Mekari",
+      "company": "OY! Indonesia",
       "position": "Software Engineer Intern",
-      "image": "https://mekari.com/wp-content/uploads/2019/03/logo-mekari.svg",
-      "startDate": "2020-07-13",
+      "image": "https://oyindonesia.com/wp-content/uploads/2019/12/logo-1.png",
+      "startDate": "Sep 2020",
       "endDate": "Present",
       "summary": "",
       "highlights": ["Started the internship!"]
+    },
+    {
+      "company": "Mekari",
+      "position": "Software Engineer Intern",
+      "image": "https://mekari.com/wp-content/uploads/2019/03/logo-mekari.svg",
+      "startDate": "Jul 2020",
+      "endDate": "Sep 2020",
+      "summary": "",
+      "highlights": [
+        "Developed and automated access management backend system to multiple services using Selenium and AWS (Amplify, Lambda, Secrets Manager, S3).",
+        "Utilized Docker, AWS-CLI, and serverless CLI to create AWS Lambda layer environment before deployment.",
+        "Developed access management frontend using React, Typescript, including a personal UI-kit for Mekari."
+      ]
     }
   ]
 }

@@ -1,10 +1,10 @@
 ---
-path: "/freshman-year"
-cover: "./freshman.png"
+path: "/freshmen-year"
+cover: "./freshmen.png"
 date: "2020-07-05"
 title: "My Freshman Year Studying CS: Only The Important Stuffs"
 tags: [university]
-published: false
+published: true
 featured: true
 ---
 

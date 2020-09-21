@@ -1,7 +1,7 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import React from "react";
+import { Helmet } from "react-helmet";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
 
 const SEO = ({ title, description, banner, pathname, article }) => (
   <StaticQuery
@@ -28,52 +28,52 @@ const SEO = ({ title, description, banner, pathname, article }) => (
         title: title || defaultTitle,
         description: defaultDescription || description,
         image: `${siteUrl}${banner || defaultBanner}`,
-        url: `${siteUrl}${pathname || '/'}`,
+        url: `${siteUrl}${pathname || "/"}`,
       };
-      const realPrefix = pathPrefix === '/' ? '' : pathPrefix;
+      const realPrefix = pathPrefix === "/" ? "" : pathPrefix;
       let schemaOrgJSONLD = [
         {
-          '@context': 'http://schema.org',
-          '@type': 'WebSite',
-          '@id': siteUrl,
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "@id": siteUrl,
           url: siteUrl,
           name: defaultTitle,
-          alternateName: titleAlt || '',
+          alternateName: titleAlt || "",
         },
       ];
       if (article) {
         schemaOrgJSONLD = [
           {
-            '@context': 'http://schema.org',
-            '@type': 'BlogPosting',
-            '@id': seo.url,
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": seo.url,
             url: seo.url,
             name: title,
-            alternateName: titleAlt || '',
+            alternateName: titleAlt || "",
             headline: title,
             image: {
-              '@type': 'ImageObject',
+              "@type": "ImageObject",
               url: seo.image,
             },
             description: seo.description,
             datePublished: buildTime,
             dateModified: buildTime,
             author: {
-              '@type': 'Person',
+              "@type": "Person",
               name: author,
             },
             publisher: {
-              '@type': 'Organization',
+              "@type": "Organization",
               name: author,
               logo: {
-                '@type': 'ImageObject',
+                "@type": "ImageObject",
                 url: siteUrl + realPrefix + logo,
               },
             },
             isPartOf: siteUrl,
             mainEntityOfPage: {
-              '@type': 'WebSite',
-              '@id': siteUrl,
+              "@type": "WebSite",
+              "@id": siteUrl,
             },
           },
         ];
@@ -92,7 +92,7 @@ const SEO = ({ title, description, banner, pathname, article }) => (
 
             {/* OpenGraph  */}
             <meta property="og:url" content={seo.url} />
-            <meta property="og:type" content={article ? 'article' : null} />
+            <meta property="og:type" content={article ? "article" : null} />
             <meta property="og:title" content={seo.title} />
             <meta property="og:description" content={seo.description} />
             <meta property="og:image" content={seo.image} />

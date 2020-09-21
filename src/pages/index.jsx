@@ -1,10 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
 import styled from "@emotion/styled";
 
-import { PostList, BlogList, AnimatedIntro } from "components";
+import { PostList, BlogList, AnimatedIntro, SEO } from "components";
 import { Layout } from "layouts";
 import Pulse from "react-reveal";
 import Fade from "react-reveal/Fade";
@@ -12,6 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Experience from "../components/Experience";
+import pic from "../../static/posts/2020-07-05/freshmen.png";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -63,7 +63,8 @@ const Index = ({ data }) => {
   };
   return (
     <Layout>
-      <Helmet title={`Portfolio of Jonathan Nicholas`} />
+      {/* <Helmet title={`Portfolio of Jonathan Nicholas`} /> */}
+      {/* <SEO description={"Portfolio of Jonathan Nicholas"} banner={pic} /> */}
       <Fade duration={1300}>
         <Section>
           <AnimatedIntro />
@@ -131,19 +132,19 @@ const Index = ({ data }) => {
       <Section>
         <SectionTitle>About Me</SectionTitle>
         <Container>
-          Software Engineer Intern at Mekari
+          Software Engineer Intern at OY! Indonesia
           <br />
           Universitas Indonesia, Sophomore
           <br />
           Current GPA: 3.92/4.00
+          <br />
+          Member of BEM, COMPFEST, RISTEK, KMK
           <br />
           Sea Undergraduate Scholarship 2019 Awardee
           <br />
           Third Winner of Datavidia 2020
           <br />
           Third Winner of JOINTS Data Mining 2020
-          <br />
-          Organizations: Ristek, BEM, KMK
           <br />
           Huge fan of Mrs. GREEN APPLE and Aimer
         </Container>
