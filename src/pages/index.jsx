@@ -130,11 +130,11 @@ const Index = ({ data }) => {
       <Section>
         <SectionTitle>About Me</SectionTitle>
         <Container>
-          Software Engineer Intern at OY! Indonesia
-          <br />
           Universitas Indonesia, Sophomore
           <br />
           Current GPA: 3.92/4.00
+          <br />
+          Software Engineer Intern at OY! Indonesia
           <br />
           Member of BEM, COMPFEST, RISTEK, KMK
           <br />
