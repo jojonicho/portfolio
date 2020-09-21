@@ -4,7 +4,7 @@ module.exports = {
   titleAlt: "Jonathan Yao", // Title for JSONLD
   description: "Portfolio of Jonathan Nicholas",
   url: "https://jojonicho.gtsb.io", // Domain of your site. No trailing slash!
-  siteUrl: "https://jojonicho.gtsb.io", // url + pathPrefix
+  siteUrl: "https://jojonicho.gtsb.io/", // url + pathPrefix
   siteLanguage: "en", // Language Tag on <html> element
   logo: "static/logo/profpic.png", // Used for SEO
   banner: "static/logo/jojonicho.svg",
