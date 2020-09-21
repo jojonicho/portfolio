@@ -27,8 +27,8 @@ const SEO = ({ title, description, banner, pathname, article }) => (
       const seo = {
         title: title || defaultTitle,
         description: defaultDescription || description,
-        image: `${siteUrl}${banner || defaultBanner}`,
         url: `${siteUrl}${pathname || "/"}`,
+        image: `${siteUrl}/${banner || defaultBanner}`,
       };
       const realPrefix = pathPrefix === "/" ? "" : pathPrefix;
       let schemaOrgJSONLD = [
