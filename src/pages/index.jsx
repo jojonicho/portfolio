@@ -63,8 +63,6 @@ const Index = ({ data }) => {
   };
   return (
     <Layout>
-      {/* <Helmet title={`Portfolio of Jonathan Nicholas`} /> */}
-      {/* <SEO description={"Portfolio of Jonathan Nicholas"} banner={pic} /> */}
       <Fade duration={1300}>
         <Section>
           <AnimatedIntro />
