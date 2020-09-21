@@ -7,7 +7,7 @@ module.exports = {
   siteUrl: "https://jojonicho.gtsb.io/", // url + pathPrefix
   siteLanguage: "en", // Language Tag on <html> element
   logo: "/logo/profpic.png", // Used for SEO
-  banner: "/logo/jojonicho.svg",
+  banner: "/logo/freshmen.png",
   // JSONLD / Manifest
   favicon: "static/logo/profpic.png", // Used for manifest favicon generation
   shortName: "jojonicho", // shortname for manifest. MUST be shorter than 12 characters
