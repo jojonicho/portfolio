@@ -6,7 +6,7 @@ module.exports = {
   url: "https://jojonicho.gtsb.io", // Domain of your site. No trailing slash!
   siteUrl: "https://jojonicho.gtsb.io", // url + pathPrefix
   siteLanguage: "en", // Language Tag on <html> element
-  logo: "/logo/profpic.png", // Used for SEO
+  logo: "/static/logo/profpic.png", // Used for SEO
   banner: "/logo/jojonicho.svg",
   // JSONLD / Manifest
   favicon: "/logo/profpic.png", // Used for manifest favicon generation
