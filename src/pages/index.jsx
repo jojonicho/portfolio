@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-import { PostList, BlogList, AnimatedIntro, SEO } from "components";
+import { PostList, BlogList, AnimatedIntro } from "components";
 import { Layout } from "layouts";
 import Pulse from "react-reveal";
 import Fade from "react-reveal/Fade";
@@ -14,6 +14,8 @@ import Experience from "../components/Experience";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
+  color: ${(props) =>
+    props.dark ? props.theme.colors.white.base : props.theme.colors.black.base};
   display: flex;
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     padding: 0.5rem 2rem 2rem;
@@ -31,16 +33,22 @@ const PostWrapper = styled.div`
   }
 `;
 
-const Section = styled.div``;
+const Section = styled.div`
+  background: ${(props) =>
+    props.dark
+      ? props.theme.gradient.rightToLeft
+      : props.theme.colors.white.base};
+`;
 const SectionTitle = styled.div`
   font-weight: bold;
-  color: ${(props) => props.theme.colors.black.base};
+  color: ${(props) =>
+    props.dark ? props.theme.colors.white.base : props.theme.colors.black.base};
   font-size: calc(0.5vw + 20px);
   margin: calc(0.5vw + 10px) calc(1.5vw + 10px);
   text-align: ${(props) => (props.center ? "center" : "left")};
-
+  padding-top: 1rem;
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
-    margin: 1.5rem 1.5rem;
+    margin: 1rem 1.5rem;
   }
 `;
 
@@ -89,8 +97,8 @@ const Index = ({ data }) => {
         </Section>
       </Fade>
       <Fade duration={900}>
-        <Section>
-          <SectionTitle>Experience</SectionTitle>
+        <Section dark>
+          <SectionTitle dark>Experience</SectionTitle>
           <PostWrapper>
             {experiences.map(
               ({ company, position, startDate, endDate, image }) => {
@@ -130,9 +138,9 @@ const Index = ({ data }) => {
           </PostWrapper>
         </Section>
       </Fade>
-      <Section>
-        <SectionTitle>About Me</SectionTitle>
-        <Container>
+      <Section dark>
+        <SectionTitle dark>About Me</SectionTitle>
+        <Container dark>
           Universitas Indonesia, Sophomore
           <br />
           Current GPA: 3.92/4.00

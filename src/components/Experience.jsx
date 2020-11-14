@@ -9,6 +9,7 @@ const Wrapper = styled.article`
   padding-bottom: 1vw;
   border-radius: ${(props) => props.theme.borderRadius.default};
   transition: ${(props) => props.theme.transitions.boom.transition};
+  background: ${(props) => props.theme.colors.white.base};
   max-width: calc(99.9% * 1 / 3 - 2.5rem);
   width: calc(99.9% * 1 / 3 - 2.5rem);
   box-shadow: ${(props) => props.theme.shadow.feature.smaller.default};
