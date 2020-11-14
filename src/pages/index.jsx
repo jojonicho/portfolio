@@ -11,7 +11,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Experience from "../components/Experience";
-import pic from "../../static/posts/2020-07-05/freshmen.png";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -26,8 +25,7 @@ const PostWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 2rem 4rem 1rem 4rem;
+  justify-content: center;
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     margin: 2vw 1rem;
   }
@@ -35,11 +33,15 @@ const PostWrapper = styled.div`
 
 const Section = styled.div``;
 const SectionTitle = styled.div`
+  font-weight: bold;
   color: ${(props) => props.theme.colors.black.base};
-  font-size: calc(0.8vw + 20px);
-  font-weight: 300;
+  font-size: calc(0.5vw + 20px);
   margin: calc(0.5vw + 10px) calc(1.5vw + 10px);
   text-align: ${(props) => (props.center ? "center" : "left")};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
+    margin: 1.5rem 2rem;
+  }
 `;
 
 const CarouselContainer = styled.div`
@@ -112,7 +114,7 @@ const Index = ({ data }) => {
           <PostWrapper>
             {posts.map(({ node }) => {
               const { id, excerpt, frontmatter } = node;
-              const { cover, path, title, date } = frontmatter;
+              const { cover, path, title, date, white } = frontmatter;
               return (
                 <PostList
                   key={id}
@@ -120,6 +122,7 @@ const Index = ({ data }) => {
                   path={path}
                   title={title}
                   date={date}
+                  white={white}
                   excerpt={excerpt}
                 />
               );
@@ -230,6 +233,7 @@ export const query = graphql`
             title
             path
             tags
+            white
             date(formatString: "MM.DD.YYYY")
             cover {
               childImageSharp {

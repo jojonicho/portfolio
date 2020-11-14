@@ -6,11 +6,14 @@ import PropTypes from "prop-types";
 import theme from "../../config/theme";
 
 const Wrapper = styled.article`
-  margin-bottom: 2rem;
+  margin: 0 0.75rem 2rem 0.75rem;
   position: relative;
   z-index: 100;
   border-radius: ${(props) => props.theme.borderRadius.default};
-  box-shadow: ${(props) => props.theme.shadow.feature.small.default};
+  box-shadow: ${(props) =>
+    props.white
+      ? props.theme.shadow.feature.smaller.default
+      : props.theme.shadow.feature.small.default};
   transition: ${(props) => props.theme.transitions.boom.transition};
   height: 17rem;
   flex-basis: calc(99.9% * 1 / 3 - 2.5rem);
@@ -18,7 +21,10 @@ const Wrapper = styled.article`
   width: calc(99.9% * 1 / 3 - 2.5rem);
 
   &:hover {
-    box-shadow: ${(props) => props.theme.shadow.feature.small.hover};
+    box-shadow: ${(props) =>
+      props.white
+        ? props.theme.shadow.feature.smaller.hover
+        : props.theme.shadow.feature.small.hover};
     transform: scale(1.04);
   }
 
@@ -59,13 +65,7 @@ const StyledLink = styled(Link)`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(46, 50, 70, 0) 0%,
-      rgba(46, 50, 70, 0.2) 40%,
-      rgba(46, 50, 70, 0.4) 60%,
-      rgba(46, 50, 70, 0.6) 100%
-    );
+    background: rgba(46, 50, 70, 0.1);
     z-index: -10;
     border-radius: ${theme.borderRadius.default};
     transition: opacity ${theme.transitions.default.duration};
@@ -94,7 +94,10 @@ const Image = styled.div`
 `;
 
 const Info = styled.div`
-  color: ${(props) => props.theme.colors.white.light};
+  color: ${(props) =>
+    props.white
+      ? props.theme.colors.black.blue
+      : props.theme.colors.white.light};
   margin: 0 1rem 1.25rem 1.25rem;
   position: absolute;
   bottom: 0;
@@ -107,13 +110,13 @@ const Title = styled.h2`
   font-size: calc(0.2vw + 18px);
 `;
 
-const PostList = ({ cover, path, date, title, excerpt }) => (
-  <Wrapper>
+const PostList = ({ cover, path, date, title, excerpt, white }) => (
+  <Wrapper white={white}>
     <Image>
       <Img fluid={cover} />
     </Image>
-    <StyledLink to={path}>
-      <Info>
+    <StyledLink to={path} white={white}>
+      <Info white={white}>
         <span>{date}</span>
         <Title>{title}</Title>
         <span>{excerpt}</span>

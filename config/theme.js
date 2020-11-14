@@ -64,6 +64,10 @@ export const shadow = {
       default: "0 1px 7px 1px rgba(46, 50, 70, 0.2)",
       hover: "0 10px 45px rgba(46, 50, 70, 0.1)",
     },
+    smaller: {
+      default: "0 1px 7px 1px rgba(46, 50, 70, 0.1)",
+      hover: "0 10px 45px rgba(46, 50, 70, 0.05)",
+    },
   },
   text: {
     small: "0 5px 10px rgba(0, 0, 0, 0.25)",
@@ -107,7 +111,7 @@ export const theme = {
     big: "83.33333rem",
   },
   borderRadius: {
-    default: "0.4rem",
+    default: "0.75rem",
     round: "100rem",
   },
   transitions: {

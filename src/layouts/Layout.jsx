@@ -8,6 +8,14 @@ import { SEO } from "components";
 import { NavBar, Footer } from "layouts";
 import theme from "../../config/theme";
 import headroom from "../styles/headroom";
+import styled from "@emotion/styled";
+
+const Center = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+`;
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -58,9 +66,11 @@ const Layout = ({ children }) => (
       `}
     />
     <SEO />
-    <NavBar />
-    {children}
-    <Footer />
+    <Center>
+      <NavBar />
+      {children}
+      <Footer />
+    </Center>
   </ThemeProvider>
 );
 

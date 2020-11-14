@@ -42,7 +42,7 @@ const NavBar = () => (
         is
         href="https://docs.google.com/document/d/16Sq38YBPO5pXOXhL7qezbZIY2xVN4oTFLJKVICiynDw/export?format=pdf"
       >
-        CV
+        Resume
       </a>
       <Link to="/blog">Blog</Link>
     </Nav>

@@ -4,16 +4,13 @@ import styled from "@emotion/styled";
 const Wrapper = styled.article`
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 100;
+  align-items: space-between;
+  margin: 0 0.75rem 1rem 0.75rem;
   border-radius: ${(props) => props.theme.borderRadius.default};
   transition: ${(props) => props.theme.transitions.boom.transition};
-  flex-basis: calc(99.9% * 1 / 3 - 2.5rem);
   max-width: calc(99.9% * 1 / 3 - 2.5rem);
   width: calc(99.9% * 1 / 3 - 2.5rem);
-  box-shadow: ${(props) => props.theme.shadow.feature.small.default};
+  box-shadow: ${(props) => props.theme.shadow.feature.smaller.default};
 
   @media (max-width: 1000px) {
     flex-basis: calc(99.9% * 1 / 2 - 1rem);
@@ -28,7 +25,7 @@ const Wrapper = styled.article`
   }
 
   &:hover {
-    box-shadow: ${(props) => props.theme.shadow.feature.small.hover};
+    box-shadow: ${(props) => props.theme.shadow.feature.smaller.hover};
     transform: scale(1.04);
   }
 `;

@@ -7,7 +7,7 @@ import { Layout } from "layouts";
 import styled from "@emotion/styled";
 
 const Wrapper = styled.div`
-  margin-top: 3rem;
+  margin-top: 4rem;
 `;
 
 const Blog = ({ data }) => {
