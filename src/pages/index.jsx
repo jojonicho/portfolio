@@ -40,7 +40,7 @@ const SectionTitle = styled.div`
   text-align: ${(props) => (props.center ? "center" : "left")};
 
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
-    margin: 1.5rem 2rem;
+    margin: 1.5rem 1.5rem;
   }
 `;
 

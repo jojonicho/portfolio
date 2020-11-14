@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import theme from "../../config/theme";
 
 const Wrapper = styled.article`
-  margin: 0 0.75rem 2rem 0.75rem;
   position: relative;
   z-index: 100;
   border-radius: ${(props) => props.theme.borderRadius.default};
@@ -27,12 +26,14 @@ const Wrapper = styled.article`
         : props.theme.shadow.feature.small.hover};
     transform: scale(1.04);
   }
+  margin: 0 0.75rem 2rem 0.75rem;
 
   @media (max-width: 1000px) {
     flex-basis: calc(99.9% * 1 / 2 - 1rem);
     max-width: calc(99.9% * 1 / 2 - 1rem);
     width: calc(99.9% * 1 / 2 - 1rem);
     height: 18rem;
+    margin: 0 0.35rem 2rem 0.35rem;
   }
 
   @media (max-width: 700px) {
@@ -40,6 +41,7 @@ const Wrapper = styled.article`
     max-width: 100%;
     width: 100%;
     height: 12rem;
+    margin: 0 0 1rem 0;
   }
 `;
 

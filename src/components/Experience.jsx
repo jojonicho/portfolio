@@ -3,25 +3,32 @@ import styled from "@emotion/styled";
 
 const Wrapper = styled.article`
   display: flex;
-  justify-content: center;
-  align-items: space-between;
-  margin: 0 0.75rem 1rem 0.75rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 1vw;
   border-radius: ${(props) => props.theme.borderRadius.default};
   transition: ${(props) => props.theme.transitions.boom.transition};
   max-width: calc(99.9% * 1 / 3 - 2.5rem);
   width: calc(99.9% * 1 / 3 - 2.5rem);
   box-shadow: ${(props) => props.theme.shadow.feature.smaller.default};
+  height: 8rem;
+  margin: 0 0.75rem 2rem 0.75rem;
 
   @media (max-width: 1000px) {
     flex-basis: calc(99.9% * 1 / 2 - 1rem);
     max-width: calc(99.9% * 1 / 2 - 1rem);
     width: calc(99.9% * 1 / 2 - 1rem);
+    height: 7rem;
+    margin: 0 0.35rem 2rem 0.35rem;
   }
 
   @media (max-width: 700px) {
     flex-basis: 100%;
     max-width: 100%;
     width: 100%;
+    height: 7rem;
+    margin: 0 0 1rem 0;
   }
 
   &:hover {
@@ -81,13 +88,13 @@ const Experience = ({ company, position, image, startDate, endDate }) => (
   <Wrapper>
     <Image>
       <Img src={image} />
-      <Information>
-        <Title>{position}</Title>
-        <Date>
-          {startDate} - {endDate}
-        </Date>
-      </Information>
     </Image>
+    <Information>
+      <Title>{position}</Title>
+      <Date>
+        {startDate} - {endDate}
+      </Date>
+    </Information>
   </Wrapper>
 );
 
