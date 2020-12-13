@@ -2,10 +2,19 @@
   "node": [
     {
       "company": "OY! Indonesia",
+      "position": "Software Engineer",
+      "image": "https://oyindonesia.com/wp-content/uploads/2019/12/logo-1.png",
+      "startDate": "Dec 2020",
+      "endDate": "Present",
+      "summary": "",
+      "highlights": ["Got promoted!"]
+    },
+    {
+      "company": "OY! Indonesia",
       "position": "Software Engineer Intern",
       "image": "https://oyindonesia.com/wp-content/uploads/2019/12/logo-1.png",
       "startDate": "Sep 2020",
-      "endDate": "Present",
+      "endDate": "Dec 2020",
       "summary": "",
       "highlights": ["Started the internship!"]
     },
