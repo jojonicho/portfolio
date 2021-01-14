@@ -19,7 +19,7 @@ const Container = styled.div`
     props.dark ? props.theme.colors.white.base : props.theme.colors.black.base};
   display: flex;
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
-    padding: 0.5rem 2rem 2rem;
+    padding: 1rem 1.5rem;
     font-size: 0.8rem;
   }
 `;
@@ -148,21 +148,20 @@ const Index = ({ data }) => {
         <SectionTitle dark>About Me</SectionTitle>
         <Container dark>
           <p tw="text-base">
-            Universitas Indonesia, Sophomore
+            • Universitas Indonesia, Sophomore
             <br />
-            Current GPA: 3.92/4.00
+            • Current GPA: 3.92/4.00
             <br />
-            Software Engineer Intern at OY! Indonesia
+            • Software Engineer at OY! Indonesia
             <br />
-            Member of BEM, COMPFEST, RISTEK, KMK
+            • Member of BEM, COMPFEST, RISTEK, KMK
             <br />
-            Sea Undergraduate Scholarship 2019 Awardee
+            • Sea Undergraduate Scholarship 2019 Awardee
             <br />
-            Third Winner of Datavidia 2020
+            • Third Winner of Datavidia 2020
             <br />
-            Third Winner of JOINTS Data Mining 2020
-            <br />
-            Huge fan of Mrs. GREEN APPLE and Aimer
+            • Third Winner of JOINTS Data Mining 2020
+            <br />• Huge fan of Mrs. GREEN APPLE and Aimer
           </p>
         </Container>
       </Section>
