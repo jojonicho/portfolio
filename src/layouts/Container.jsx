@@ -1,21 +1,21 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.section`
-  text-align: ${props => (props.center ? 'center' : '')};
+  text-align: ${(props) => (props.center ? "center" : "")};
   margin: auto;
   padding: 2rem 1.5rem 1rem 1.5rem;
   width: 50%;
-  max-width: ${props => props.theme.layout[props.type]};
+  max-width: ${(props) => props.theme.layout[props.type]};
   height: 100%;
   flex: 1;
 
-  @media (max-width: ${props => props.theme.breakpoints.m}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.l}) {
     width: 90%;
   }
 
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     width: 100%;
     padding: 0.7rem 0.7rem;
     // padding: 0.7rem;

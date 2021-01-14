@@ -29,7 +29,7 @@ const SVGContainer = styled.div`
   flex-wrap: wrap;
   width: calc(4vw + 40px);
   height: calc(4vw + 40px);
-  margin-top: calc(1rem + 0.5vw);
+  margin-top: calc(1rem + 0.1vw);
   @media (max-width: ${(props) => props.theme.breakpoints.xs}) {
     margin-top: calc(0.4rem + 0.4vw);
   }

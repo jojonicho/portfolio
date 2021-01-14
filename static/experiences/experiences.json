@@ -3,33 +3,40 @@
     {
       "company": "OY! Indonesia",
       "position": "Software Engineer",
-      "image": "https://oyindonesia.com/wp-content/uploads/2019/12/logo-1.png",
-      "startDate": "Dec 2020",
+      "src": "./oy.png",
+      "startDate": "Jan 2021",
       "endDate": "Present",
-      "summary": "",
-      "highlights": ["Got promoted!"]
+      "highlights": [
+        "Promoted to a part-time position based on performance throughout 4 months of internship."
+      ],
+      "background": "./bg-1.png"
     },
     {
       "company": "OY! Indonesia",
       "position": "Software Engineer Intern",
-      "image": "https://oyindonesia.com/wp-content/uploads/2019/12/logo-1.png",
+      "src": "./oy.png",
       "startDate": "Sep 2020",
       "endDate": "Dec 2020",
-      "summary": "",
-      "highlights": ["Started the internship!"]
+      "highlights": [
+        "Applied Java conventions such as DAO (Data Access Object) and MCS (Model, Controller, Service) Backend architecture.",
+        "Created unit tests and mock tests on top of validation middlewares with RabbitMQ schedulers for Backend API.",
+        "Implemented complex multi-step form and data table Frontend using React and Oy’s Fortune UI.",
+        "Developed end-to-end Promo Code feature on the mobile app using Flutter and BloC state management."
+      ],
+      "background": "./bg-2.png"
     },
     {
       "company": "Mekari",
       "position": "Software Engineer Intern",
-      "image": "https://mekari.com/wp-content/uploads/2019/03/logo-mekari.svg",
+      "src": "./mekari.png",
       "startDate": "Jul 2020",
       "endDate": "Sep 2020",
-      "summary": "",
       "highlights": [
         "Developed and automated access management backend system to multiple services using Selenium and AWS (Amplify, Lambda, Secrets Manager, S3).",
         "Utilized Docker, AWS-CLI, and serverless CLI to create AWS Lambda layer environment before deployment.",
         "Developed access management frontend using React, Typescript, including a personal UI-kit for Mekari."
-      ]
+      ],
+      "background": "./bg-3.png"
     }
   ]
 }

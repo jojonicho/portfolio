@@ -1,14 +1,14 @@
-import "typeface-open-sans";
-import "typeface-josefin-sans";
-
-import React from "react";
-import { ThemeProvider, css, Global } from "@emotion/react";
-import PropTypes from "prop-types";
+import { Global, ThemeProvider } from "@emotion/react";
+import { css } from "twin.macro";
+import styled from "@emotion/styled";
 import { SEO } from "components";
-import { NavBar, Footer } from "layouts";
+import { Footer, NavBar } from "layouts";
+import PropTypes from "prop-types";
+import React from "react";
+import "typeface-josefin-sans";
+import "typeface-open-sans";
 import theme from "../../config/theme";
 import headroom from "../styles/headroom";
-import styled from "@emotion/styled";
 
 const Center = styled.div`
   display: flex;
@@ -20,6 +20,7 @@ const Center = styled.div`
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <link rel="preload" />
+    {/* <GlobalStyles /> */}
     <Global
       styles={css`
         *,
@@ -45,7 +46,6 @@ const Layout = ({ children }) => (
           flex-direction: column;
         }
         body {
-          overflow-x: hidden;
           widht: 100vw;
           display: flex;
           flex-direction: column;
@@ -61,6 +61,9 @@ const Layout = ({ children }) => (
         }
         h1 {
           font-family: ${theme.fontFamily.heading};
+        }
+        p {
+          margin: 0;
         }
         ${headroom}
       `}

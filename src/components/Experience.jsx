@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import Img from "gatsby-image";
 
 const Wrapper = styled.article`
   display: flex;
@@ -20,7 +21,7 @@ const Wrapper = styled.article`
     flex-basis: calc(99.9% * 1 / 2 - 1rem);
     max-width: calc(99.9% * 1 / 2 - 1rem);
     width: calc(99.9% * 1 / 2 - 1rem);
-    height: 7rem;
+    min-height: 7rem;
     margin: 0 0.35rem 2rem 0.35rem;
   }
 
@@ -28,7 +29,7 @@ const Wrapper = styled.article`
     flex-basis: 100%;
     max-width: 100%;
     width: 100%;
-    height: 7rem;
+    min-height: 7rem;
     margin: 0 0 1rem 0;
   }
 
@@ -78,17 +79,10 @@ const Title = styled.h1`
   text-align: center;
 `;
 
-const Img = styled.img`
-  // width: 100%;
-  // min-width: 200px;
-  min-height: 40px;
-  max-height: 100px;
-`;
-
-const Experience = ({ company, position, image, startDate, endDate }) => (
+const Experience = ({ position, image, startDate, endDate }) => (
   <Wrapper>
     <Image>
-      <Img src={image} />
+      <Img fixed={image.childImageSharp.fixed} />
     </Image>
     <Information>
       <Title>{position}</Title>

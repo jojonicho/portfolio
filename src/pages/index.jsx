@@ -1,16 +1,17 @@
-import React from "react";
-import { graphql } from "gatsby";
-import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-
-import { PostList, BlogList, AnimatedIntro } from "components";
+import { AnimatedIntro, BlogList, PostList } from "components";
+import { Sticky } from "components/Sticky";
+import { graphql } from "gatsby";
 import { Layout } from "layouts";
+import PropTypes from "prop-types";
+import React from "react";
 import Pulse from "react-reveal";
 import Fade from "react-reveal/Fade";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import Experience from "../components/Experience";
+import tw from "twin.macro";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -39,11 +40,11 @@ const Section = styled.div`
       ? props.theme.gradient.rightToLeft
       : props.theme.colors.white.base};
 `;
-const SectionTitle = styled.div`
-  font-weight: bold;
+const SectionTitle = styled.p`
+  font-weight: 900;
   color: ${(props) =>
     props.dark ? props.theme.colors.white.base : props.theme.colors.black.base};
-  font-size: calc(0.5vw + 20px);
+  font-size: calc(0.4vw + 30px);
   margin: calc(0.5vw + 10px) calc(1.5vw + 10px);
   text-align: ${(props) => (props.center ? "center" : "left")};
   padding-top: 1rem;
@@ -53,6 +54,8 @@ const SectionTitle = styled.div`
 `;
 
 const CarouselContainer = styled.div`
+  overflow-x: hidden;
+  padding-bottom: 3rem;
   margin-bottom: 15px;
   @media (max-width: ${(props) => props.theme.breakpoints.xs}) {
     margin-bottom: 50px;
@@ -96,26 +99,29 @@ const Index = ({ data }) => {
           </Pulse>
         </Section>
       </Fade>
-      <Fade duration={900}>
-        <Section dark>
-          <SectionTitle dark>Experience</SectionTitle>
-          <PostWrapper>
+      <Section dark>
+        <Fade duration={900}>
+          <SectionTitle css={tw`pt-8`} dark>
+            My Experiences
+          </SectionTitle>
+          <Sticky data={experiences} />
+          {/* <PostWrapper css={[tw`lg:hidden`]}>
             {experiences.map(
-              ({ company, position, startDate, endDate, image }) => {
+              ({ company, position, startDate, endDate, src }) => {
                 return (
                   <Experience
                     company={company}
                     position={position}
-                    image={image}
+                    image={src}
                     startDate={startDate}
                     endDate={endDate}
                   />
                 );
               }
             )}
-          </PostWrapper>
-        </Section>
-      </Fade>
+          </PostWrapper> */}
+        </Fade>
+      </Section>
       <Fade duration={900}>
         <Section>
           <SectionTitle>Featured Posts</SectionTitle>
@@ -141,21 +147,23 @@ const Index = ({ data }) => {
       <Section dark>
         <SectionTitle dark>About Me</SectionTitle>
         <Container dark>
-          Universitas Indonesia, Sophomore
-          <br />
-          Current GPA: 3.92/4.00
-          <br />
-          Software Engineer Intern at OY! Indonesia
-          <br />
-          Member of BEM, COMPFEST, RISTEK, KMK
-          <br />
-          Sea Undergraduate Scholarship 2019 Awardee
-          <br />
-          Third Winner of Datavidia 2020
-          <br />
-          Third Winner of JOINTS Data Mining 2020
-          <br />
-          Huge fan of Mrs. GREEN APPLE and Aimer
+          <p tw="text-base">
+            Universitas Indonesia, Sophomore
+            <br />
+            Current GPA: 3.92/4.00
+            <br />
+            Software Engineer Intern at OY! Indonesia
+            <br />
+            Member of BEM, COMPFEST, RISTEK, KMK
+            <br />
+            Sea Undergraduate Scholarship 2019 Awardee
+            <br />
+            Third Winner of Datavidia 2020
+            <br />
+            Third Winner of JOINTS Data Mining 2020
+            <br />
+            Huge fan of Mrs. GREEN APPLE and Aimer
+          </p>
         </Container>
       </Section>
       <Section>
@@ -220,9 +228,23 @@ export const query = graphql`
       node {
         company
         position
-        image
+        src {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         startDate
         endDate
+        highlights
+        background {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
     posts: allMarkdownRemark(

@@ -56,11 +56,6 @@ const Information = styled.div`
   flex-basis: 100%;
   max-width: 100%;
   width: 100%;
-  @media (max-width: 800px) {
-    flex-basis: 100%;
-    max-width: 100%;
-    width: 100%;
-  }
 `;
 
 const Date = styled.div`
