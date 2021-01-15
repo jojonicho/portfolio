@@ -26,7 +26,7 @@
     "@babel/core": "^7.10.1",
     "@emotion/babel-plugin": "^11.1.2",
     "@emotion/babel-preset-css-prop": "^11.0.0",
-    "@emotion/react": "^11.0.0-next.10",
+    "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0-next.12",
     "babel-plugin-emotion": "^10.0.17",
     "disqus-react": "^1.0.8",
