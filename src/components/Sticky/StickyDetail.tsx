@@ -36,14 +36,14 @@ export const StickyDetail: React.FC<StickyDetailProps> = ({
             <Img fluid={data.src.childImageSharp.fluid} />
           </div>
         </BgContainer>
-        <div tw="flex flex-col lg:h-screen justify-center mt-5 p-6 text-white">
-          <p tw="font-black text-2xl">{data.company}</p>
-          <p tw="font-black text-xl">{data.position}</p>
-          <p>
+        <div tw="flex flex-col lg:h-screen justify-center p-4 sm:p-6 text-white">
+          <p tw="font-black text-2xl sm:text-4xl">{data.company}</p>
+          <p tw="font-black text-xl sm:text-2xl">{data.position}</p>
+          <p tw="italic sm:text-lg">
             {data.startDate} - {data.endDate}
           </p>
           {data.highlights.map((highlight, idx) => (
-            <p key={idx} tw="text-base sm:text-lg mt-5">
+            <p key={idx} tw="text-sm sm:text-lg mt-4">
               • {highlight}
             </p>
           ))}

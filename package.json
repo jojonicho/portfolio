@@ -11,7 +11,8 @@
     "url": "https://github.com/jojonicho/jojonicho"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -p 3000 --host=0.0.0.0",
+    "develop": "gatsby develop -p 3000",
     "preload-fonts": "gatsby-preload-fonts",
     "build": "gatsby-preload-fonts && gatsby build",
     "serve": "gatsby serve",

@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import Experience from "../components/Experience";
 import tw from "twin.macro";
+import { ProjectsSlider } from "../components/ProjectsSlider";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -19,8 +20,7 @@ const Container = styled.div`
     props.dark ? props.theme.colors.white.base : props.theme.colors.black.base};
   display: flex;
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
-    padding: 1rem 1.5rem;
-    font-size: 0.8rem;
+    padding: 0rem 1.25rem 1rem 1.25rem;
   }
 `;
 
@@ -49,16 +49,7 @@ const SectionTitle = styled.p`
   text-align: ${(props) => (props.center ? "center" : "left")};
   padding-top: 1rem;
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
-    margin: 1rem 1.5rem;
-  }
-`;
-
-const CarouselContainer = styled.div`
-  overflow-x: hidden;
-  padding-bottom: 3rem;
-  margin-bottom: 15px;
-  @media (max-width: ${(props) => props.theme.breakpoints.xs}) {
-    margin-bottom: 50px;
+    margin: 0.5rem 1.25rem;
   }
 `;
 
@@ -66,14 +57,6 @@ const Index = ({ data }) => {
   const posts = data.posts.edges;
   const projects = data.projects.edges;
   const experiences = data.experiences.node;
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 700,
-    swipeToSlide: true,
-  };
   return (
     <Layout>
       <Fade duration={1300}>
@@ -81,29 +64,13 @@ const Index = ({ data }) => {
           <AnimatedIntro />
           <SectionTitle>Projects</SectionTitle>
           <Pulse duration={1100}>
-            <CarouselContainer>
-              <Slider {...settings}>
-                {projects.map(({ node }) => (
-                  <BlogList
-                    key={node.id}
-                    cover={node.frontmatter.cover.childImageSharp.fluid}
-                    path={node.frontmatter.path}
-                    title={node.frontmatter.title}
-                    date={node.frontmatter.date}
-                    tags={node.frontmatter.tags}
-                    excerpt={node.excerpt}
-                  />
-                ))}
-              </Slider>
-            </CarouselContainer>
+            <ProjectsSlider projects={projects} />
           </Pulse>
         </Section>
       </Fade>
       <Section dark>
         <Fade duration={900}>
-          <SectionTitle css={tw`pt-8`} dark>
-            My Experiences
-          </SectionTitle>
+          <SectionTitle dark>My Experiences</SectionTitle>
           <Sticky data={experiences} />
           {/* <PostWrapper css={[tw`lg:hidden`]}>
             {experiences.map(
@@ -150,30 +117,20 @@ const Index = ({ data }) => {
           <p tw="text-base">
             • Universitas Indonesia, Sophomore
             <br />
-            • Current GPA: 3.92/4.00
-            <br />
             • Software Engineer at OY! Indonesia
-            <br />
-            • Member of BEM, COMPFEST, RISTEK, KMK
-            <br />
-            • Sea Undergraduate Scholarship 2019 Awardee
-            <br />
-            • Third Winner of Datavidia 2020
-            <br />
-            • Third Winner of JOINTS Data Mining 2020
-            <br />• Huge fan of Mrs. GREEN APPLE and Aimer
+            <br />• Lead Software Engineer at COMPFEST
           </p>
         </Container>
       </Section>
       <Section>
-        <SectionTitle center={true}>
-          <i>
+        <SectionTitle center={true} css={tw`text-base sm:text-lg`}>
+          {/* <i>
             To test in hope of a result... <br />
             is an action to be praised.
             <br />
             We only covet that which has value
-          </i>
-          {/* <i>
+          </i> */}
+          <i>
             "Take it as a challenge, push your limits, you have come miles away,
             it is just few meters now.
             <br />
@@ -190,8 +147,8 @@ const Index = ({ data }) => {
             still do not work, you always have the option to leave it. But then,
             you won't regret that you didn't try.
             <br />
-            <br /> I hope this helps! Best of Luck!"
-          </i> */}
+            <br /> I hope this helps! Best of Luck!" - Anon
+          </i>
         </SectionTitle>
       </Section>
     </Layout>

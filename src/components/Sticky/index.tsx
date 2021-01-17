@@ -18,13 +18,17 @@ const variants = {
   },
 };
 
-export const BgContainer = styled.div`
+type BgImageProp = {
+  bgImage?: any;
+};
+
+export const BgContainer = styled.div<BgImageProp>`
   background-image: url(${(props) => props.bgImage});
   background-repeat: no-repeat;
   background-size: cover;
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = styled.div<BgImageProp>`
   background-image: url(${(props) => props.bgImage});
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,31 +78,32 @@ export const Sticky: React.FC<StickyProps> = ({ data }) => {
               <ImageContainer bgImage={bgImage} tw="lg:flex justify-center">
                 <div tw="flex ">
                   {image && (
-                    <motion.div
-                      variants={variants}
-                      initial="initial"
-                      transition={{ duration: 0.5 }}
-                      animate={
-                        inView
-                          ? {
-                              opacity: 1,
-                              scale: 1 + Math.random(),
-                            }
-                          : "exit"
-                      }
-                    >
-                      <AnimatePresence>
+                    <AnimatePresence>
+                      <motion.div
+                        variants={variants}
+                        initial="initial"
+                        transition={{
+                          type: "spring",
+                          bounce: 0.25,
+                          duration: 0.6,
+                        }}
+                        animate={
+                          inView
+                            ? { opacity: [0, 1], scale: [1.3, 1.35] }
+                            : "exit"
+                        }
+                      >
                         <BgContainer tw="flex flex-col justify-center items-center lg:w-full lg:h-full">
                           <div tw="w-full">
                             <Img fluid={image} />
-                            <h1 tw="mt-5 text-transparent">
+                            <h1 tw="text-transparent">
                               {data[stickyIndex].startDate} -{" "}
                               {data[stickyIndex].endDate}
                             </h1>
                           </div>
                         </BgContainer>
-                      </AnimatePresence>
-                    </motion.div>
+                      </motion.div>
+                    </AnimatePresence>
                   )}
                 </div>
               </ImageContainer>
