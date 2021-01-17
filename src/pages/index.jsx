@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick.css";
 import Experience from "../components/Experience";
 import tw from "twin.macro";
 import { ProjectsSlider } from "../components/ProjectsSlider";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -52,6 +53,16 @@ const SectionTitle = styled.p`
   }
 `;
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.5,
+    },
+  },
+};
+
 const Index = ({ data }) => {
   const posts = data.posts.edges;
   const projects = data.projects.edges;
@@ -87,15 +98,16 @@ const Index = ({ data }) => {
         </Fade>
       </Section>
       <Section>
-        <Fade duration={900}>
-          <SectionTitle>Featured Posts</SectionTitle>
+        <SectionTitle>Featured Posts</SectionTitle>
+        <motion.div variants={container} initial="hidden" animate="show">
           <PostWrapper>
-            {posts.map(({ node }) => {
+            {posts.map(({ node }, idx) => {
               const { id, excerpt, frontmatter } = node;
               const { cover, path, title, date, white } = frontmatter;
               return (
                 <PostList
                   key={id}
+                  idx={idx}
                   cover={cover.childImageSharp.fluid}
                   path={path}
                   title={title}
@@ -106,7 +118,7 @@ const Index = ({ data }) => {
               );
             })}
           </PostWrapper>
-        </Fade>
+        </motion.div>
       </Section>
       <Section dark>
         <SectionTitle dark>About Me</SectionTitle>

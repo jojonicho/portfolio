@@ -11,13 +11,6 @@ interface StickyProps {
   data: any;
 }
 
-const variants = {
-  initial: { opacity: 0, transition: { duration: 0.5 } },
-  exit: {
-    opacity: 0,
-  },
-};
-
 type BgImageProp = {
   bgImage?: any;
 };
@@ -40,6 +33,13 @@ const ImageContainer = styled.div<BgImageProp>`
     border-radius: 4px;
   }
 `;
+
+const variants = {
+  initial: { opacity: 0, transition: { duration: 0.5 } },
+  exit: {
+    opacity: 0,
+  },
+};
 
 export const Sticky: React.FC<StickyProps> = ({ data }) => {
   const [stickyIndex, setStickyIndex] = useState(0);

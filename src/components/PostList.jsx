@@ -4,6 +4,8 @@ import Img from "gatsby-image";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import theme from "../../config/theme";
+import { AnimatePresence, motion } from "framer-motion";
+import InView from "react-intersection-observer";
 
 const Wrapper = styled.article`
   position: relative;
@@ -112,19 +114,48 @@ const Title = styled.h2`
   font-size: calc(0.2vw + 18px);
 `;
 
-const PostList = ({ cover, path, date, title, excerpt, white }) => (
-  <Wrapper white={white}>
-    <Image>
-      <Img fluid={cover} />
-    </Image>
-    <StyledLink to={path} white={white}>
-      <Info white={white}>
-        <span>{date}</span>
-        <Title>{title}</Title>
-        <span>{excerpt}</span>
-      </Info>
-    </StyledLink>
-  </Wrapper>
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  exit: { opacity: 0 },
+  visible: (i) => ({
+    opacity: 1,
+    transition: {
+      duration: 1,
+      delay: 0.25 * i,
+    },
+  }),
+};
+
+const PostList = ({ idx, cover, path, date, title, excerpt, white }) => (
+  <InView as="div" threshold={0.3}>
+    {({ inView, ref }) => {
+      return (
+        <AnimatePresence>
+          <Wrapper white={white} ref={ref}>
+            <motion.div
+              custom={idx}
+              variants={variants}
+              initial="initial"
+              animate={inView ? "visible" : "exit"}
+            >
+              <Image>
+                <Img fluid={cover} />
+              </Image>
+              <StyledLink to={path} white={white}>
+                <Info white={white}>
+                  <span>{date}</span>
+                  <Title>{title}</Title>
+                  <span>{excerpt}</span>
+                </Info>
+              </StyledLink>
+            </motion.div>
+          </Wrapper>
+        </AnimatePresence>
+      );
+    }}
+  </InView>
 );
 
 export default PostList;
