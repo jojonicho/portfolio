@@ -123,7 +123,7 @@ const variants = {
     opacity: 1,
     transition: {
       duration: 1,
-      delay: 0.25 * i,
+      delay: 0.15 * i,
     },
   }),
 };
