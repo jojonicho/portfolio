@@ -63,7 +63,7 @@ const AnimatedIntro = () => {
   const svgName = mylist[count];
   return (
     <Header>
-      <InView as="div" threshold={0.25}>
+      <InView as="div" threshold={0.65}>
         {({ inView, ref }) => {
           return (
             <AnimatePresence>
