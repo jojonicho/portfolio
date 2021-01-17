@@ -20,7 +20,6 @@ const Center = styled.div`
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <link rel="preload" />
-    {/* <GlobalStyles /> */}
     <Global
       styles={css`
         *,

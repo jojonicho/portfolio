@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { AnimatedIntro, BlogList, PostList } from "components";
+import { AnimatedIntro, PostList } from "components";
 import { Sticky } from "components/Sticky";
 import { graphql } from "gatsby";
 import { Layout } from "layouts";
@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 import React from "react";
 import Pulse from "react-reveal";
 import Fade from "react-reveal/Fade";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import Experience from "../components/Experience";
@@ -59,15 +58,13 @@ const Index = ({ data }) => {
   const experiences = data.experiences.node;
   return (
     <Layout>
-      <Fade duration={1300}>
-        <Section>
-          <AnimatedIntro />
-          <SectionTitle>Projects</SectionTitle>
-          <Pulse duration={1100}>
-            <ProjectsSlider projects={projects} />
-          </Pulse>
-        </Section>
-      </Fade>
+      <Section>
+        <AnimatedIntro />
+        <SectionTitle>Projects</SectionTitle>
+        <Pulse duration={1100}>
+          <ProjectsSlider projects={projects} />
+        </Pulse>
+      </Section>
       <Section dark>
         <Fade duration={900}>
           <SectionTitle dark>My Experiences</SectionTitle>
@@ -89,8 +86,8 @@ const Index = ({ data }) => {
           </PostWrapper> */}
         </Fade>
       </Section>
-      <Fade duration={900}>
-        <Section>
+      <Section>
+        <Fade duration={900}>
           <SectionTitle>Featured Posts</SectionTitle>
           <PostWrapper>
             {posts.map(({ node }) => {
@@ -109,8 +106,8 @@ const Index = ({ data }) => {
               );
             })}
           </PostWrapper>
-        </Section>
-      </Fade>
+        </Fade>
+      </Section>
       <Section dark>
         <SectionTitle dark>About Me</SectionTitle>
         <Container dark>
