@@ -6,7 +6,6 @@ import InView from "react-intersection-observer";
 import tw from "twin.macro";
 import { StickyDetail } from "./StickyDetail";
 
-
 interface StickyProps {
   data: any;
 }
@@ -41,10 +40,6 @@ const variants = {
   },
 };
 
-// const bgVariants = {
-//   visible:
-// }
-
 export const Sticky: React.FC<StickyProps> = ({ data }) => {
   const [stickyIndex, setStickyIndex] = useState(0);
   const [image, setImage] = useState(
@@ -78,8 +73,7 @@ export const Sticky: React.FC<StickyProps> = ({ data }) => {
                 />
               ))}
             </div>
-            <motion.div
-            tw="p-5 hidden lg:flex">
+            <motion.div tw="p-5 hidden lg:flex">
               <ImageContainer bgImage={bgImage} tw="lg:flex justify-center">
                 <div tw="flex ">
                   {image && (

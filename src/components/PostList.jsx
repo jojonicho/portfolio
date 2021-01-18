@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import theme from "../../config/theme";
 import { AnimatePresence, motion } from "framer-motion";
 import InView from "react-intersection-observer";
+import tw from "twin.macro";
 
 const Wrapper = styled.article`
   position: relative;
@@ -109,6 +110,11 @@ const Info = styled.div`
   font-size: calc(0.2vw + 11px);
 `;
 
+const Title = styled(motion.h2)`
+  margin-bottom: 0.3rem;
+  font-size: calc(0.2vw + 20px);
+`;
+
 const variants = {
   initial: {
     opacity: 0,
@@ -135,15 +141,20 @@ const PostList = ({ idx, cover, path, date, title, excerpt, white }) => (
               initial="initial"
               animate={inView ? "visible" : "exit"}
             >
-      <motion.div layoutId={`post-banner-${path}`}>
-              <Image>
-                <Img fluid={cover} />
-              </Image>
-      </motion.div>
+              <motion.div layoutId={`post-banner-${path}`}>
+                <Image>
+                  <Img fluid={cover} />
+                </Image>
+              </motion.div>
               <StyledLink to={path} white={white}>
                 <Info white={white}>
                   <span>{date}</span>
-                  <motion.h2 tw="mb-1" layoutId={`post-title-${path}`}>{title}</motion.h2>
+                  <Title
+                    tw="sm:text-xl lg:text-2xl xl:text-3xl"
+                    layoutId={`post-title-${path}`}
+                  >
+                    {title}
+                  </Title>
                   <span>{excerpt}</span>
                 </Info>
               </StyledLink>
