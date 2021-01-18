@@ -26,7 +26,7 @@ const ErrorPage = (center) => {
       <Container center={center}>
         <Helmet title={"404"} />
         <ImageContainer>
-          <img src={logo} />
+          <img alt="404" src={logo} />
           <h2>Oh cool, a 404 page</h2>
           <h2>
             <Link to="/">Go Back</Link>

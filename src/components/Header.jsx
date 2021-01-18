@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
+import { AnimatePresence, motion } from "framer-motion";
+import tw from 'twin.macro';
 
 const Wrapper = styled.header`
   background: ${(props) => props.theme.gradient.rightToLeft};
@@ -36,7 +38,6 @@ const Text = styled.div`
   }
   h3 {
     font-size: calc(0.9vw + 12px);
-    // margin: 2vw;
     margin-top: 0;
   }
 `;
@@ -46,16 +47,22 @@ const Subtitle = styled.p`
   color: ${(props) => props.theme.colors.white.light};
 `;
 
-const Header = ({ children, title, date, cover }) => (
-  <Wrapper>
-    <Img fluid={cover || {} || [] || ""} />
-    <Text>
-      <h1>{title}</h1>
-      <h3>{date}</h3>
-
-      {children && <Subtitle>{children}</Subtitle>}
-    </Text>
-  </Wrapper>
+const Header = ({ children, title, date, cover, path }) => (
+  <motion.div
+    transition={{ duration: 0.2, delay: 0.15 }}
+    style={{ pointerEvents: "auto" }}
+  >
+    <Wrapper>
+      <motion.div layoutId={`post-banner-${path}`}>
+        <Img fluid={cover || {} || [] || ""} />
+      </motion.div>
+      <Text>
+        <motion.h1 layoutId={`post-title-${path}`}>{title}</motion.h1>
+        <h3>{date}</h3>
+        {children && <Subtitle>{children}</Subtitle>}
+      </Text>
+    </Wrapper>
+  </motion.div>
 );
 
 export default Header;
@@ -69,6 +76,7 @@ Header.propTypes = {
     PropTypes.object,
     PropTypes.bool,
   ]),
+  path: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 };
 
 Header.defaultProps = {

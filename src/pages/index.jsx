@@ -54,11 +54,12 @@ const SectionTitle = styled.p`
 `;
 
 const container = {
-  hidden: { opacity: 0 },
-  show: {
+  hidden: { opacity: 1, scale: 0.85 },
+  visible: {
     opacity: 1,
+    scale: 1,
     transition: {
-      delayChildren: 0.5,
+      duration: 0.5,
     },
   },
 };
@@ -99,7 +100,7 @@ const Index = ({ data }) => {
       </Section>
       <Section>
         <SectionTitle>Featured Posts</SectionTitle>
-        <motion.div variants={container} initial="hidden" animate="show">
+        <motion.div variants={container} initial="hidden" animate="visible">
           <PostWrapper>
             {posts.map(({ node }, idx) => {
               const { id, excerpt, frontmatter } = node;
@@ -123,7 +124,7 @@ const Index = ({ data }) => {
       <Section dark>
         <SectionTitle dark>About Me</SectionTitle>
         <Container dark>
-          <p tw="text-base">
+          <p tw="text-sm sm:text-lg">
             • Universitas Indonesia, Sophomore
             <br />
             • Software Engineer at OY! Indonesia

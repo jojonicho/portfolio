@@ -1,10 +1,11 @@
 import { Global, ThemeProvider } from "@emotion/react";
-import { css } from "twin.macro";
 import styled from "@emotion/styled";
 import { SEO } from "components";
+import { AnimatePresence } from "framer-motion";
 import { Footer, NavBar } from "layouts";
 import PropTypes from "prop-types";
 import React from "react";
+import { css } from "twin.macro";
 import "typeface-josefin-sans";
 import "typeface-open-sans";
 import theme from "../../config/theme";
@@ -70,7 +71,7 @@ const Layout = ({ children }) => (
     <SEO />
     <Center>
       <NavBar />
-      {children}
+      <AnimatePresence>{children}</AnimatePresence>
       <Footer />
     </Center>
   </ThemeProvider>

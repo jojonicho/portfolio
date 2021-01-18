@@ -33,9 +33,9 @@ const PostSuggestion = styled.div`
 `;
 
 const Post = ({ data, pageContext }) => {
-  const { next, prev } = pageContext;
+  const { next, prev, pathSlug } = pageContext;
   const { html, frontmatter, excerpt } = data.markdownRemark;
-  const { date, title, tags, path, description, id } = frontmatter;
+  const { date, title, tags, path, description } = frontmatter;
   const image = frontmatter.cover.childImageSharp.fluid;
   const disqusConfig = {
     // shortname: process.env.GATSBY_DISQUS_NAME,
@@ -51,8 +51,9 @@ const Post = ({ data, pageContext }) => {
         pathname={path}
         article
       />
-      <Header title={title} date={date} cover={image} />
+      <Header title={title} date={date} cover={image} path={pathSlug} />
       <Container>
+        {path}
         <Content input={html} />
         <TagsBlock list={tags || []} />
       </Container>
@@ -90,6 +91,7 @@ Post.propTypes = {
   pageContext: PropTypes.shape({
     prev: PropTypes.object,
     next: PropTypes.object,
+    pathSlug: PropTypes.string,
   }).isRequired,
   data: PropTypes.object.isRequired,
 };

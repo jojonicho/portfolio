@@ -5,6 +5,8 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { TagsBlock } from "components";
 import { Container } from "layouts";
+import { AnimatePresence, motion } from "framer-motion";
+import tw from "twin.macro";
 
 const Wrapper = styled.article`
   margin: 0 2vw;
@@ -33,7 +35,6 @@ const Image = styled.div`
   }
 `;
 
-// const StyledLink = styled(Link)`
 const StyledImg = styled(Img)`
   height: 200px;
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
@@ -63,28 +64,46 @@ const Date = styled.div`
   color: ${(props) => props.theme.colors.black.lighter};
 `;
 
-const Title = styled.h1`
-  margin: 0;
-`;
-
-const BlogList = ({ path, cover, title, date, excerpt, tags }) => (
-  <Container>
-    <Wrapper>
-      <Image>
-        <Link to={path} title={title}>
-          <StyledImg fluid={cover} />
-        </Link>
-      </Image>
-      <Information>
-        <Date>{date}</Date>
-        <Link to={path}>
-          <Title>{title}</Title>
-        </Link>
-        <TagsBlock list={tags} />
-        {excerpt}
-      </Information>
-    </Wrapper>
-  </Container>
+const BlogList = ({
+  path,
+  cover,
+  title,
+  date,
+  excerpt,
+  tags,
+  magic = true,
+}) => (
+  <AnimatePresence>
+    <Container>
+      <Wrapper>
+        <Image>
+          <Link to={path} title={title}>
+            {magic ? (
+              <motion.div layoutId={`post-banner-${path}`}>
+                <StyledImg fluid={cover} />
+              </motion.div>
+            ) : (
+              <StyledImg fluid={cover} />
+            )}
+          </Link>
+        </Image>
+        <Information>
+          <Date>{date}</Date>
+          <Link to={path}>
+            {magic ? (
+              <motion.h1 layoutId={`post-title-${path}`} tw="m-0">
+                {title}
+              </motion.h1>
+            ) : (
+              <h1 tw="m-0">{title}</h1>
+            )}
+          </Link>
+          <TagsBlock list={tags} />
+          {excerpt}
+        </Information>
+      </Wrapper>
+    </Container>
+  </AnimatePresence>
 );
 
 export default BlogList;
@@ -96,4 +115,5 @@ BlogList.propTypes = {
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
+  magic: PropTypes.bool,
 };

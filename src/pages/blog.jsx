@@ -25,6 +25,7 @@ const Blog = ({ data }) => {
             date={node.frontmatter.date}
             tags={node.frontmatter.tags}
             excerpt={node.excerpt}
+            id={node.path}
           />
         ))}
       </Wrapper>

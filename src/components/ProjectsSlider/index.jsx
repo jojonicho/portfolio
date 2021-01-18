@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import Slider from "react-slick";
 import BlogList from "../BlogList";
 import tw from "twin.macro";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Container = styled.div`
   backdrop-filter: blur(5px);
@@ -71,9 +72,10 @@ const CarouselContainer = styled.div`
 export const ProjectsSlider = ({ projects }) => {
   return (
     <CarouselContainer>
-      <Slider {...settings} tw="flex">
+      <Slider {...settings} tw="flex overflow-hidden">
         {projects.map(({ node }) => (
           <BlogList
+          magic={false}
             key={node.id}
             cover={node.frontmatter.cover.childImageSharp.fluid}
             path={node.frontmatter.path}

@@ -109,11 +109,6 @@ const Info = styled.div`
   font-size: calc(0.2vw + 11px);
 `;
 
-const Title = styled.h2`
-  margin-bottom: 0.3rem;
-  font-size: calc(0.2vw + 18px);
-`;
-
 const variants = {
   initial: {
     opacity: 0,
@@ -123,7 +118,7 @@ const variants = {
     opacity: 1,
     transition: {
       duration: 1,
-      delay: 0.15 * i,
+      delay: 0.1 * i,
     },
   }),
 };
@@ -140,13 +135,15 @@ const PostList = ({ idx, cover, path, date, title, excerpt, white }) => (
               initial="initial"
               animate={inView ? "visible" : "exit"}
             >
+      <motion.div layoutId={`post-banner-${path}`}>
               <Image>
                 <Img fluid={cover} />
               </Image>
+      </motion.div>
               <StyledLink to={path} white={white}>
                 <Info white={white}>
                   <span>{date}</span>
-                  <Title>{title}</Title>
+                  <motion.h2 tw="mb-1" layoutId={`post-title-${path}`}>{title}</motion.h2>
                   <span>{excerpt}</span>
                 </Info>
               </StyledLink>
