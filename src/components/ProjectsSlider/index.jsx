@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import Slider from "react-slick";
 import BlogList from "../BlogList";
 import tw from "twin.macro";
-import { AnimatePresence, motion } from "framer-motion";
 
 const Container = styled.div`
   backdrop-filter: blur(5px);
@@ -63,6 +62,8 @@ const settings = {
   swipeToSlide: true,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
+  touchThreshold: 15,
+  // fade: true,
 };
 const CarouselContainer = styled.div`
   overflow-x: hidden;
@@ -72,10 +73,10 @@ const CarouselContainer = styled.div`
 export const ProjectsSlider = ({ projects }) => {
   return (
     <CarouselContainer>
-      <Slider {...settings} tw="flex overflow-hidden">
+      <Slider {...settings} tw="flex">
         {projects.map(({ node }) => (
           <BlogList
-          magic={false}
+            magic={false}
             key={node.id}
             cover={node.frontmatter.cover.childImageSharp.fluid}
             path={node.frontmatter.path}
