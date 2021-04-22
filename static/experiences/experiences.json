@@ -1,13 +1,22 @@
 {
   "node": [
     {
+      "company": "Dekoruma",
+      "position": "Software Engineer Intern",
+      "src": "./dekoruma.png",
+      "startDate": "Jun 2021",
+      "endDate": "Present",
+      "highlights": ["Incoming!"],
+      "background": "./bg-1.png"
+    },
+    {
       "company": "OY! Indonesia",
       "position": "Software Engineer",
       "src": "./oy.png",
       "startDate": "Jan 2021",
       "endDate": "Present",
       "highlights": [
-        "Promoted to a part-time position based on performance throughout 4 months of internship."
+        "Utilized RabbitMQ to publish and consume incoming events to validate user's eligibility to claim promo codes and rewards."
       ],
       "background": "./bg-1.png"
     },

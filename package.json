@@ -28,6 +28,7 @@
     "@emotion/babel-plugin": "^11.1.2",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "@headlessui/react": "^1.0.0",
     "babel-plugin-emotion": "^11.0.0",
     "disqus-react": "^1.0.10",
     "framer-motion": "^3.2.1",

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { AnimatedIntro, PostList } from "components";
 import { Sticky } from "components/Sticky";
+import { motion } from "framer-motion";
 import { graphql } from "gatsby";
 import { Layout } from "layouts";
 import PropTypes from "prop-types";
@@ -9,10 +10,8 @@ import Pulse from "react-reveal";
 import Fade from "react-reveal/Fade";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import Experience from "../components/Experience";
 import tw from "twin.macro";
 import { ProjectsSlider } from "../components/ProjectsSlider";
-import { motion } from "framer-motion";
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -126,8 +125,6 @@ const Index = ({ data }) => {
         <Container dark>
           <p tw="text-sm sm:text-lg">
             • Universitas Indonesia, Sophomore
-            <br />
-            • Software Engineer at OY! Indonesia
             <br />• Lead Software Engineer at COMPFEST
           </p>
         </Container>

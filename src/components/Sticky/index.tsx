@@ -14,14 +14,7 @@ type BgImageProp = {
   bgImage?: any;
 };
 
-export const BgContainer = styled.div<BgImageProp>`
-  background-image: url(${(props) => props.bgImage});
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
-
 const ImageContainer = styled.div<BgImageProp>`
-  background-image: url(${(props) => props.bgImage});
   background-repeat: no-repeat;
   background-size: cover;
   height: 96vh;
@@ -74,7 +67,10 @@ export const Sticky: React.FC<StickyProps> = ({ data }) => {
               ))}
             </div>
             <motion.div tw="p-5 hidden lg:flex">
-              <ImageContainer bgImage={bgImage} tw="lg:flex justify-center">
+              <ImageContainer
+                bgImage={bgImage}
+                tw="lg:flex justify-center bg-white"
+              >
                 <div tw="flex ">
                   {image && (
                     <AnimatePresence>
@@ -92,7 +88,7 @@ export const Sticky: React.FC<StickyProps> = ({ data }) => {
                             : "exit"
                         }
                       >
-                        <BgContainer tw="flex flex-col justify-center items-center lg:w-full lg:h-full">
+                        <div tw="flex flex-col justify-center items-center lg:w-full lg:h-full">
                           <div tw="w-full">
                             <Img fluid={image} />
                             <h1 tw="text-transparent">
@@ -100,7 +96,7 @@ export const Sticky: React.FC<StickyProps> = ({ data }) => {
                               {data[stickyIndex].endDate}
                             </h1>
                           </div>
-                        </BgContainer>
+                        </div>
                       </motion.div>
                     </AnimatePresence>
                   )}
