@@ -31,7 +31,7 @@ function Bullets(plans) {
   const [selected, setSelected] = useState(plans[0]);
 
   return (
-    <div tw="w-full px-4 py-16">
+    <div tw="w-full px-4 sm:py-16">
       <div tw="w-full max-w-xl mx-auto">
         <RadioGroup value={selected} onChange={setSelected}>
           <RadioGroup.Label tw="sr-only">Server size</RadioGroup.Label>
@@ -41,14 +41,14 @@ function Bullets(plans) {
                 key={idx}
                 value={plan}
                 css={[
-                  tw`relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none`,
+                  tw`relative rounded-lg shadow-md py-4 cursor-pointer flex focus:outline-none`,
                 ]}
               >
                 {({ checked }) => (
                   <>
                     <div tw="flex items-center justify-between w-full transform transition duration-100 ease-in-out motion-safe:hover:scale-105">
                       <div tw="flex items-center">
-                        <div tw="text-base">
+                        <div tw="text-sm lg:text-base">
                           <RadioGroup.Label
                             as="p"
                             css={[
