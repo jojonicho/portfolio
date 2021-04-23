@@ -14,7 +14,7 @@ type BgImageProp = {
   bgImage?: any;
 };
 
-const ImageContainer = styled.div<BgImageProp>`
+const ImageContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   height: 96vh;
@@ -52,7 +52,7 @@ export const Sticky: React.FC<StickyProps> = ({ data }) => {
     setHighlights(data[stickyIndex].highlights);
   }, [stickyIndex, setStickyIndex]);
   return (
-    <InView as="div" threshold={0.25}>
+    <InView as="div" threshold={0.15}>
       {({ inView, ref }) => {
         return (
           <div ref={ref} css={[tw`flex flex-row my-5`]}>
@@ -67,10 +67,7 @@ export const Sticky: React.FC<StickyProps> = ({ data }) => {
               ))}
             </div>
             <motion.div tw="p-5 hidden lg:flex">
-              <ImageContainer
-                bgImage={bgImage}
-                tw="lg:flex justify-center bg-white"
-              >
+              <ImageContainer tw="lg:flex justify-center bg-white">
                 <div tw="flex ">
                   {image && (
                     <AnimatePresence>
@@ -90,7 +87,11 @@ export const Sticky: React.FC<StickyProps> = ({ data }) => {
                       >
                         <div tw="flex flex-col justify-center items-center lg:w-full lg:h-full">
                           <div tw="w-full">
-                            <Img fluid={image} />
+                            <Img
+                              tw="max-h-20"
+                              fluid={image}
+                              imgStyle={{ objectFit: "contain" }}
+                            />
                             <h1 tw="text-transparent">
                               {data[stickyIndex].startDate} -{" "}
                               {data[stickyIndex].endDate}

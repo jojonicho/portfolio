@@ -49,16 +49,6 @@ function Bullets(plans) {
                     <div tw="flex items-center justify-between w-full transform transition duration-100 ease-in-out motion-safe:hover:scale-105">
                       <div tw="flex items-center">
                         <div tw="text-sm lg:text-base">
-                          <RadioGroup.Label
-                            as="p"
-                            css={[
-                              tw`font-medium`,
-                              tw`text-white`,
-                              checked && tw`font-bold`,
-                            ]}
-                          >
-                            {plan.name}
-                          </RadioGroup.Label>
                           <RadioGroup.Description
                             as="span"
                             css={[
@@ -109,7 +99,11 @@ export const StickyDetail: React.FC<StickyDetailProps> = ({
         }}
       >
         <div tw="lg:hidden py-10 px-20 bg-white">
-          <Img fluid={data.src.childImageSharp.fluid} />
+          <Img
+            fluid={data.src.childImageSharp.fluid}
+            tw="max-h-20"
+            imgStyle={{ objectFit: "contain" }}
+          />
         </div>
         <div tw="flex flex-col lg:h-screen justify-center p-4 sm:p-6 text-white">
           <p tw="font-black text-2xl sm:text-4xl">{data.company}</p>
