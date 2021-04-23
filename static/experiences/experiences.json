@@ -29,8 +29,8 @@
       "highlights": [
         "Applied Java conventions such as DAO (Data Access Object) and MCS (Model, Controller, Service) Backend architecture.",
         "Created unit tests and mock tests on top of validation middlewares with RabbitMQ schedulers for Backend API.",
-        "Implemented complex multi-step form and data table Frontend using React and Oy’s Fortune UI.",
-        "Developed end-to-end Promo Code feature on the mobile app using Flutter and BloC state management."
+        "Implemented multi-step form and data table Frontend using React, Typescript, and OY’s Fortune UI.",
+        "Developed end-to-end Promo Code feature on the mobile app using Flutter with BloC state management."
       ],
       "background": "./bg-2.png"
     },

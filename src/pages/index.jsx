@@ -77,25 +77,8 @@ const Index = ({ data }) => {
         </Pulse>
       </Section>
       <Section dark>
-        <Fade duration={900}>
-          <SectionTitle dark>My Experiences</SectionTitle>
-          <Sticky data={experiences} />
-          {/* <PostWrapper css={[tw`lg:hidden`]}>
-            {experiences.map(
-              ({ company, position, startDate, endDate, src }) => {
-                return (
-                  <Experience
-                    company={company}
-                    position={position}
-                    image={src}
-                    startDate={startDate}
-                    endDate={endDate}
-                  />
-                );
-              }
-            )}
-          </PostWrapper> */}
-        </Fade>
+        <SectionTitle dark>My Experiences</SectionTitle>
+        <Sticky data={experiences} />
       </Section>
       <Section>
         <SectionTitle>Featured Posts</SectionTitle>

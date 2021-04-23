@@ -87,11 +87,11 @@ export const StickyDetail: React.FC<StickyDetailProps> = ({
     <motion.div
       initial={{ x: 0, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      exit={{ y: -1000, opacity: 0 }}
+      exit={{ y: -100, opacity: 0 }}
     >
       <InView
         as="div"
-        threshold={0.8}
+        threshold={[0.8]}
         onChange={(inView) => {
           if (inView) {
             setCoreValueIndex(index);
