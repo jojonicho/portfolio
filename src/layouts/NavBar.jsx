@@ -38,7 +38,7 @@ const NavBar = () => (
       <SVG name="Logo" />
     </StyledLink>
     <Nav>
-      <a is href="https://s.id/jojonicho-resume">
+      <a is href="https://s.id/joni-resume">
         Resume
       </a>
       <Link to="/blog">Blog</Link>
