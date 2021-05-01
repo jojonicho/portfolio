@@ -65,6 +65,23 @@ const Layout = ({ children }) => (
         p {
           margin: 0;
         }
+
+        blockquote:before {
+          color: #ccc;
+          content: open-quote;
+          font-size: 4em;
+          line-height: 0.1em;
+          margin-right: 0.25em;
+          vertical-align: -0.4em;
+        }
+
+        blockquote {
+          border-radius: 5px;
+          background-color: ${theme.colors.white.light};
+          border-left: 10px solid #ccc;
+          padding: 0.5em 10px;
+          margin: 0;
+        }
         ${headroom}
       `}
     />

@@ -12,10 +12,6 @@ const Wrapper = styled.article`
   position: relative;
   z-index: 100;
   border-radius: ${(props) => props.theme.borderRadius.default};
-  box-shadow: ${(props) =>
-    props.white
-      ? props.theme.shadow.feature.smaller.default
-      : props.theme.shadow.feature.small.default};
   transition: ${(props) => props.theme.transitions.boom.transition};
   height: 17rem;
   flex-basis: calc(99.9% * 1 / 3 - 2.5rem);
@@ -99,10 +95,7 @@ const Image = styled.div`
 `;
 
 const Info = styled.div`
-  color: ${(props) =>
-    props.white
-      ? props.theme.colors.black.blue
-      : props.theme.colors.white.light};
+  color: ${(props) => (props.white ? props.theme.colors.black.blue : "white")};
   margin: 0 1rem 1.25rem 1.25rem;
   position: absolute;
   bottom: 0;
@@ -148,14 +141,23 @@ const PostList = ({ idx, cover, path, date, title, excerpt, white }) => (
               </motion.div>
               <StyledLink to={path} white={white}>
                 <Info white={white}>
-                  <span>{date}</span>
+                  <span css={[white && tw`bg-gray-100`, tw`p-2 rounded-t-lg`]}>
+                    {new Date(date).toLocaleString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
                   <Title
+                    css={[white && tw`bg-gray-100`, tw`p-2 rounded-lg`]}
                     tw="sm:text-xl lg:text-2xl xl:text-3xl"
                     layoutId={`post-title-${path}`}
                   >
                     {title}
                   </Title>
-                  <span>{excerpt}</span>
+                  {/* <span css={[white && tw`bg-gray-100`, tw`rounded-lg`]}>
+                    {excerpt}
+                  </span> */}
                 </Info>
               </StyledLink>
             </motion.div>

@@ -95,7 +95,7 @@ const Index = ({ data }) => {
                   path={path}
                   title={title}
                   date={date}
-                  white={white}
+                  white={white || false}
                   excerpt={excerpt}
                 />
               );
