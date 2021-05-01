@@ -104,6 +104,7 @@ export const query = graphql`
         date
         title
         tags
+        description
         cover {
           childImageSharp {
             fluid(
