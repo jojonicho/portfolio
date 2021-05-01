@@ -120,8 +120,8 @@ const Index = ({ data }) => {
             <br />
             We only covet that which has value
           </i> */}
-          <i>
-            "Take it as a challenge, push your limits, you have come miles away,
+          <blockquote>
+            Take it as a challenge, push your limits, you have come miles away,
             it is just few meters now.
             <br />
             <br /> It is never easy to achieve anything. If you have achieved
@@ -137,8 +137,8 @@ const Index = ({ data }) => {
             still do not work, you always have the option to leave it. But then,
             you won't regret that you didn't try.
             <br />
-            <br /> I hope this helps! Best of Luck!" - Anon
-          </i>
+            <br /> I hope this helps! Best of Luck! - Anon
+          </blockquote>
         </SectionTitle>
       </Section>
     </Layout>
