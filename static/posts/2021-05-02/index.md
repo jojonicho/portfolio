@@ -9,7 +9,7 @@ featured: true
 white: true
 ---
 
-My software engineering internship journey fails (and successes) in 2021!
+Hello, this is my software engineering internship journey fails (and successes) in 2021!
 
 ## Google SG (STEP) - **Rejected** (Online Test)
 
@@ -91,5 +91,25 @@ Referral to get the interview, thx Ko Jojo & Ko Stephen. Knowledge of `Merge Sor
 ---
 
 ## Reflection
+
+A year ago, I only had one offer and numerous rejections. I kept on practicing Leetcode, Codeforces, and Atcoder. Even though I still suck at competitive programming, I can still see the progress that I've made.
+
+![bob](./postit.jpg)
+
+It's nice to set goals for yourself.
+
+## Advice
+
+- Find help from awesome seniors, ask and show enthusiasm.
+- Web development organization experiences are helpful in many ways.
+- Find a mentor, mine is Ko Jowin.
+- Don't be afraid to apply to `sarang toki` internships, find a way to stand out.
+- Practice leetcode.
+- Write a one page resume, perhaps using latex / word.
+
+## Surprises
+
+- I rarely get asked about my competition awards.
+- I almost didn't get an interview because i shared too much information lol.
 
 It's 2 am, I don't even know why I'm writing this now.
