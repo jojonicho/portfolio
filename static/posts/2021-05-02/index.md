@@ -1,5 +1,5 @@
 ---
-path: "/summer-internship-2021"
+path: "/summer-2021-interviews"
 cover: "./banner.png"
 date: "2021-05-02"
 title: "My Summer 2021 Internship Interview Experience"
