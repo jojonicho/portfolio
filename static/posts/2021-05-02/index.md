@@ -113,4 +113,14 @@ It's nice to set goals for yourself.
 - I rarely get asked about my competition awards.
 - I almost didn't get an interview because i shared too much information lol.
 
+## Decision
+
+I'll be joining Dekoruma's engineering team in the summer!
+![dekoruma](./dekoruma-kalibrr.png)
+
+## FAQ
+
+- Do you have to have CP experience? No, but it helps
+- How to pass the coding interview? Just practice leetcode, plus a little bit of luck
+
 It's 2 am, I don't even know why I'm writing this now.
