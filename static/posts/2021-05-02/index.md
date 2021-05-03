@@ -4,7 +4,7 @@ cover: "./banner.png"
 date: "2021-05-02"
 title: "My Summer 2021 Internship Interview Experience"
 tags: [interviews]
-description: "My fails (and successes) in Software Engineer interviews (2021)"
+description: "My interview fails (and successes) for summer 2021 internship"
 published: true
 featured: true
 white: true
