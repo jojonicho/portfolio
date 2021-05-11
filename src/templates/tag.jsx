@@ -18,7 +18,7 @@ const Tag = ({ pageContext }) => {
         {posts.map((post) => (
           <BlogList
             key={post.id}
-            cover={post.frontmatter.cover.childImageSharp.fluid}
+            cover={post.frontmatter.cover.childImageSharp.imageData}
             path={post.frontmatter.path}
             title={post.frontmatter.title}
             date={post.frontmatter.date}
