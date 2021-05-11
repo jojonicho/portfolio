@@ -32,18 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
                   tags
                   cover {
                     childImageSharp {
-                      fluid(
-                        maxWidth: 1000
-                        quality: 90
-                        traceSVG: { color: "#2B2B2F" }
-                      ) {
-                        base64
-                        tracedSVG
-                        srcWebp
-                        srcSetWebp
-                        originalImg
-                        originalName
-                      }
+                      gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
                     }
                   }
                 }

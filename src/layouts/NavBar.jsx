@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import Headroom from "react-headroom";
 import SVG from "../components/SVG";
+import tw from "twin.macro";
 
 const StyledLink = styled(Link)`
   display: flex;
@@ -18,9 +19,6 @@ const StyledLink = styled(Link)`
 const Nav = styled.nav`
   display: flex;
   justify-content: flex-end;
-  font-family: ${(props) => props.theme.fontFamily.body};
-  font-weight: 500;
-  font-size: 1.1rem;
   align-items: center;
   a {
     color: ${(props) => props.theme.colors.white.base};
@@ -39,9 +37,11 @@ const NavBar = () => (
     </StyledLink>
     <Nav>
       <a is href="https://s.id/joni-resume">
-        Resume
+        <p tw="font-black">Resume</p>
       </a>
-      <Link to="/blog">Blog</Link>
+      <Link to="/blog">
+        <p tw="font-black">Blog</p>
+      </Link>
     </Nav>
   </Headroom>
 );

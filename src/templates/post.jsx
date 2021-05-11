@@ -35,19 +35,32 @@ const PostSuggestion = styled.div`
 const Post = ({ data, pageContext }) => {
   const { next, prev, pathSlug } = pageContext;
   const { html, frontmatter, excerpt } = data.markdownRemark;
-  const { date, title, tags, path, description } = frontmatter;
-  const image = frontmatter.cover.childImageSharp.fluid;
+  const {
+    date,
+    title,
+    tags,
+    path,
+    description,
+    cover: {
+      childImageSharp: {
+        original: { src },
+        gatsbyImageData,
+      },
+    },
+  } = frontmatter;
+  const image = gatsbyImageData;
   const disqusConfig = {
     // shortname: process.env.GATSBY_DISQUS_NAME,
     shortname: "jojonicho",
     config: { identifier: path, title },
   };
+  console.log(src);
   return (
     <Layout>
       <SEO
         title={title}
         description={description || excerpt || " "}
-        banner={image.src}
+        banner={src}
         pathname={path}
         article
       />
@@ -107,17 +120,31 @@ export const query = graphql`
         description
         cover {
           childImageSharp {
-            fluid(
-              background: "#2e3246"
-              maxWidth: 1920
-              quality: 90
-              duotone: { highlight: "#2e3246", shadow: "#2e3246", opacity: 50 }
-            ) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-            resize(width: 1200, quality: 90) {
+            original {
               src
             }
+            gatsbyImageData(
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+              transformOptions: {
+                duotone: {
+                  highlight: "#284187"
+                  shadow: "#284187"
+                  opacity: 50
+                }
+              }
+            )
+            # fluid(
+            #   background: "#2e3246"
+            #   maxWidth: 1920
+            #   quality: 90
+            #   duotone: { highlight: "#2e3246", shadow: "#2e3246", opacity: 50 }
+            # ) {
+            #   ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            # }
+            # resize(width: 1200, quality: 90) {
+            #   src
+            # }
           }
         }
       }

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { TagsBlock } from "components";
 import { Container } from "layouts";
 import { AnimatePresence, motion } from "framer-motion";
@@ -35,7 +35,7 @@ const Image = styled.div`
   }
 `;
 
-const StyledImg = styled(Img)`
+const StyledImg = styled(GatsbyImage)`
   height: 200px;
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     height: 150px;
@@ -80,10 +80,10 @@ const BlogList = ({
           <Link to={path} title={title}>
             {magic ? (
               <motion.div layoutId={`post-banner-${path}`}>
-                <StyledImg fluid={cover} />
+                <StyledImg image={cover} alt={title} />
               </motion.div>
             ) : (
-              <StyledImg fluid={cover} />
+              <StyledImg image={cover} alt={title} />
             )}
           </Link>
         </Image>

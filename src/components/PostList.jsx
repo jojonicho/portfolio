@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import theme from "../../config/theme";
@@ -66,7 +66,7 @@ const StyledLink = styled(Link)`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(46, 50, 70, 0.1);
+    background: rgba(46, 50, 70, 0.05);
     z-index: -10;
     border-radius: ${theme.borderRadius.default};
     transition: opacity ${theme.transitions.default.duration};
@@ -127,7 +127,7 @@ const PostList = ({ idx, cover, path, date, title, excerpt, white }) => (
     {({ inView, ref }) => {
       return (
         <AnimatePresence>
-          <Wrapper white={white} ref={ref}>
+          <Wrapper white ref={ref}>
             <motion.div
               custom={idx}
               variants={variants}
@@ -136,7 +136,7 @@ const PostList = ({ idx, cover, path, date, title, excerpt, white }) => (
             >
               <motion.div layoutId={`post-banner-${path}`}>
                 <Image>
-                  <Img fluid={cover} />
+                  <GatsbyImage image={cover} alt={title} />
                 </Image>
               </motion.div>
               <StyledLink to={path} white={white}>

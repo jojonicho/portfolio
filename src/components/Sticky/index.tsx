@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { AnimatePresence, motion } from "framer-motion";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
 import InView from "react-intersection-observer";
 import tw from "twin.macro";
@@ -9,10 +9,6 @@ import { StickyDetail } from "./StickyDetail";
 interface StickyProps {
   data: any;
 }
-
-type BgImageProp = {
-  bgImage?: any;
-};
 
 const ImageContainer = styled.div`
   background-repeat: no-repeat;
@@ -36,21 +32,13 @@ const variants = {
 export const Sticky: React.FC<StickyProps> = ({ data }) => {
   const [stickyIndex, setStickyIndex] = useState(0);
   const [image, setImage] = useState(
-    data[stickyIndex].src.childImageSharp.fluid
-  );
-  const [highlights, setHighlights] = useState(data[stickyIndex].highlights);
-  const [bgImage, setBgImage] = useState(
-    data[stickyIndex].background.childImageSharp.fluid.src
+    data[stickyIndex].src.childImageSharp.gatsbyImageData
   );
 
   useEffect(() => {
-    setBgImage(data[stickyIndex].background.childImageSharp.fluid.src);
+    setImage(data[stickyIndex].src.childImageSharp.gatsbyImageData);
   }, [stickyIndex, setStickyIndex]);
 
-  useEffect(() => {
-    setImage(data[stickyIndex].src.childImageSharp.fluid);
-    setHighlights(data[stickyIndex].highlights);
-  }, [stickyIndex, setStickyIndex]);
   return (
     <InView as="div" threshold={0.15}>
       {({ inView, ref }) => {
@@ -81,22 +69,25 @@ export const Sticky: React.FC<StickyProps> = ({ data }) => {
                         }}
                         animate={
                           inView
-                            ? { opacity: [0, 1], scale: [1.3, 1.35] }
+                            ? {
+                                opacity: [0, 1],
+                                scale:
+                                  stickyIndex % 2 ? [1.35, 1.3] : [1.3, 1.35],
+                              }
                             : "exit"
                         }
                       >
                         <div tw="flex flex-col justify-center items-center lg:w-full lg:h-full">
-                          <div tw="w-full">
-                            <Img
-                              tw="max-h-20"
-                              fluid={image}
-                              imgStyle={{ objectFit: "contain" }}
-                            />
-                            <h1 tw="text-transparent">
-                              {data[stickyIndex].startDate} -{" "}
-                              {data[stickyIndex].endDate}
-                            </h1>
-                          </div>
+                          <GatsbyImage
+                            tw="max-h-14 w-full"
+                            image={image}
+                            imgStyle={{ objectFit: "contain" }}
+                            alt={data[stickyIndex].company}
+                          />
+                          <h1 tw="text-transparent">
+                            {data[stickyIndex].startDate} -{" "}
+                            {data[stickyIndex].endDate}
+                          </h1>
                         </div>
                       </motion.div>
                     </AnimatePresence>

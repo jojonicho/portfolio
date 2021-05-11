@@ -8,6 +8,7 @@ module.exports = {
     ...config,
   },
   plugins: [
+    `gatsby-plugin-image`,
     "gatsby-transformer-json",
     {
       resolve: "gatsby-source-filesystem",

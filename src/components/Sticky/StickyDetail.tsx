@@ -1,6 +1,6 @@
 import { RadioGroup } from "@headlessui/react";
 import { motion } from "framer-motion";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useState } from "react";
 import InView from "react-intersection-observer";
 import "twin.macro";
@@ -99,10 +99,11 @@ export const StickyDetail: React.FC<StickyDetailProps> = ({
         }}
       >
         <div tw="lg:hidden py-10 px-20 bg-white">
-          <Img
-            fluid={data.src.childImageSharp.fluid}
-            tw="max-h-20"
+          <GatsbyImage
+            image={data.src.childImageSharp.gatsbyImageData}
+            tw="max-h-12 w-full"
             imgStyle={{ objectFit: "contain" }}
+            alt={data.company}
           />
         </div>
         <div tw="flex flex-col lg:h-screen justify-center p-4 sm:p-6 text-white">

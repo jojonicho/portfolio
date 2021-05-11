@@ -22,7 +22,6 @@ const headroom = css`
     }
     nav {
       a {
-        font-weight: 600;
         color: ${theme.colors.secondary.base};
         &:hover {
           border-color: ${theme.colors.black.blue};
@@ -50,17 +49,18 @@ const headroom = css`
     transform: translateY(0);
     transition: ${theme.transitions.headroom.transition};
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(20px);
     box-shadow: 0 1px 10px rgba(46, 50, 70, 0.2);
     nav {
       a {
-        color: ${theme.colors.primary.base};
+        // color: ${theme.colors.primary.base};
+        color: ${theme.colors.background.dark};
         &:hover {
           border-color: ${theme.colors.black.blue};
-          color: ${theme.colors.secondary.base};
+          color: ${theme.colors.primary.base};
         }
         &:focus {
-          color: ${theme.colors.black.blue};
+          color: ${theme.colors.background.ddark};
         }
       }
     }
