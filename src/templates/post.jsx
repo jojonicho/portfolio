@@ -42,10 +42,8 @@ const Post = ({ data, pageContext }) => {
     path,
     description,
     cover: {
-      childImageSharp: {
-        original: { src },
-        gatsbyImageData,
-      },
+      childImageSharp: { gatsbyImageData },
+      publicURL,
     },
   } = frontmatter;
   const image = gatsbyImageData;
@@ -54,13 +52,13 @@ const Post = ({ data, pageContext }) => {
     shortname: "jojonicho",
     config: { identifier: path, title },
   };
-  console.log(src);
+
   return (
     <Layout>
       <SEO
         title={title}
         description={description || excerpt || " "}
-        banner={src}
+        banner={publicURL}
         pathname={path}
         article
       />
@@ -119,10 +117,8 @@ export const query = graphql`
         tags
         description
         cover {
+          publicURL
           childImageSharp {
-            original {
-              src
-            }
             gatsbyImageData(
               layout: FULL_WIDTH
               placeholder: BLURRED

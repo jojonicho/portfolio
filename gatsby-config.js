@@ -15,7 +15,6 @@ module.exports = {
       options: {
         name: "experience",
         path: `${__dirname}/static/experiences/`,
-        typeName: `Experience`,
       },
     },
     {
