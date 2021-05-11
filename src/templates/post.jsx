@@ -42,8 +42,10 @@ const Post = ({ data, pageContext }) => {
     path,
     description,
     cover: {
-      childImageSharp: { gatsbyImageData },
-      publicURL,
+      childImageSharp: {
+        gatsbyImageData,
+        resize: { src },
+      },
     },
   } = frontmatter;
   const image = gatsbyImageData;
@@ -58,7 +60,7 @@ const Post = ({ data, pageContext }) => {
       <SEO
         title={title}
         description={description || excerpt || " "}
-        banner={publicURL}
+        banner={src}
         pathname={path}
         article
       />
@@ -117,8 +119,10 @@ export const query = graphql`
         tags
         description
         cover {
-          publicURL
           childImageSharp {
+            resize {
+              src
+            }
             gatsbyImageData(
               layout: FULL_WIDTH
               placeholder: BLURRED
