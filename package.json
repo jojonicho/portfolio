@@ -37,6 +37,7 @@
     "gatsby-plugin-catch-links": "^3.4.0",
     "gatsby-plugin-emotion": "^6.4.0",
     "gatsby-plugin-google-analytics": "^3.4.0",
+    "gatsby-plugin-google-gtag": "^3.5.0",
     "gatsby-plugin-image": "^1.4.1",
     "gatsby-plugin-layout": "^2.4.0",
     "gatsby-plugin-manifest": "^3.4.0",
