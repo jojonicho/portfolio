@@ -6,8 +6,6 @@ import { Footer, NavBar } from "layouts";
 import PropTypes from "prop-types";
 import React from "react";
 import { css } from "twin.macro";
-import "typeface-josefin-sans";
-import "typeface-open-sans";
 import theme from "../../config/theme";
 import headroom from "../styles/headroom";
 

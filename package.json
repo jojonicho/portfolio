@@ -48,6 +48,7 @@
     "gatsby-plugin-sitemap": "^4.0.0",
     "gatsby-plugin-typescript": "^3.4.0",
     "gatsby-plugin-typography": "^3.4.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^5.1.0",
     "gatsby-remark-prismjs": "^5.1.0",
     "gatsby-source-filesystem": "^3.4.0",
@@ -69,9 +70,6 @@
     "slick-carousel": "^1.8.1",
     "tailwindcss": "^2.1.2",
     "twin.macro": "^2.4.1",
-    "typeface-candal": "1.1.13",
-    "typeface-josefin-sans": "^1.1.13",
-    "typeface-open-sans": "1.1.13",
     "typography": "^0.16.21"
   },
   "devDependencies": {

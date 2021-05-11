@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import SVG from '../components/SVG';
+import React from "react";
+import styled from "@emotion/styled";
+import SVG from "../components/SVG";
 
 const Container = styled.div`
   margin: 0.35rem 0;
@@ -33,16 +33,16 @@ const Container = styled.div`
 `;
 const affiliates = [
   {
-    logo: 'Linkedin',
-    link: 'https://www.linkedin.com/in/joni',
+    logo: "Linkedin",
+    link: "https://www.linkedin.com/in/joni",
   },
   {
-    logo: 'Github',
-    link: 'https://www.github.com/jojonicho',
+    logo: "Github",
+    link: "https://www.github.com/jojonicho",
   },
   {
-    logo: 'Instagram',
-    link: 'https://www.instagram.com/jojo_nicho',
+    logo: "Instagram",
+    link: "https://www.instagram.com/jojo_nicho",
   },
 ];
 
@@ -55,9 +55,9 @@ const External = styled.a`
 const Affiliates = () => (
   <Container>
     {affiliates &&
-      affiliates.map((aff) => {
+      affiliates.map((aff, idx) => {
         return (
-          <External href={aff.link} title={aff.logo}>
+          <External key={idx} href={aff.link} title={aff.logo}>
             <SVG name={aff.logo} />
           </External>
         );

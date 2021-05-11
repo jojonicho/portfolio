@@ -73,7 +73,7 @@ const BlogList = ({
   tags,
   magic = true,
 }) => (
-  <AnimatePresence>
+  <AnimatePresence key={title}>
     <Container>
       <Wrapper>
         <Image>

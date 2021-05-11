@@ -67,7 +67,7 @@ const Index = ({ data }) => {
   const posts = data.posts.edges;
   const projects = data.projects.edges;
   const experiences = data.experiences.node;
-  // console.log(posts);
+
   return (
     <Layout>
       <Section>

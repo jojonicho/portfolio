@@ -96,5 +96,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Droid Sans", "Droid Serif", "Josefin Sans"],
+        },
+      },
+    },
   ],
 };

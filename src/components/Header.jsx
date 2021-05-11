@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { GatsbyImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import tw from "twin.macro";
 
 const Wrapper = styled.header`
