@@ -13,12 +13,12 @@ const Tag = ({ pageContext }) => {
   const { posts, tagName } = pageContext;
   return (
     <Layout>
-      <Helmet title={`${tagName} | Jojonicho`} />
+      <Helmet title={`${tagName} | Jonathan Nicholas`} />
       <Container>
         {posts.map((post) => (
           <BlogList
             key={post.id}
-            cover={post.frontmatter.cover.childImageSharp.fluid}
+            cover={post.frontmatter.cover.childImageSharp.gatsbyImageData}
             path={post.frontmatter.path}
             title={post.frontmatter.title}
             date={post.frontmatter.date}

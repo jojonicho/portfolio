@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
 import { AnimatePresence, motion } from "framer-motion";
-import tw from 'twin.macro';
+import tw from "twin.macro";
 
 const Wrapper = styled.header`
   background: ${(props) => props.theme.gradient.rightToLeft};
-  height: 500px;
+  height: 400px;
   @media (max-width: ${(props) => props.theme.breakpoints.m}) {
     height: 400px;
   }
@@ -54,7 +54,7 @@ const Header = ({ children, title, date, cover, path }) => (
   >
     <Wrapper>
       <motion.div layoutId={`post-banner-${path}`}>
-        <Img fluid={cover || {} || [] || ""} />
+        <GatsbyImage image={cover || {} || [] || ""} alt={title} />
       </motion.div>
       <Text>
         <motion.h1 layoutId={`post-title-${path}`}>{title}</motion.h1>

@@ -78,7 +78,7 @@ export const ProjectsSlider = ({ projects }) => {
           <BlogList
             magic={false}
             key={node.id}
-            cover={node.frontmatter.cover.childImageSharp.fluid}
+            cover={node.frontmatter.cover.childImageSharp.gatsbyImageData}
             path={node.frontmatter.path}
             title={node.frontmatter.title}
             date={node.frontmatter.date}

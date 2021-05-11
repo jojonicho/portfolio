@@ -67,6 +67,7 @@ const Index = ({ data }) => {
   const posts = data.posts.edges;
   const projects = data.projects.edges;
   const experiences = data.experiences.node;
+  // console.log(posts);
   return (
     <Layout>
       <Section>
@@ -91,7 +92,7 @@ const Index = ({ data }) => {
                 <PostList
                   key={id}
                   idx={idx}
-                  cover={cover.childImageSharp.fluid}
+                  cover={cover.childImageSharp.gatsbyImageData}
                   path={path}
                   title={title}
                   date={date}
@@ -176,9 +177,10 @@ export const query = graphql`
         position
         src {
           childImageSharp {
-            fluid(quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(placeholder: BLURRED)
+            # fluid(quality: 100) {
+            #   ...GatsbyImageSharpFluid
+            # }
           }
         }
         startDate
@@ -186,9 +188,10 @@ export const query = graphql`
         highlights
         background {
           childImageSharp {
-            fluid(quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(placeholder: BLURRED)
+            # fluid(quality: 100) {
+            #   ...GatsbyImageSharpFluid
+            # }
           }
         }
       }
@@ -213,13 +216,14 @@ export const query = graphql`
             date(formatString: "MM.DD.YYYY")
             cover {
               childImageSharp {
-                fluid(
-                  maxWidth: 1000
-                  quality: 90
-                  traceSVG: { color: "#2B2B2F" }
-                ) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+                gatsbyImageData(placeholder: BLURRED)
+                # fluid(
+                #   maxWidth: 1000
+                #   quality: 90
+                #   traceSVG: { color: "#2B2B2F" }
+                # ) {
+                #   ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                # }
               }
             }
           }
@@ -244,13 +248,13 @@ export const query = graphql`
             date(formatString: "MM.DD.YYYY")
             cover {
               childImageSharp {
-                fluid(
-                  maxWidth: 1000
-                  quality: 90
-                  traceSVG: { color: "#2B2B2F" }
-                ) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+                gatsbyImageData(placeholder: BLURRED)
+                # fluid(
+                #   maxWidth: 1000
+                #   quality: 90
+                # ) {
+                #   ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                # }
               }
             }
           }
