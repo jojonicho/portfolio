@@ -32,7 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
                   tags
                   cover {
                     childImageSharp {
-                      gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+                      gatsbyImageData(placeholder: BLURRED)
                     }
                   }
                 }

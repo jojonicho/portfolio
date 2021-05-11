@@ -13,7 +13,7 @@ const Tag = ({ pageContext }) => {
   const { posts, tagName } = pageContext;
   return (
     <Layout>
-      <Helmet title={`${tagName} | Jojonicho`} />
+      <Helmet title={`${tagName} | Jonathan Nicholas`} />
       <Container>
         {posts.map((post) => (
           <BlogList
