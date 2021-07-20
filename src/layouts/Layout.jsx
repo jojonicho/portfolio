@@ -53,9 +53,14 @@ const Layout = ({ children }) => (
           text-decoration: none;
         }
         a:hover {
-          text-decoration: none;
+          text-decoration: underline;
           color: ${theme.colors.linkHover};
         }
+        a:focus {
+          text-decoration: underline;
+          color: ${theme.colors.linkHover};
+        }
+
         h1 {
           font-family: ${theme.fontFamily.heading};
         }

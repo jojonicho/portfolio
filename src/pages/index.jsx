@@ -7,11 +7,22 @@ import { Layout } from "layouts";
 import PropTypes from "prop-types";
 import React from "react";
 import Pulse from "react-reveal";
-import Fade from "react-reveal/Fade";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import tw from "twin.macro";
 import { ProjectsSlider } from "../components/ProjectsSlider";
+import AnskiEmilia from "../../static/logo/anski-emilia.gif";
+
+const Gif = styled.img`
+  @media (min-width: ${(props) => props.theme.breakpoints.l}) {
+    width: 50vw;
+  }
+  border-radius: 4px;
+  margin-top: 16px;
+  margin-bottom: 0;
+`;
+
+const ImageAuthor = styled.p``;
 
 const Container = styled.div`
   padding: 1vw 2vw 2vw 2vw;
@@ -108,19 +119,13 @@ const Index = ({ data }) => {
         <SectionTitle dark>About Me</SectionTitle>
         <Container dark>
           <p tw="text-sm sm:text-lg">
-            • Universitas Indonesia, Sophomore
-            <br />• Lead Software Engineer at COMPFEST
+            • Universitas Indonesia, Junior
+            <br />• Software Engineer Intern at Dekoruma
           </p>
         </Container>
       </Section>
       <Section>
         <SectionTitle center={true} css={tw`text-base sm:text-lg`}>
-          {/* <i>
-            To test in hope of a result... <br />
-            is an action to be praised.
-            <br />
-            We only covet that which has value
-          </i> */}
           <blockquote>
             Take it as a challenge, push your limits, you have come miles away,
             it is just few meters now.
@@ -140,6 +145,17 @@ const Index = ({ data }) => {
             <br />
             <br /> I hope this helps! Best of Luck! - Anon
           </blockquote>
+          <Gif src={AnskiEmilia} alt="Anski Emilia" />
+          <ImageAuthor>
+            artist:{" "}
+            <a
+              href="https://ansqee.netlify.app"
+              target="_blank"
+              rel="norefferer"
+            >
+              ansqee.netlify.app
+            </a>
+          </ImageAuthor>
         </SectionTitle>
       </Section>
     </Layout>

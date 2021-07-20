@@ -23,7 +23,11 @@ const CustomLink = styled.a`
 
 const Footer = () => (
   <Wrapper tw="flex justify-center">
-    <CustomLink href="https://www.github.com/jojonicho">
+    <CustomLink
+      href="https://www.github.com/jojonicho"
+      target="_blank"
+      rel="norefferer"
+    >
       <GradientP
         tw="font-black text-2xl"
         gr1="3498db"
