@@ -11,28 +11,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import tw from "twin.macro";
 import { ProjectsSlider } from "../components/ProjectsSlider";
-import AnskiEmilia from "../../static/logo/anski-emilia.gif";
-
-const Gif = styled.img`
-  @media (min-width: ${(props) => props.theme.breakpoints.l}) {
-    width: 50vw;
-  }
-  border-radius: 4px;
-  margin-top: 16px;
-  margin-bottom: 0;
-`;
-
-const ImageAuthor = styled.p``;
-
-const Container = styled.div`
-  padding: 1vw 2vw 2vw 2vw;
-  color: ${(props) =>
-    props.dark ? props.theme.colors.white.base : props.theme.colors.black.base};
-  display: flex;
-  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
-    padding: 0rem 1.25rem 1rem 1.25rem;
-  }
-`;
 
 const PostWrapper = styled.div`
   display: flex;
@@ -115,15 +93,6 @@ const Index = ({ data }) => {
           </PostWrapper>
         </motion.div>
       </Section>
-      <Section dark>
-        <SectionTitle dark>About Me</SectionTitle>
-        <Container dark>
-          <p tw="text-sm sm:text-lg">
-            • Universitas Indonesia, Junior
-            <br />• Software Engineer Intern at Dekoruma
-          </p>
-        </Container>
-      </Section>
       <Section>
         <SectionTitle center={true} css={tw`text-base sm:text-lg`}>
           <blockquote>
@@ -145,17 +114,6 @@ const Index = ({ data }) => {
             <br />
             <br /> I hope this helps! Best of Luck! - Anon
           </blockquote>
-          <Gif src={AnskiEmilia} alt="Anski Emilia" />
-          <ImageAuthor>
-            artist:{" "}
-            <a
-              href="https://ansqee.netlify.app"
-              target="_blank"
-              rel="norefferer"
-            >
-              ansqee.netlify.app
-            </a>
-          </ImageAuthor>
         </SectionTitle>
       </Section>
     </Layout>
@@ -202,14 +160,6 @@ export const query = graphql`
         startDate
         endDate
         highlights
-        background {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
-            # fluid(quality: 100) {
-            #   ...GatsbyImageSharpFluid
-            # }
-          }
-        }
       }
     }
     posts: allMarkdownRemark(

@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { InView } from "react-intersection-observer";
 import { SplitText } from "./SplitText";
+import tw from "twin.macro";
 
 const SVGContainer = styled.div`
   display: flex;
@@ -16,29 +17,73 @@ const SVGContainer = styled.div`
 
 const Header = styled.div`
   background: ${(props) => props.theme.gradient.rightToLeft};
-  padding-top: 1vw;
+  padding-top: 30px;
   @media (max-width: ${(props) => props.theme.breakpoints.m}) {
-    height: 400px;
+    padding: 55px 0px 0px 0px;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
-    height: 330px;
     padding: 55px 3vw 0px 3vw;
   }
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+  //justify-content: center;
+  //text-align: center;
+  //align-items: center;
   color: ${(props) => props.theme.colors.white.light};
   font-size: calc(1.2vw + 30px);
 `;
 
-const SubTitle = styled.text`
-  padding-top: 0;
-  color: ${(props) => props.theme.colors.white.light};
-  font-size: calc(0.5vw + 20px);
-  font-weight: 100;
+const Section = styled.div`
+  background: ${(props) =>
+    props.dark
+      ? props.theme.gradient.rightToLeft
+      : props.theme.colors.white.base};
+  text-align: left;
+`;
+
+const SectionTitle = styled.p`
+  font-weight: 900;
+  color: ${(props) =>
+    props.dark ? props.theme.colors.white.base : props.theme.colors.black.base};
+  font-size: calc(0.4vw + 30px);
+  margin: calc(0.5vw + 10px) calc(1.5vw + 10px);
+  text-align: ${(props) => (props.center ? "center" : "left")};
+  padding-top: 1rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
+    margin: 0.5rem 1.25rem;
+  }
+`;
+
+const Container = styled.div`
+  padding: 1vw 2vw 2vw 2vw;
+  color: ${(props) =>
+    props.dark ? props.theme.colors.white.base : props.theme.colors.black.base};
+  display: flex;
+  @media (max-width: ${(props) => props.theme.breakpoints.s}) {
+    padding: 0rem 1.25rem 1rem 1.25rem;
+  }
+`;
+
+const Row = styled.div`
+  // evenly spaced row
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const TechStackContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  @media (max-width: ${(props) => props.theme.breakpoints.m}) {
+    display: none;
+  }
+  padding: 0px 30px;
 `;
 
 const textVariants = {
@@ -63,45 +108,22 @@ const AnimatedIntro = () => {
   const svgName = mylist[count];
   return (
     <Header>
-      <InView as="div" threshold={0.65}>
-        {({ inView, ref }) => {
-          return (
-            <AnimatePresence>
-              <motion.div
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                ref={ref}
-              >
-                <SplitText
-                  initial={{ y: "100%" }}
-                  animate={inView ? "visible" : "exit"}
-                  size="3xl"
-                  variants={textVariants}
-                >
-                  Hello, my name is Jonathan!
-                </SplitText>
-              </motion.div>
-            </AnimatePresence>
-          );
-        }}
-      </InView>
-      <AnimatePresence>
-        <motion.div
-          animate={{
-            scale: [1, 2, 1, 1, 1],
-            rotate: count % 2 ? [0, 360] : [360, 0],
-          }}
-          transition={{ duration: 2 }}
-        >
-          <SVGContainer>
-            <SVG name={svgName} />
-          </SVGContainer>
-        </motion.div>
-      </AnimatePresence>
-      <SubTitle>
-        I Love to <strong>Code</strong> and <strong>Learn</strong>
-      </SubTitle>
+      <Row>
+        <Section dark>
+          <SectionTitle dark>Jonathan Nicholas</SectionTitle>
+          <Container dark>
+            <p tw="text-sm sm:text-lg">
+              • Top 15 Ranked Leetcode in Indonesia
+              <br />
+              • Computer Science Student at University of Indonesia
+              <br />
+              • Ex-Software Engineer Intern at Traveloka, Ruangguru, Dekoruma
+              <br />• Looking for{" "}
+              <b>full-time Software Engineer opportunities</b>!
+            </p>
+          </Container>
+        </Section>
+      </Row>
       <Affiliates />
     </Header>
   );

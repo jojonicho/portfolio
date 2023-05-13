@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import SVG from "../components/SVG";
 
 const Container = styled.div`
-  margin: 0.35rem 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -41,8 +40,8 @@ const affiliates = [
     link: "https://www.github.com/jojonicho",
   },
   {
-    logo: "Instagram",
-    link: "https://www.instagram.com/jojo_nicho",
+    logo: "Leetcode",
+    link: "https://leetcode.com/jojonicho",
   },
 ];
 
@@ -57,7 +56,7 @@ const Affiliates = () => (
     {affiliates &&
       affiliates.map((aff, idx) => {
         return (
-          <External key={idx} href={aff.link} title={aff.logo}>
+          <External key={idx} href={aff.link} title={aff.logo} target="_blank">
             <SVG name={aff.logo} />
           </External>
         );

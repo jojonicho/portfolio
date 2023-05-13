@@ -142,11 +142,14 @@ const PostList = ({ idx, cover, path, date, title, excerpt, white }) => (
               <StyledLink to={path} white={white}>
                 <Info white={white}>
                   <span css={[white && tw`bg-gray-100`, tw`p-2 rounded-t-lg`]}>
-                    {new Date(date).toLocaleString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
+                    {new Date(date.split(".").join("/")).toLocaleString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      }
+                    )}
                   </span>
                   <Title
                     css={[white && tw`bg-gray-100`, tw`p-2 rounded-lg`]}
