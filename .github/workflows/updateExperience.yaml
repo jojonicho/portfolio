@@ -1,5 +1,7 @@
 name: Parse Tex
 
+on: repository_dispatch
+
 jobs:
   build:
     runs-on: ubuntu-latest
