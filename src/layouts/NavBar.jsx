@@ -45,7 +45,7 @@ const NavBar = () => (
       <a target="_blank" href={RESUME_VIEW_URL} tw="font-black">
         Resume (View
       </a>
-      <span tw="font-black">or</span>
+      <span tw="font-black">/</span>
       <a target="_blank" href={RESUME_DOWNLOAD_URL} tw="font-black">
         Download)
       </a>
