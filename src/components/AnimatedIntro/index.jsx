@@ -1,19 +1,7 @@
 import styled from "@emotion/styled";
-import { Affiliates, SVG } from "components";
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import { InView } from "react-intersection-observer";
-import { SplitText } from "./SplitText";
+import { Affiliates } from "components";
+import React from "react";
 import tw from "twin.macro";
-
-const SVGContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: calc(4vw + 40px);
-  height: calc(4vw + 40px);
-`;
 
 const Header = styled.div`
   background: ${(props) => props.theme.gradient.rightToLeft};
@@ -32,6 +20,10 @@ const Header = styled.div`
   //align-items: center;
   color: ${(props) => props.theme.colors.white.light};
   font-size: calc(1.2vw + 30px);
+  a {
+    color: ${(props) => props.theme.colors.white.light};
+    text-decoration: underline;
+  }
 `;
 
 const Section = styled.div`
@@ -73,39 +65,7 @@ const Row = styled.div`
   align-items: center;
 `;
 
-const TechStackContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  text-align: center;
-  @media (max-width: ${(props) => props.theme.breakpoints.m}) {
-    display: none;
-  }
-  padding: 0px 30px;
-`;
-
-const textVariants = {
-  exit: { opacity: 0 },
-  visible: (i) => ({
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-    },
-  }),
-};
-
 const AnimatedIntro = () => {
-  const mylist = ["React", "Gatsby", "Flutter", "GraphQL"];
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    setTimeout(() => {
-      setCount(count >= mylist.length - 1 ? 0 : count + 1);
-    }, 2600);
-  }, [count]);
-
-  const svgName = mylist[count];
   return (
     <Header>
       <Row>
@@ -118,8 +78,11 @@ const AnimatedIntro = () => {
               • Computer Science Student at University of Indonesia
               <br />
               • Ex-Software Engineer Intern at Traveloka, Ruangguru, Dekoruma
-              <br />• Looking for{" "}
-              <b>full-time Software Engineer opportunities</b>!
+              <br />• Looking for full-time Software Engineer opportunities!
+              <br /> Reach me through jojonichoo@gmail.com or{" "}
+              <a target="_blank" href="https://www.linkedin.com/in/joni/">
+                LinkedIn
+              </a>
             </p>
           </Container>
         </Section>

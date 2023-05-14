@@ -21,14 +21,20 @@ const Nav = styled.nav`
   justify-content: flex-end;
   align-items: center;
   a {
-    color: ${(props) => props.theme.colors.white.base};
     margin-left: 2rem;
     transition: all ${(props) => props.theme.transitions.default.duration};
-    &:hover {
-      color: ${(props) => props.theme.colors.secondary.base};
-    }
+  }
+  span {
+    margin-right: -1.5rem;
+    margin-left: 0.5rem;
+    color: ${(props) => props.theme.colors.secondary.base};
   }
 `;
+
+const RESUME_DOWNLOAD_URL =
+  "https://github.com/jojonicho/jojonicho/releases/latest/download/JonathanNicholas_Resume.pdf";
+const RESUME_VIEW_URL =
+  "https://github.com/jojonicho/jojonicho/blob/master/JonathanNicholas_Resume.pdf";
 
 const NavBar = () => (
   <Headroom calcHeightOnResize disableInlineStyles>
@@ -36,11 +42,12 @@ const NavBar = () => (
       <SVG name="Logo" />
     </StyledLink>
     <Nav>
-      <a
-        target="_blank"
-        href="https://github.com/jojonicho/jojonicho/releases/latest/download/JonathanNicholas_Resume.pdf"
-      >
-        <p tw="font-black">Resume</p>
+      <a target="_blank" href={RESUME_VIEW_URL} tw="font-black">
+        Resume (View
+      </a>
+      <span tw="font-black">or</span>
+      <a target="_blank" href={RESUME_DOWNLOAD_URL} tw="font-black">
+        Download)
       </a>
       <Link to="/blog">
         <p tw="font-black">Blog</p>
