@@ -1,14 +1,25 @@
 {
   "node": [
     {
+      "company": "Atome.sg",
+      "position": "Backend Engineer",
+      "src": "./atome.sg.png",
+      "startDate": "Jul 2023",
+      "endDate": "Present",
+      "highlights": [
+        "Integrated Lazada PayLater API and collaborated with Lazada engineers on requirements and debugging.",
+        "Worked with multi-national tech team members from Singapore across platforms (Tiktok Shop, Lazada)."
+      ]
+    },
+    {
       "company": "University of Indonesia",
       "position": "Student Researcher",
       "src": "./universityofindonesia.png",
       "startDate": "Jan 2023",
       "endDate": "May 2023",
       "highlights": [
-        "Wrote thesis titled Load Balancing Analysis on App Performance in Geo-Distributed Kubernetes Clusters.",
-        "Developed and deployed application to geo-distributed Kubernetes clusters using multi-cluster resources on GCP.",
+        "Wrote \"Web Application Performance Analysis of Multi-Region Geo- Distributed Kubernetes Clusters\" thesis.",
+        "Deployed 3-tier web application to geo-distributed Kubernetes clusters using multi-cluster resources on GCP.",
         "Configured Istio service mesh for location-aware load balancing and measured performance using Vegeta load test tool."
       ]
     },
