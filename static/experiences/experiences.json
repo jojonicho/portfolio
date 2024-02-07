@@ -7,8 +7,9 @@
       "startDate": "Jul 2023",
       "endDate": "Present",
       "highlights": [
-        "Integrated Lazada PayLater API and collaborated with Lazada engineers on requirements and debugging.",
-        "Worked with multi-national tech team members from Singapore across platforms (Tiktok Shop, Lazada)."
+        "Integrated Lazada PayLater API on multiple countries using Java Spring, Kubernetes, and Rancher.",
+        "Collaborated with teams across platforms (Lazada, etc) to develop and maintain payment services.",
+        "Demonstrated knowledge mastery in products through successful Financial Services Authority (OJK) audits."
       ]
     },
     {
@@ -66,17 +67,6 @@
         "Increased revenue by 30% by developing end-to-end Promo Code feature using Flutter with BloC state management.",
         "Applied Data Access Object(DAO) and Model Controller Service(MCS) Design Patterns in Java Backend architecture.",
         "Utilized RabbitMQ for publishing and consuming events to validate user eligibility on promo codes and rewards."
-      ]
-    },
-    {
-      "company": "Mekari",
-      "position": "Software Engineer Intern",
-      "src": "./mekari.png",
-      "startDate": "Jul 2020",
-      "endDate": "Sep 2020",
-      "highlights": [
-        "Developed and automated Backend using Python, Selenium, and AWS (Amplify, Lambda, Secrets Manager, S3, SES).",
-        "Utilized Docker, AWS-CLI, and serverless CLI to create and deploy AWS Lambda dependency layers."
       ]
     }
   ]
