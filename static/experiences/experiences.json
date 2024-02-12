@@ -40,7 +40,7 @@
       "company": "Ruangguru",
       "position": "Backend Engineer Intern",
       "src": "./ruangguru.png",
-      "startDate": "Feb 2022",
+      "startDate": "Jan 2022",
       "endDate": "Apr 2022",
       "highlights": [
         "Prevented millions in losses by integrating rate limiting on hundreds of services using Go, Kubernetes, Istio, and Envoy."
