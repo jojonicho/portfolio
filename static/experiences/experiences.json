@@ -1,11 +1,23 @@
 {
   "node": [
     {
+      "company": "Jimo",
+      "position": "Software Engineer",
+      "src": "./jimo.png",
+      "startDate": "May 2024",
+      "endDate": "Present",
+      "highlights": [
+        "Improved user retention through Snooze and Recurrence feature, allowing users to take control of what they see",
+        "Increased MRR by 3K EUR by revamping Changelog/Post with sleek animations using React and Framer Motion.",
+        "Increased Survey feature usage by 40% through integrating responses with Slack channel notifications using NestJS."
+      ]
+    },
+    {
       "company": "Atome.sg",
       "position": "Backend Engineer",
       "src": "./atome.sg.png",
       "startDate": "Jul 2023",
-      "endDate": "Present",
+      "endDate": "May 2023",
       "highlights": [
         "Integrated Lazada PayLater API on multiple countries using Java Spring, Kubernetes, and Rancher.",
         "Collaborated with teams across platforms (Lazada, etc) to develop and maintain payment services.",
@@ -14,10 +26,10 @@
     },
     {
       "company": "University of Indonesia",
-      "position": "Student Researcher",
+      "position": "Assistant Researcher",
       "src": "./universityofindonesia.png",
       "startDate": "Jan 2023",
-      "endDate": "May 2023",
+      "endDate": "Jun 2023",
       "highlights": [
         "Wrote \"Web Application Performance Analysis of Multi-Region Geo- Distributed Kubernetes Clusters\" thesis.",
         "Deployed 3-tier web application to geo-distributed Kubernetes clusters using multi-cluster resources on GCP.",
@@ -64,8 +76,7 @@
       "startDate": "Sep 2020",
       "endDate": "Mar 2021",
       "highlights": [
-        "Increased revenue by 30% by developing end-to-end Promo Code feature using Flutter with BloC state management.",
-        "Applied Data Access Object(DAO) and Model Controller Service(MCS) Design Patterns in Java Backend architecture.",
+        "Increased revenue by 30% by developing end-to-end Promo Code feature using Flutter, React, and Java.",
         "Utilized RabbitMQ for publishing and consuming events to validate user eligibility on promo codes and rewards."
       ]
     }
